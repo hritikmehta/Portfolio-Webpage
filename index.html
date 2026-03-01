@@ -1,34 +1,38 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hritik Mehta — Portfolio Skeleton</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="top-nav">
-      <a class="logo" href="#hero">HRITIK MEHTA</a>
-      <nav>
-        <a href="#career">Career</a>
-        <a href="#builds">Builds</a>
-        <a href="#library">Library</a>
-        <a href="#connect">Connect</a>
-      </nav>
-      <a class="button small" href="#connect">Open to Work</a>
-    </header>
 
-    <main>
-      <section class="card section hero" id="hero">
-        <p class="eyebrow">Personal Website</p>
-        <h1>Learning &amp; Building Systems</h1>
-        <p class="lead">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hritik Mehta — Portfolio Skeleton</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="top-nav">
+    <a class="logo" href="#hero">HRITIK MEHTA</a>
+    <nav>
+      <a href="#career">Career</a>
+      <a href="#builds">Builds</a>
+      <a href="#library">Library</a>
+      <a href="#connect">Connect</a>
+    </nav>
+    <a class="button small" href="#connect">Open to Work</a>
+  </header>
+
+  <main>
+    <section class="section hero" id="hero">
+      <canvas id="shootingStarsCanvas" class="stars-canvas"></canvas>
+      <div class="twinkling-bg"></div>
+      <div class="hero-content">
+        <p class="eyebrow" style="color: #00FF9E;">Personal Website</p>
+        <h1 style="color: #fff;">Learning &amp; Building Systems</h1>
+        <p class="lead" style="color: #cbd5e1;">
           Product-minded engineer crafting clean interfaces, robust web systems,
           and calm digital experiences.
         </p>
@@ -36,123 +40,258 @@
           <span>Status: Open to collaborate</span>
           <span>Timezone: +3:30 UTC</span>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="card section" id="career">
-        <div class="section-head">
-          <h2>Career Timeline</h2>
-          <a class="button ghost small" href="#">Download Résumé</a>
+    <section class="section" id="career">
+      <div class="section-head">
+        <h2>Career Timeline</h2>
+        <a class="button ghost small" href="#">Download Résumé</a>
+      </div>
+      <p>Key milestones in academics and industry.</p>
+
+      <div class="timeline">
+        <article>
+          <p class="period">2018 — 2023</p>
+          <h3>IIT Kharagpur</h3>
+          <ul>
+            <li>E-Cell Core Team</li>
+            <li>Undergraduate Research Intern</li>
+          </ul>
+        </article>
+
+        <article>
+          <p class="period">2023 — Present</p>
+          <h3>Housing.com</h3>
+          <ul>
+            <li>Associate Product Engineer</li>
+            <li>Assistant Manager (Engineering)</li>
+          </ul>
+        </article>
+
+        <article>
+          <p class="period">Next</p>
+          <h3>Loading...</h3>
+          <ul>
+            <li>Design-led systems role</li>
+            <li>Cross-functional product ownership</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="logo-strip">
+        <div>React</div>
+        <div>TypeScript</div>
+        <div>Design Systems</div>
+        <div>Performance</div>
+        <div>Product Thinking</div>
+      </div>
+    </section>
+
+    <section class="section builds-rail-sec" id="builds">
+      <div class="section-head builds-head">
+        <h2 style="color: #fff;">Featured Stories</h2>
+        <p>Navigate the rail to explore selected works.</p>
+      </div>
+
+      <div class="focus-rail-container">
+        <!-- Ambient background bound to the active item later via JS -->
+        <div class="rail-ambient-bg" id="railAmbientBg">
+          <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=1000&auto=format&fit=crop"
+            id="railAmbientImg" alt="" />
+          <div class="rail-ambient-overlay"></div>
         </div>
-        <p>Key milestones in academics and industry.</p>
 
-        <div class="timeline">
-          <article>
-            <p class="period">2018 — 2023</p>
-            <h3>IIT Kharagpur</h3>
-            <ul>
-              <li>E-Cell Core Team</li>
-              <li>Undergraduate Research Intern</li>
-            </ul>
-          </article>
-
-          <article>
-            <p class="period">2023 — Present</p>
-            <h3>Housing.com</h3>
-            <ul>
-              <li>Associate Product Engineer</li>
-              <li>Assistant Manager (Engineering)</li>
-            </ul>
-          </article>
-
-          <article>
-            <p class="period">Next</p>
-            <h3>Loading...</h3>
-            <ul>
-              <li>Design-led systems role</li>
-              <li>Cross-functional product ownership</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="logo-strip">
-          <div>React</div>
-          <div>TypeScript</div>
-          <div>Design Systems</div>
-          <div>Performance</div>
-          <div>Product Thinking</div>
-        </div>
-      </section>
-
-      <section class="card section" id="builds">
-        <div class="section-head">
-          <h2>Builds</h2>
-          <p>Carousel-style featured work panel.</p>
-        </div>
-        <div class="carousel-grid">
-          <article class="build-feature">
-            <p class="period">03 / 04</p>
-            <h3>Kyoto Garden</h3>
-            <p>
-              A minimal storytelling experience with elegant transitions,
-              strong typography, and visual rhythm.
-            </p>
-            <div class="chip-row">
-              <span>UI Engineering</span>
-              <span>Motion</span>
-              <span>Case Study</span>
+        <div class="rail-stage-wrapper">
+          <div class="rail-stage-perspective">
+            <div class="rail-stage-drag" id="railStageDrag">
+              <!-- Rendered via JS -->
             </div>
-          </article>
-          <div class="build-preview"></div>
-          <article class="build-faded">
-            <p class="period">Next card</p>
-            <h4>Nordic Silence</h4>
-          </article>
-        </div>
-      </section>
+          </div>
 
-      <section class="card section" id="library">
-        <div class="section-head">
-          <h2>Library</h2>
-          <label class="toggle">Read only <span></span></label>
-        </div>
+          <div class="rail-info-controls">
+            <div class="rail-info" id="railInfo">
+              <span class="rail-meta" id="railMeta">Urban • Travel</span>
+              <h2 class="rail-title" id="railTitle">Neon Tokyo</h2>
+              <p class="rail-desc" id="railDesc">Experience the vibrant nightlife and illuminated streets of Shinjuku.
+              </p>
+            </div>
 
-        <h3 class="subhead">Recent Activity</h3>
-        <div class="cards four">
-          <article>Instagram Reel</article>
-          <article>Medium Article</article>
-          <article>LinkedIn Post</article>
-          <article>X Post</article>
+            <div class="rail-controls">
+              <div class="rail-nav">
+                <button id="railPrev">&lsaquo;</button>
+                <span id="railCount">1 / 5</span>
+                <button id="railNext">&rsaquo;</button>
+              </div>
+              <a href="#" class="button" id="railExplore">Explore &rarr;</a>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <h3 class="subhead">Recommendations</h3>
-        <div class="cards four">
-          <article>Book 1</article>
-          <article>Book 2</article>
-          <article>Movie 1</article>
-          <article>Movie 2</article>
-        </div>
-      </section>
+    <section class="section" id="library">
+      <div class="section-head">
+        <h2>Library</h2>
+        <label class="toggle">Read only <span></span></label>
+      </div>
 
-      <section class="card section connect" id="connect">
-        <div class="section-head">
-          <h2>Connect</h2>
-          <p>Mail me at hritik@yourdomain.com</p>
-        </div>
-        <form>
-          <label>
-            Message
-            <textarea placeholder="Drop a message..."></textarea>
-          </label>
-          <button type="button" class="button">Send Message</button>
-        </form>
+      <h3 class="subhead">Recent Activities</h3>
+      <div class="gallery-grid">
+        <a href="#" class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+            alt="Instagram Reel" />
+          <div class="gallery-overlay">
+            <h4>Instagram Reel</h4>
+            <p>Designing modern user interfaces.</p>
+            <span class="read-more">Read more &rarr;</span>
+          </div>
+        </a>
+        <a href="#" class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1552508744-1696d4464960?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+            alt="Medium Article" />
+          <div class="gallery-overlay">
+            <h4>Medium Article</h4>
+            <p>Reflections on building large scale applications.</p>
+            <span class="read-more">Read more &rarr;</span>
+          </div>
+        </a>
+        <a href="#" class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+            alt="LinkedIn Post" />
+          <div class="gallery-overlay">
+            <h4>LinkedIn Post</h4>
+            <p>My latest career milestone and learning journey.</p>
+            <span class="read-more">Read more &rarr;</span>
+          </div>
+        </a>
+        <a href="#" class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1611605698335-8b1569810432?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+            alt="X Post" />
+          <div class="gallery-overlay">
+            <h4>X Post</h4>
+            <p>Thread on web performance optimization.</p>
+            <span class="read-more">Read more &rarr;</span>
+          </div>
+        </a>
+      </div>
 
-        <div class="platforms">
-          <a href="#">GitHub</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">X</a>
-          <a href="#">Medium</a>
-        </div>
-      </section>
-    </main>
-  </body>
+      <h3 class="subhead">Recommendations</h3>
+      <div class="gallery-grid">
+        <a href="#" class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+            alt="Book 1" />
+          <div class="gallery-overlay">
+            <h4>Reading: Atomic Habits</h4>
+            <p>An easy and proven way to build good habits and break bad ones.</p>
+            <span class="read-more">Read more &rarr;</span>
+          </div>
+        </a>
+        <a href="#" class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+            alt="Book 2" />
+          <div class="gallery-overlay">
+            <h4>Reading: Deep Work</h4>
+            <p>Rules for focused success in a distracted world.</p>
+            <span class="read-more">Read more &rarr;</span>
+          </div>
+        </a>
+        <a href="#" class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+            alt="Movie 1" />
+          <div class="gallery-overlay">
+            <h4>Watching: Inception</h4>
+            <p>A thief who steals corporate secrets through the use of dream-sharing technology.</p>
+            <span class="read-more">Read more &rarr;</span>
+          </div>
+        </a>
+        <a href="#" class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+            alt="Movie 2" />
+          <div class="gallery-overlay">
+            <h4>Watching: Interstellar</h4>
+            <p>A team of explorers travel through a wormhole in space.</p>
+            <span class="read-more">Read more &rarr;</span>
+          </div>
+        </a>
+      </div>
+
+      <h3 class="subhead">Resources</h3>
+      <div class="gallery-grid">
+        <a href="#" class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+            alt="GitHub Repos" />
+          <div class="gallery-overlay">
+            <h4>GitHub Repos</h4>
+            <p>Top open source tools and libraries I reuse.</p>
+            <span class="read-more">Read more &rarr;</span>
+          </div>
+        </a>
+        <a href="#" class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+            alt="Skill Maps" />
+          <div class="gallery-overlay">
+            <h4>Skill Maps</h4>
+            <p>Roadmaps and learning paths for web engineering.</p>
+            <span class="read-more">Read more &rarr;</span>
+          </div>
+        </a>
+        <a href="#" class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1457305237443-44c3d5a30b89?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+            alt="Favorite Websites" />
+          <div class="gallery-overlay">
+            <h4>Favorite Websites</h4>
+            <p>Design inspiration and reading materials.</p>
+            <span class="read-more">Read more &rarr;</span>
+          </div>
+        </a>
+        <a href="#" class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
+            alt="Products Used" />
+          <div class="gallery-overlay">
+            <h4>Products Used</h4>
+            <p>Software and hardware stack that powers my work.</p>
+            <span class="read-more">Read more &rarr;</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section connect" id="connect">
+      <div class="section-head">
+        <h2>Connect</h2>
+        <p>Mail me at hritik@yourdomain.com</p>
+      </div>
+      <form>
+        <label>
+          Message
+          <textarea placeholder="Drop a message..."></textarea>
+        </label>
+        <button type="button" class="button">Send Message</button>
+      </form>
+
+      <div class="platforms">
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">X</a>
+        <a href="#">Medium</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="animations.js"></script>
+</body>
+
 </html>

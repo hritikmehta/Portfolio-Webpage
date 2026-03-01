@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hritik Mehta — Portfolio</title>
+    <title>Hritik Mehta — Portfolio Skeleton</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,12 +26,11 @@
 
     <main>
       <section class="card section hero" id="hero">
-        <div class="hero-stars" aria-hidden="true"></div>
         <p class="eyebrow">Personal Website</p>
         <h1>Learning &amp; Building Systems</h1>
         <p class="lead">
-          Product-minded engineer crafting calm interfaces, robust systems, and
-          memorable user journeys.
+          Product-minded engineer crafting clean interfaces, robust web systems,
+          and calm digital experiences.
         </p>
         <div class="hero-meta">
           <span>Status: Open to collaborate</span>
@@ -41,12 +40,10 @@
 
       <section class="card section" id="career">
         <div class="section-head">
-          <div>
-            <h2>Career Timeline</h2>
-            <p>From fundamentals to product-focused engineering.</p>
-          </div>
+          <h2>Career Timeline</h2>
           <a class="button ghost small" href="#">Download Résumé</a>
         </div>
+        <p>Key milestones in academics and industry.</p>
 
         <div class="timeline">
           <article>
@@ -58,7 +55,7 @@
             </ul>
           </article>
 
-          <article class="current">
+          <article>
             <p class="period">2023 — Present</p>
             <h3>Housing.com</h3>
             <ul>
@@ -80,57 +77,36 @@
         <div class="logo-strip">
           <div>React</div>
           <div>TypeScript</div>
+          <div>Design Systems</div>
           <div>Performance</div>
-          <div>System Design</div>
           <div>Product Thinking</div>
         </div>
       </section>
 
       <section class="card section" id="builds">
         <div class="section-head">
-          <div>
-            <h2>Builds</h2>
-            <p>Featured rail stage · active details · navigation controls.</p>
-          </div>
-          <span class="muted-mini">2 / 5</span>
+          <h2>Builds</h2>
+          <p>Carousel-style featured work panel.</p>
         </div>
-
-        <div class="focus-rail-stage">
-          <div class="rail-card faded left">
-            <img
-              src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=1000&auto=format&fit=crop"
-              alt="Neon Tokyo"
-            />
-          </div>
-          <div class="rail-card active">
-            <img
-              src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1000&auto=format&fit=crop"
-              alt="Nordic Silence"
-            />
-          </div>
-          <div class="rail-card faded right">
-            <img
-              src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=1000&auto=format&fit=crop"
-              alt="Sahara Echoes"
-            />
-          </div>
-        </div>
-
-        <div class="build-info-bar">
-          <div>
-            <p class="period">Design • Nature</p>
-            <h3>Nordic Silence</h3>
-            <p class="muted-line">
-              Minimalist architecture meeting the raw beauty of the Icelandic
-              coast.
+        <div class="carousel-grid">
+          <article class="build-feature">
+            <p class="period">03 / 04</p>
+            <h3>Kyoto Garden</h3>
+            <p>
+              A minimal storytelling experience with elegant transitions,
+              strong typography, and visual rhythm.
             </p>
-          </div>
-
-          <div class="build-controls">
-            <button class="circle" aria-label="Previous">←</button>
-            <button class="circle" aria-label="Next">→</button>
-            <a href="#" class="button small">Explore</a>
-          </div>
+            <div class="chip-row">
+              <span>UI Engineering</span>
+              <span>Motion</span>
+              <span>Case Study</span>
+            </div>
+          </article>
+          <div class="build-preview"></div>
+          <article class="build-faded">
+            <p class="period">Next card</p>
+            <h4>Nordic Silence</h4>
+          </article>
         </div>
       </section>
 
@@ -140,28 +116,20 @@
           <label class="toggle">Read only <span></span></label>
         </div>
 
-        <h3 class="subhead">Recent Activities</h3>
+        <h3 class="subhead">Recent Activity</h3>
         <div class="cards four">
           <article>Instagram Reel</article>
           <article>Medium Article</article>
           <article>LinkedIn Post</article>
-          <article>X Thread</article>
+          <article>X Post</article>
         </div>
 
         <h3 class="subhead">Recommendations</h3>
         <div class="cards four">
-          <article>Reading · Book 1</article>
-          <article>Reading · Book 2</article>
-          <article>Watching · Movie 1</article>
-          <article>Watching · Movie 2</article>
-        </div>
-
-        <h3 class="subhead">Resources</h3>
-        <div class="cards four">
-          <article>GitHub Repos</article>
-          <article>Skill Maps</article>
-          <article>Favorite Websites</article>
-          <article>Products Used</article>
+          <article>Book 1</article>
+          <article>Book 2</article>
+          <article>Movie 1</article>
+          <article>Movie 2</article>
         </div>
       </section>
 
@@ -170,8 +138,6 @@
           <h2>Connect</h2>
           <p>Mail me at hritik@yourdomain.com</p>
         </div>
-        <p class="muted-line">Usually respond within 24 hours.</p>
-
         <form>
           <label>
             Message

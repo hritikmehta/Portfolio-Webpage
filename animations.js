@@ -1,7 +1,7 @@
 // animations.js
 
 // --- Shooting Stars Animation ---
-(function() {
+(function () {
   const canvas = document.getElementById('shootingStarsCanvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
@@ -13,7 +13,7 @@
     canvas.width = width;
     canvas.height = height;
   }
-  
+
   setSize();
   window.addEventListener('resize', setSize);
 
@@ -61,16 +61,16 @@
   }
 
   // Spawn initial set
-  for(let i=0; i<3; i++) {
+  for (let i = 0; i < 3; i++) {
     setTimeout(spawnStar, i * 800);
   }
 
   function draw() {
     ctx.clearRect(0, 0, width, height);
-    
+
     for (let i = stars.length - 1; i >= 0; i--) {
       const s = stars[i];
-      
+
       const newX = s.x + s.speed * Math.cos((s.angle * Math.PI) / 180);
       const newY = s.y + s.speed * Math.sin((s.angle * Math.PI) / 180);
       s.distance += s.speed;
@@ -87,23 +87,23 @@
       ctx.save();
       ctx.translate(s.x, s.y);
       ctx.rotate((s.angle * Math.PI) / 180);
-      
+
       const grad = ctx.createLinearGradient(0, 0, config.width * s.scale, 0);
       grad.addColorStop(0, 'rgba(255,255,255,0)');
       grad.addColorStop(1, s.color);
-      
+
       ctx.fillStyle = grad;
       ctx.fillRect(0, -config.height / 2, config.width * s.scale, config.height);
       ctx.restore();
     }
     requestAnimationFrame(draw);
   }
-  
+
   draw();
 })();
 
 // --- Focus Rail Animation ---
-(function() {
+(function () {
   const items = [
     {
       id: 1,
@@ -168,7 +168,7 @@
 
   function render() {
     dragContainer.innerHTML = '';
-    
+
     // update info
     const activeItem = items[wrap(0, count, activeIndex)];
     uiMeta.textContent = activeItem.meta;
@@ -176,7 +176,7 @@
     uiDesc.textContent = activeItem.description;
     uiCount.textContent = wrap(0, count, activeIndex) + 1 + " / " + count;
     bgImg.src = activeItem.imageSrc;
-    if(activeItem.href) {
+    if (activeItem.href) {
       uiExplore.href = activeItem.href;
       uiExplore.style.display = 'inline-flex';
     } else {
@@ -203,7 +203,7 @@
 
       const card = document.createElement('div');
       card.className = "rail-card " + (!isCenter ? 'clickable' : '');
-      card.style.transform = "translateX(" + (offset*280) + "px) translateZ(" + zOffset + "px) scale(" + scale + ") rotateY(" + rotateY + "deg)";
+      card.style.transform = "translateX(" + (offset * 280) + "px) translateZ(" + zOffset + "px) scale(" + scale + ") rotateY(" + rotateY + "deg)";
       card.style.opacity = opacity;
       card.style.filter = "blur(" + blur + "px) brightness(" + brightness + ")";
       card.style.zIndex = isCenter ? "20" : "10";
@@ -236,7 +236,7 @@
     // Optional drag scroll
     let isDragging = false;
     let startX = 0;
-    
+
     dragContainer.addEventListener('mousedown', (e) => {
       isDragging = true;
       startX = e.clientX;
@@ -259,4 +259,128 @@
 
     window.addEventListener('resize', render);
   }
+})();
+
+// --- Ethereal Shadows Background (Career) ---
+(function () {
+  const filterElement = document.getElementById('etherealColorMatrix');
+  if (!filterElement) return;
+
+  // We want to animate the hueRotation from 0 to 360 in a loop.
+  // The React component animated at a duration mapped from speed (approx 50s - 1000ms based on 1-100 scale).
+  // Let's use a standard 4000ms cycle for a nice smooth shift.
+  let start = null;
+  const duration = 8000; // ms per 360 rotation
+
+  function animateEthereal(timestamp) {
+    if (!start) start = timestamp;
+    const progress = timestamp - start;
+
+    // Calculate current angle (0-360) loops automatically
+    const angle = ((progress % duration) / duration) * 360;
+    filterElement.setAttribute("values", angle.toString());
+
+    requestAnimationFrame(animateEthereal);
+  }
+
+  requestAnimationFrame(animateEthereal);
+})();
+
+// --- Dotted Surface Background (Connect) ---
+(function () {
+  const container = document.getElementById('dottedSurfaceBg');
+  if (!container || typeof THREE === 'undefined') return;
+
+  const SEPARATION = 150;
+  const AMOUNTX = 40;
+  const AMOUNTY = 60;
+
+  // Scene setup
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.Fog(0x09090b, 2000, 10000);
+
+  const camera = new THREE.PerspectiveCamera(
+    60,
+    container.clientWidth / container.clientHeight,
+    1,
+    10000
+  );
+  camera.position.set(0, 355, 1220);
+
+  const renderer = new THREE.WebGLRenderer({
+    alpha: true,
+    antialias: true,
+  });
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  renderer.setClearColor(scene.fog.color, 0);
+
+  container.appendChild(renderer.domElement);
+
+  // Create particles
+  const positions = [];
+  const colors = [];
+
+  const geometry = new THREE.BufferGeometry();
+
+  for (let ix = 0; ix < AMOUNTX; ix++) {
+    for (let iy = 0; iy < AMOUNTY; iy++) {
+      const x = ix * SEPARATION - (AMOUNTX * SEPARATION) / 2;
+      const y = 0; // Animated below
+      const z = iy * SEPARATION - (AMOUNTY * SEPARATION) / 2;
+
+      positions.push(x, y, z);
+
+      // Since our theme is dark, use light gray/white dots
+      colors.push(0.8, 0.8, 0.8);
+    }
+  }
+
+  geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+  geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+
+  const material = new THREE.PointsMaterial({
+    size: 6,
+    vertexColors: true,
+    transparent: true,
+    opacity: 0.6,
+    sizeAttenuation: true,
+  });
+
+  const points = new THREE.Points(geometry, material);
+  scene.add(points);
+
+  let count = 0;
+
+  function animate() {
+    requestAnimationFrame(animate);
+
+    const positionAttribute = geometry.attributes.position;
+    const posArray = positionAttribute.array;
+
+    let i = 0;
+    for (let ix = 0; ix < AMOUNTX; ix++) {
+      for (let iy = 0; iy < AMOUNTY; iy++) {
+        const index = i * 3;
+        // Animate Y position with sine waves
+        posArray[index + 1] =
+          Math.sin((ix + count) * 0.3) * 50 +
+          Math.sin((iy + count) * 0.5) * 50;
+        i++;
+      }
+    }
+    positionAttribute.needsUpdate = true;
+    renderer.render(scene, camera);
+    count += 0.1;
+  }
+
+  function handleResize() {
+    if (!container) return;
+    camera.aspect = container.clientWidth / container.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(container.clientWidth, container.clientHeight);
+  }
+
+  window.addEventListener('resize', handleResize);
+  animate();
 })();

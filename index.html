@@ -43,48 +43,69 @@
       </div>
     </section>
 
-    <section class="section" id="career">
-      <div class="section-head">
-        <h2>Career Timeline</h2>
-        <a class="button ghost small" href="#">Download Résumé</a>
-      </div>
-      <p>Key milestones in academics and industry.</p>
-
-      <div class="timeline">
-        <article>
-          <p class="period">2018 — 2023</p>
-          <h3>IIT Kharagpur</h3>
-          <ul>
-            <li>E-Cell Core Team</li>
-            <li>Undergraduate Research Intern</li>
-          </ul>
-        </article>
-
-        <article>
-          <p class="period">2023 — Present</p>
-          <h3>Housing.com</h3>
-          <ul>
-            <li>Associate Product Engineer</li>
-            <li>Assistant Manager (Engineering)</li>
-          </ul>
-        </article>
-
-        <article>
-          <p class="period">Next</p>
-          <h3>Loading...</h3>
-          <ul>
-            <li>Design-led systems role</li>
-            <li>Cross-functional product ownership</li>
-          </ul>
-        </article>
+    <section class="section relative overflow-hidden" id="career">
+      <!-- Ethereal Shadows Background -->
+      <div class="ethereal-bg" id="etherealBg">
+        <svg style="position: absolute; width: 0; height: 0;">
+          <defs>
+            <filter id="etherealFilter">
+              <feTurbulence result="undulation" numOctaves="2" baseFrequency="0.001,0.004" seed="0" type="turbulence">
+              </feTurbulence>
+              <feColorMatrix id="etherealColorMatrix" in="undulation" type="hueRotate" values="0"></feColorMatrix>
+              <feColorMatrix in="dist" result="circulation" type="matrix"
+                values="4 0 0 0 1  4 0 0 0 1  4 0 0 0 1  1 0 0 0 0"></feColorMatrix>
+              <feDisplacementMap in="SourceGraphic" in2="circulation" scale="100" result="dist"></feDisplacementMap>
+              <feDisplacementMap in="dist" in2="undulation" scale="100" result="output"></feDisplacementMap>
+            </filter>
+          </defs>
+        </svg>
+        <div class="ethereal-mask"></div>
+        <div class="ethereal-noise"></div>
       </div>
 
-      <div class="logo-strip">
-        <div>React</div>
-        <div>TypeScript</div>
-        <div>Design Systems</div>
-        <div>Performance</div>
-        <div>Product Thinking</div>
+      <div class="section-content relative z-10 w-full max-w-6xl mx-auto px-4 mt-8">
+        <div class="section-head">
+          <h2>Career Timeline</h2>
+          <a class="button ghost small border-white/20 text-white" href="#">Download Résumé</a>
+        </div>
+        <p class="text-neutral-400">Key milestones in academics and industry.</p>
+
+        <div class="timeline">
+          <article>
+            <p class="period">2018 — 2023</p>
+            <h3>IIT Kharagpur</h3>
+            <ul>
+              <li>E-Cell Core Team</li>
+              <li>Undergraduate Research Intern</li>
+            </ul>
+          </article>
+
+          <article>
+            <p class="period">2023 — Present</p>
+            <h3>Housing.com</h3>
+            <ul>
+              <li>Associate Product Engineer</li>
+              <li>Assistant Manager (Engineering)</li>
+            </ul>
+          </article>
+
+          <article>
+            <p class="period">Next</p>
+            <h3>Loading...</h3>
+            <ul>
+              <li>Design-led systems role</li>
+              <li>Cross-functional product ownership</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="logo-strip">
+          <div>React</div>
+          <div>TypeScript</div>
+          <div>Design Systems</div>
+          <div>Performance</div>
+          <div>Product Thinking</div>
+        </div>
       </div>
     </section>
 
@@ -269,28 +290,35 @@
       </div>
     </section>
 
-    <section class="section connect" id="connect">
-      <div class="section-head">
-        <h2>Connect</h2>
-        <p>Mail me at hritik@yourdomain.com</p>
-      </div>
-      <form>
-        <label>
-          Message
-          <textarea placeholder="Drop a message..."></textarea>
-        </label>
-        <button type="button" class="button">Send Message</button>
-      </form>
+    <section class="section connect relative overflow-hidden" id="connect">
+      <!-- Dotted Surface Background -->
+      <div class="dotted-surface-bg" id="dottedSurfaceBg"></div>
 
-      <div class="platforms">
-        <a href="#">GitHub</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">X</a>
-        <a href="#">Medium</a>
+      <div class="section-content relative z-10 w-full max-w-6xl mx-auto px-4 mt-8">
+        <div class="section-head">
+          <h2 class="text-white">Connect</h2>
+          <p class="text-neutral-400">Mail me at hritik@yourdomain.com</p>
+        </div>
+        <form>
+          <label>
+            Message
+            <textarea placeholder="Drop a message..."></textarea>
+          </label>
+          <button type="button" class="button">Send Message</button>
+        </form>
+
+        <div class="platforms">
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">X</a>
+          <a href="#">Medium</a>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- External dependency: Three.js for Dotted Surface -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="animations.js"></script>
 </body>
 

@@ -717,3 +717,51 @@ textarea {
 #railExplore:active {
   transform: scale(0.95);
 }
+
+/* --- Ethereal Shadows Background (Career) --- */
+.ethereal-bg {
+  position: absolute;
+  inset: -100px;
+  /* displacement scale padding */
+  z-index: 0;
+  pointer-events: none;
+  filter: url(#etherealFilter) blur(4px);
+}
+
+.ethereal-mask {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(9, 9, 11, 1);
+  mask-image: url('https://framerusercontent.com/images/ceBGguIpUU8luwByxuQz79t7To.png');
+  -webkit-mask-image: url('https://framerusercontent.com/images/ceBGguIpUU8luwByxuQz79t7To.png');
+  mask-size: cover;
+  -webkit-mask-size: cover;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.ethereal-noise {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://framerusercontent.com/images/g0QcWrxr87K0ufOxIUFBakwYA8.png');
+  background-size: 240px;
+  /* scale 1.2 * 200 */
+  background-repeat: repeat;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+}
+
+/* --- Dotted Surface (Connect) --- */
+.dotted-surface-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}

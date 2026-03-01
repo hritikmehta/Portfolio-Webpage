@@ -40,10 +40,12 @@
 
       <section class="card section" id="career">
         <div class="section-head">
-          <h2>Career Timeline</h2>
+          <div>
+            <h2>Career Timeline</h2>
+            <p>From fundamentals to product-focused engineering.</p>
+          </div>
           <a class="button ghost small" href="#">Download Résumé</a>
         </div>
-        <p>Key milestones in academics and industry.</p>
 
         <div class="timeline">
           <article>
@@ -55,7 +57,7 @@
             </ul>
           </article>
 
-          <article>
+          <article class="active-milestone">
             <p class="period">2023 — Present</p>
             <h3>Housing.com</h3>
             <ul>
@@ -77,20 +79,31 @@
         <div class="logo-strip">
           <div>React</div>
           <div>TypeScript</div>
-          <div>Design Systems</div>
           <div>Performance</div>
+          <div>System Design</div>
           <div>Product Thinking</div>
         </div>
       </section>
 
       <section class="card section" id="builds">
         <div class="section-head">
-          <h2>Builds</h2>
-          <p>Carousel-style featured work panel.</p>
+          <div>
+            <h2>Builds</h2>
+            <p>Featured rail stage with cinematic project focus.</p>
+          </div>
+          <div class="rail-controls" aria-label="Build navigation controls">
+            <button type="button" aria-label="Previous build">←</button>
+            <span>2 / 5</span>
+            <button type="button" aria-label="Next build">→</button>
+          </div>
         </div>
         <div class="carousel-grid">
+          <article class="build-faded" aria-hidden="true">
+            <p class="period">01 / 05</p>
+            <h4>Atlas Notes</h4>
+          </article>
           <article class="build-feature">
-            <p class="period">03 / 04</p>
+            <p class="period">Design • Nature</p>
             <h3>Kyoto Garden</h3>
             <p>
               A minimal storytelling experience with elegant transitions,
@@ -101,12 +114,9 @@
               <span>Motion</span>
               <span>Case Study</span>
             </div>
+            <a class="button small" href="#">Explore</a>
           </article>
           <div class="build-preview"></div>
-          <article class="build-faded">
-            <p class="period">Next card</p>
-            <h4>Nordic Silence</h4>
-          </article>
         </div>
       </section>
 
@@ -121,23 +131,35 @@
           <article>Instagram Reel</article>
           <article>Medium Article</article>
           <article>LinkedIn Post</article>
-          <article>X Post</article>
+          <article>X Thread</article>
         </div>
 
         <h3 class="subhead">Recommendations</h3>
         <div class="cards four">
-          <article>Book 1</article>
-          <article>Book 2</article>
-          <article>Movie 1</article>
-          <article>Movie 2</article>
+          <article>Reading: Book 1</article>
+          <article>Reading: Book 2</article>
+          <article>Watching: Movie 1</article>
+          <article>Watching: Movie 2</article>
+        </div>
+
+        <h3 class="subhead">Resources</h3>
+        <div class="cards four">
+          <article>GitHub Repos</article>
+          <article>Skill Maps</article>
+          <article>Favorite Websites</article>
+          <article>Products Used</article>
         </div>
       </section>
 
       <section class="card section connect" id="connect">
         <div class="section-head">
-          <h2>Connect</h2>
-          <p>Mail me at hritik@yourdomain.com</p>
+          <div>
+            <h2>Connect</h2>
+            <p>Mail me at hritik@yourdomain.com or drop a message.</p>
+          </div>
         </div>
+        <p class="response-time">Usually replies within 24–48 hours.</p>
+
         <form>
           <label>
             Message

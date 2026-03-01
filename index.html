@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hritik Mehta — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="top-nav">
+      <a class="logo" href="#hero">HRITIK MEHTA</a>
+      <nav>
+        <a href="#career">Career</a>
+        <a href="#builds">Builds</a>
+        <a href="#library">Library</a>
+        <a href="#connect">Connect</a>
+      </nav>
+      <a class="button small" href="#connect">Open to Work</a>
+    </header>
+
+    <main>
+      <section class="card section hero" id="hero">
+        <div class="hero-stars" aria-hidden="true"></div>
+        <p class="eyebrow">Personal Website</p>
+        <h1>Learning &amp; Building Systems</h1>
+        <p class="lead">
+          Product-minded engineer crafting calm interfaces, robust systems, and
+          memorable user journeys.
+        </p>
+        <div class="hero-meta">
+          <span>Status: Open to collaborate</span>
+          <span>Timezone: +3:30 UTC</span>
+        </div>
+      </section>
+
+      <section class="card section" id="career">
+        <div class="section-head">
+          <div>
+            <h2>Career Timeline</h2>
+            <p>From fundamentals to product-focused engineering.</p>
+          </div>
+          <a class="button ghost small" href="#">Download Résumé</a>
+        </div>
+
+        <div class="timeline">
+          <article>
+            <p class="period">2018 — 2023</p>
+            <h3>IIT Kharagpur</h3>
+            <ul>
+              <li>E-Cell Core Team</li>
+              <li>Undergraduate Research Intern</li>
+            </ul>
+          </article>
+
+          <article class="current">
+            <p class="period">2023 — Present</p>
+            <h3>Housing.com</h3>
+            <ul>
+              <li>Associate Product Engineer</li>
+              <li>Assistant Manager (Engineering)</li>
+            </ul>
+          </article>
+
+          <article>
+            <p class="period">Next</p>
+            <h3>Loading...</h3>
+            <ul>
+              <li>Design-led systems role</li>
+              <li>Cross-functional product ownership</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="logo-strip">
+          <div>React</div>
+          <div>TypeScript</div>
+          <div>Performance</div>
+          <div>System Design</div>
+          <div>Product Thinking</div>
+        </div>
+      </section>
+
+      <section class="card section" id="builds">
+        <div class="section-head">
+          <div>
+            <h2>Builds</h2>
+            <p>Featured rail stage · active details · navigation controls.</p>
+          </div>
+          <span class="muted-mini">2 / 5</span>
+        </div>
+
+        <div class="focus-rail-stage">
+          <div class="rail-card faded left">
+            <img
+              src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=1000&auto=format&fit=crop"
+              alt="Neon Tokyo"
+            />
+          </div>
+          <div class="rail-card active">
+            <img
+              src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1000&auto=format&fit=crop"
+              alt="Nordic Silence"
+            />
+          </div>
+          <div class="rail-card faded right">
+            <img
+              src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=1000&auto=format&fit=crop"
+              alt="Sahara Echoes"
+            />
+          </div>
+        </div>
+
+        <div class="build-info-bar">
+          <div>
+            <p class="period">Design • Nature</p>
+            <h3>Nordic Silence</h3>
+            <p class="muted-line">
+              Minimalist architecture meeting the raw beauty of the Icelandic
+              coast.
+            </p>
+          </div>
+
+          <div class="build-controls">
+            <button class="circle" aria-label="Previous">←</button>
+            <button class="circle" aria-label="Next">→</button>
+            <a href="#" class="button small">Explore</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card section" id="library">
+        <div class="section-head">
+          <h2>Library</h2>
+          <label class="toggle">Read only <span></span></label>
+        </div>
+
+        <h3 class="subhead">Recent Activities</h3>
+        <div class="cards four">
+          <article>Instagram Reel</article>
+          <article>Medium Article</article>
+          <article>LinkedIn Post</article>
+          <article>X Thread</article>
+        </div>
+
+        <h3 class="subhead">Recommendations</h3>
+        <div class="cards four">
+          <article>Reading · Book 1</article>
+          <article>Reading · Book 2</article>
+          <article>Watching · Movie 1</article>
+          <article>Watching · Movie 2</article>
+        </div>
+
+        <h3 class="subhead">Resources</h3>
+        <div class="cards four">
+          <article>GitHub Repos</article>
+          <article>Skill Maps</article>
+          <article>Favorite Websites</article>
+          <article>Products Used</article>
+        </div>
+      </section>
+
+      <section class="card section connect" id="connect">
+        <div class="section-head">
+          <h2>Connect</h2>
+          <p>Mail me at hritik@yourdomain.com</p>
+        </div>
+        <p class="muted-line">Usually respond within 24 hours.</p>
+
+        <form>
+          <label>
+            Message
+            <textarea placeholder="Drop a message..."></textarea>
+          </label>
+          <button type="button" class="button">Send Message</button>
+        </form>
+
+        <div class="platforms">
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">X</a>
+          <a href="#">Medium</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -10,19 +10,24 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
   <header class="top-nav">
-    <a class="logo" href="#hero">HRITIK MEHTA</a>
-    <nav>
-      <a href="#career">Career</a>
-      <a href="#builds">Builds</a>
-      <a href="#library">Library</a>
-      <a href="#connect">Connect</a>
-    </nav>
-    <a class="button small" href="#connect">Open to Work</a>
+    <div class="top-nav-inner">
+      <a class="logo" href="#hero">HRITIK MEHTA</a>
+      <nav>
+        <a href="#career">Career</a>
+        <a href="#builds">Builds</a>
+        <a href="#library">Library</a>
+      </nav>
+      <a class="nav-cta" href="#connect">Connect</a>
+    </div>
   </header>
 
   <main>
@@ -30,99 +35,90 @@
       <canvas id="shootingStarsCanvas" class="stars-canvas"></canvas>
       <div class="twinkling-bg"></div>
       <div class="hero-content">
-        <p class="eyebrow" style="color: #00FF9E;">Personal Website</p>
-        <h1 style="color: #fff;">Learning &amp; Building Systems</h1>
+        <!-- <h1 style="color: #fff;">Learning &amp; Building Systems</h1> -->
+        <h1 style="color: #fff;">Building Systems With Taste</h1>
         <p class="lead" style="color: #cbd5e1;">
           Product-minded engineer crafting clean interfaces, robust web systems,
           and calm digital experiences.
         </p>
         <div class="hero-meta">
-          <span>Status: Open to collaborate</span>
-          <span>Timezone: +3:30 UTC</span>
+          <span id="heroTypingAnimation" class="typing-animation" aria-live="polite">Open to collaborate</span>
         </div>
       </div>
     </section>
 
-    <section class="section relative overflow-hidden" id="career">
-      <!-- Ethereal Shadows Background -->
-      <div class="ethereal-bg" id="etherealBg">
-        <svg style="position: absolute; width: 0; height: 0;">
-          <defs>
-            <filter id="etherealFilter">
-              <feTurbulence result="undulation" numOctaves="2" baseFrequency="0.001,0.004" seed="0" type="turbulence">
-              </feTurbulence>
-              <feColorMatrix id="etherealColorMatrix" in="undulation" type="hueRotate" values="0"></feColorMatrix>
-              <feColorMatrix in="dist" result="circulation" type="matrix"
-                values="4 0 0 0 1  4 0 0 0 1  4 0 0 0 1  1 0 0 0 0"></feColorMatrix>
-              <feDisplacementMap in="SourceGraphic" in2="circulation" scale="100" result="dist"></feDisplacementMap>
-              <feDisplacementMap in="dist" in2="undulation" scale="100" result="output"></feDisplacementMap>
-            </filter>
-          </defs>
-        </svg>
-        <div class="ethereal-mask"></div>
-        <div class="ethereal-noise"></div>
-      </div>
-
-      <div class="section-content relative z-10 w-full max-w-6xl mx-auto px-4 mt-8">
+    <section class="section with-bg relative overflow-hidden" id="career">
+      <div class="dotted-surface-bg" aria-hidden="true"></div>
+      <div class="section-content section-body career-shell relative z-10 w-full max-w-6xl mx-auto px-4 mt-8">
         <div class="section-head">
           <h2>Career Timeline</h2>
-          <a class="button ghost small border-white/20 text-white" href="#">Download Résumé</a>
+          <a id="careerResumeCta" class="button resume-cta" href="#" aria-label="Download Résumé">
+            <span class="resume-cta-text">Download Résumé</span>
+            <svg class="resume-cta-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+              <path class="resume-tray" d="M8 28v4a2 2 0 002 2h20a2 2 0 002-2v-4" />
+              <g class="resume-arrow">
+                <line x1="20" y1="6" x2="20" y2="24" />
+                <polyline points="14,18 20,24 26,18" />
+              </g>
+              <path class="resume-check" d="M14 22l6 6 8-10" />
+            </svg>
+          </a>
         </div>
-        <p class="text-neutral-400">Key milestones in academics and industry.</p>
+        <div class="career-orbit-layout">
+          <div class="career-orbits" role="tablist" aria-label="Career periods">
+            <button class="career-orbit-button" type="button" role="tab" aria-selected="false" data-index="0">
+              <span class="orbit-ring"><span class="orbit-planet"></span></span>
+              <span class="orbit-label">2018 — 2023</span>
+            </button>
+            <button class="career-orbit-button is-active" type="button" role="tab" aria-selected="true" data-index="1">
+              <span class="orbit-ring"><span class="orbit-planet"></span></span>
+              <span class="orbit-label">2023 — Present</span>
+            </button>
+            <button class="career-orbit-button" type="button" role="tab" aria-selected="false" data-index="2">
+              <span class="orbit-ring"><span class="orbit-planet"></span></span>
+              <span class="orbit-label">Next</span>
+            </button>
+          </div>
 
-        <div class="timeline">
-          <article>
-            <p class="period">2018 — 2023</p>
-            <h3>IIT Kharagpur</h3>
-            <ul>
-              <li>E-Cell Core Team</li>
-              <li>Undergraduate Research Intern</li>
-            </ul>
-          </article>
+          <div class="career-main">
+            <article class="career-info-panel" aria-live="polite">
+              <p id="careerInfoPeriod" class="career-info-period">2023 — Present</p>
+              <h3 id="careerInfoOrg">Housing.com</h3>
+              <p id="careerInfoRole" class="career-info-role">Associate Product Engineer • Assistant Manager (Engineering)
+              </p>
+              <ul id="careerInfoHighlights" class="career-info-highlights">
+                <li>Scaling product surfaces with reliable frontend architecture.</li>
+                <li>Driving design-system consistency across teams.</li>
+                <li>Owning delivery from prototyping to production rollout.</li>
+              </ul>
+            </article>
 
-          <article>
-            <p class="period">2023 — Present</p>
-            <h3>Housing.com</h3>
-            <ul>
-              <li>Associate Product Engineer</li>
-              <li>Assistant Manager (Engineering)</li>
-            </ul>
-          </article>
-
-          <article>
-            <p class="period">Next</p>
-            <h3>Loading...</h3>
-            <ul>
-              <li>Design-led systems role</li>
-              <li>Cross-functional product ownership</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="logo-strip">
-          <div>React</div>
-          <div>TypeScript</div>
-          <div>Design Systems</div>
-          <div>Performance</div>
-          <div>Product Thinking</div>
+            <aside class="career-media" aria-label="Career media carousel">
+              <div class="career-carousel" id="careerCarousel">
+                <img
+                  id="careerCarouselImage"
+                  src="assets/career/2023-present/01.svg"
+                  alt="Housing.com - career highlight image 1" />
+                <button id="careerCarouselPrev" class="career-carousel-btn prev" type="button" aria-label="Previous image">
+                  &lsaquo;
+                </button>
+                <button id="careerCarouselNext" class="career-carousel-btn next" type="button" aria-label="Next image">
+                  &rsaquo;
+                </button>
+                <div id="careerCarouselDots" class="career-carousel-dots" aria-label="Image position"></div>
+              </div>
+            </aside>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section builds-rail-sec" id="builds">
-      <div class="section-head builds-head">
-        <h2 style="color: #fff;">Featured Stories</h2>
-        <p>Navigate the rail to explore selected works.</p>
-      </div>
-
+    <section class="section with-bg builds-rail-sec relative overflow-hidden" id="builds">
+      <div class="dotted-surface-bg" aria-hidden="true"></div>
       <div class="focus-rail-container">
-        <!-- Ambient background bound to the active item later via JS -->
-        <div class="rail-ambient-bg" id="railAmbientBg">
-          <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=1000&auto=format&fit=crop"
-            id="railAmbientImg" alt="" />
-          <div class="rail-ambient-overlay"></div>
+        <div class="section-head builds-head section-body">
+          <h2 style="color: #fff;">Selected Builds</h2>
         </div>
-
         <div class="rail-stage-wrapper">
           <div class="rail-stage-perspective">
             <div class="rail-stage-drag" id="railStageDrag">
@@ -151,14 +147,16 @@
       </div>
     </section>
 
-    <section class="section" id="library">
-      <div class="section-head">
-        <h2>Library</h2>
-        <label class="toggle">Read only <span></span></label>
-      </div>
+    <section class="section with-bg relative overflow-hidden" id="library">
+      <div class="dotted-surface-bg" aria-hidden="true"></div>
+      <div class="section-body">
+        <div class="section-head">
+          <h2>Library</h2>
+          <label class="toggle">Read only <span></span></label>
+        </div>
 
       <h3 class="subhead">Recent Activities</h3>
-      <div class="gallery-grid">
+        <div class="gallery-grid">
         <a href="#" class="gallery-card">
           <img
             src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
@@ -166,7 +164,6 @@
           <div class="gallery-overlay">
             <h4>Instagram Reel</h4>
             <p>Designing modern user interfaces.</p>
-            <span class="read-more">Read more &rarr;</span>
           </div>
         </a>
         <a href="#" class="gallery-card">
@@ -176,7 +173,6 @@
           <div class="gallery-overlay">
             <h4>Medium Article</h4>
             <p>Reflections on building large scale applications.</p>
-            <span class="read-more">Read more &rarr;</span>
           </div>
         </a>
         <a href="#" class="gallery-card">
@@ -186,7 +182,6 @@
           <div class="gallery-overlay">
             <h4>LinkedIn Post</h4>
             <p>My latest career milestone and learning journey.</p>
-            <span class="read-more">Read more &rarr;</span>
           </div>
         </a>
         <a href="#" class="gallery-card">
@@ -196,13 +191,12 @@
           <div class="gallery-overlay">
             <h4>X Post</h4>
             <p>Thread on web performance optimization.</p>
-            <span class="read-more">Read more &rarr;</span>
           </div>
         </a>
       </div>
 
       <h3 class="subhead">Recommendations</h3>
-      <div class="gallery-grid">
+        <div class="gallery-grid">
         <a href="#" class="gallery-card">
           <img
             src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
@@ -210,7 +204,6 @@
           <div class="gallery-overlay">
             <h4>Reading: Atomic Habits</h4>
             <p>An easy and proven way to build good habits and break bad ones.</p>
-            <span class="read-more">Read more &rarr;</span>
           </div>
         </a>
         <a href="#" class="gallery-card">
@@ -220,7 +213,6 @@
           <div class="gallery-overlay">
             <h4>Reading: Deep Work</h4>
             <p>Rules for focused success in a distracted world.</p>
-            <span class="read-more">Read more &rarr;</span>
           </div>
         </a>
         <a href="#" class="gallery-card">
@@ -230,7 +222,6 @@
           <div class="gallery-overlay">
             <h4>Watching: Inception</h4>
             <p>A thief who steals corporate secrets through the use of dream-sharing technology.</p>
-            <span class="read-more">Read more &rarr;</span>
           </div>
         </a>
         <a href="#" class="gallery-card">
@@ -240,13 +231,12 @@
           <div class="gallery-overlay">
             <h4>Watching: Interstellar</h4>
             <p>A team of explorers travel through a wormhole in space.</p>
-            <span class="read-more">Read more &rarr;</span>
           </div>
         </a>
       </div>
 
       <h3 class="subhead">Resources</h3>
-      <div class="gallery-grid">
+        <div class="gallery-grid">
         <a href="#" class="gallery-card">
           <img
             src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
@@ -254,7 +244,6 @@
           <div class="gallery-overlay">
             <h4>GitHub Repos</h4>
             <p>Top open source tools and libraries I reuse.</p>
-            <span class="read-more">Read more &rarr;</span>
           </div>
         </a>
         <a href="#" class="gallery-card">
@@ -264,7 +253,6 @@
           <div class="gallery-overlay">
             <h4>Skill Maps</h4>
             <p>Roadmaps and learning paths for web engineering.</p>
-            <span class="read-more">Read more &rarr;</span>
           </div>
         </a>
         <a href="#" class="gallery-card">
@@ -274,7 +262,6 @@
           <div class="gallery-overlay">
             <h4>Favorite Websites</h4>
             <p>Design inspiration and reading materials.</p>
-            <span class="read-more">Read more &rarr;</span>
           </div>
         </a>
         <a href="#" class="gallery-card">
@@ -284,40 +271,36 @@
           <div class="gallery-overlay">
             <h4>Products Used</h4>
             <p>Software and hardware stack that powers my work.</p>
-            <span class="read-more">Read more &rarr;</span>
           </div>
         </a>
+        </div>
       </div>
     </section>
 
-    <section class="section connect relative overflow-hidden" id="connect">
-      <!-- Dotted Surface Background -->
-      <div class="dotted-surface-bg" id="dottedSurfaceBg"></div>
-
-      <div class="section-content relative z-10 w-full max-w-6xl mx-auto px-4 mt-8">
-        <div class="section-head">
-          <h2 class="text-white">Connect</h2>
-          <p class="text-neutral-400">Mail me at hritik@yourdomain.com</p>
-        </div>
-        <form>
+    <section class="section with-bg connect relative overflow-hidden" id="connect">
+      <div class="dotted-surface-bg" aria-hidden="true"></div>
+      <div class="section-content section-body relative z-10 w-full max-w-6xl mx-auto px-4 mt-8">
+        <div class="connect-stack">
+          <p class="connect-mail">Mail me at hritik@yourdomain.com</p>
+          <form class="connect-form">
           <label>
             Message
             <textarea placeholder="Drop a message..."></textarea>
           </label>
-          <button type="button" class="button">Send Message</button>
-        </form>
+            <button type="button" class="nav-cta connect-send">Send Message</button>
+          </form>
 
-        <div class="platforms">
-          <a href="#">GitHub</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">X</a>
-          <a href="#">Medium</a>
+          <div class="platforms">
+            <a href="#">GitHub</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">X</a>
+            <a href="#">Medium</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- External dependency: Three.js for Dotted Surface -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="animations.js"></script>
 </body>

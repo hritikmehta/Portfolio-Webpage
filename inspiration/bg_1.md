@@ -1,3 +1,5 @@
+You are given a task to integrate an existing React component in the codebase
+
 The codebase should support:
 - shadcn project structure  
 - Tailwind CSS
@@ -9,232 +11,227 @@ Determine the default path for components and styles.
 If default path for components is not /components/ui, provide instructions on why it's important to create this folder
 Copy-paste this component to /components/ui folder:
 ```tsx
-etheral-shadow.tsx
+dotted-surface.tsx
 'use client';
+import { cn } from '@/lib/utils';
+import { useTheme } from 'next-themes';
+import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
 
-import React, { useRef, useId, useEffect, CSSProperties } from 'react';
-import { animate, useMotionValue, AnimationPlaybackControls } from 'framer-motion';
+type DottedSurfaceProps = Omit<React.ComponentProps<'div'>, 'ref'>;
 
-// Type definitions
-interface ResponsiveImage {
-    src: string;
-    alt?: string;
-    srcSet?: string;
+export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
+	const { theme } = useTheme();
+
+	const containerRef = useRef<HTMLDivElement>(null);
+	const sceneRef = useRef<{
+		scene: THREE.Scene;
+		camera: THREE.PerspectiveCamera;
+		renderer: THREE.WebGLRenderer;
+		particles: THREE.Points[];
+		animationId: number;
+		count: number;
+	} | null>(null);
+
+	useEffect(() => {
+		if (!containerRef.current) return;
+
+		const SEPARATION = 150;
+		const AMOUNTX = 40;
+		const AMOUNTY = 60;
+
+		// Scene setup
+		const scene = new THREE.Scene();
+		scene.fog = new THREE.Fog(0xffffff, 2000, 10000);
+
+		const camera = new THREE.PerspectiveCamera(
+			60,
+			window.innerWidth / window.innerHeight,
+			0.1,
+			10000,
+		);
+		camera.position.set(0, 355, 1220);
+
+		const renderer = new THREE.WebGLRenderer({
+			alpha: true,
+			antialias: true,
+		});
+		renderer.setPixelRatio(window.devicePixelRatio);
+		renderer.setSize(window.innerWidth, window.innerHeight);
+		renderer.setClearColor(scene.fog.color, 0);
+
+		containerRef.current.appendChild(renderer.domElement);
+
+		// Create particles
+		const particles: THREE.Points[] = [];
+		const positions: number[] = [];
+		const colors: number[] = [];
+
+		// Create geometry for all particles
+		const geometry = new THREE.BufferGeometry();
+
+		for (let ix = 0; ix < AMOUNTX; ix++) {
+			for (let iy = 0; iy < AMOUNTY; iy++) {
+				const x = ix * SEPARATION - (AMOUNTX * SEPARATION) / 2;
+				const y = 0; // Will be animated
+				const z = iy * SEPARATION - (AMOUNTY * SEPARATION) / 2;
+
+				positions.push(x, y, z);
+				if (theme === 'dark') {
+					colors.push(200, 200, 200);
+				} else {
+					colors.push(0, 0, 0);
+				}
+			}
+		}
+
+		geometry.setAttribute(
+			'position',
+			new THREE.Float32BufferAttribute(positions, 3),
+		);
+		geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+
+		// Create material
+		const material = new THREE.PointsMaterial({
+			size: 8,
+			vertexColors: true,
+			transparent: true,
+			opacity: 0.8,
+			sizeAttenuation: true,
+		});
+
+		// Create points object
+		const points = new THREE.Points(geometry, material);
+		scene.add(points);
+
+		let count = 0;
+		let animationId: number;
+
+		// Animation function
+		const animate = () => {
+			animationId = requestAnimationFrame(animate);
+
+			const positionAttribute = geometry.attributes.position;
+			const positions = positionAttribute.array as Float32Array;
+
+			let i = 0;
+			for (let ix = 0; ix < AMOUNTX; ix++) {
+				for (let iy = 0; iy < AMOUNTY; iy++) {
+					const index = i * 3;
+
+					// Animate Y position with sine waves
+					positions[index + 1] =
+						Math.sin((ix + count) * 0.3) * 50 +
+						Math.sin((iy + count) * 0.5) * 50;
+
+					i++;
+				}
+			}
+
+			positionAttribute.needsUpdate = true;
+
+			// Update point sizes based on wave
+			const customMaterial = material as THREE.PointsMaterial & {
+				uniforms?: any;
+			};
+			if (!customMaterial.uniforms) {
+				// For dynamic size changes, we'd need a custom shader
+				// For now, keeping constant size for performance
+			}
+
+			renderer.render(scene, camera);
+			count += 0.1;
+		};
+
+		// Handle window resize
+		const handleResize = () => {
+			camera.aspect = window.innerWidth / window.innerHeight;
+			camera.updateProjectionMatrix();
+			renderer.setSize(window.innerWidth, window.innerHeight);
+		};
+
+		window.addEventListener('resize', handleResize);
+
+		// Start animation
+		animate();
+
+		// Store references
+		sceneRef.current = {
+			scene,
+			camera,
+			renderer,
+			particles: [points],
+			animationId,
+			count,
+		};
+
+		// Cleanup function
+		return () => {
+			window.removeEventListener('resize', handleResize);
+
+			if (sceneRef.current) {
+				cancelAnimationFrame(sceneRef.current.animationId);
+
+				// Clean up Three.js objects
+				sceneRef.current.scene.traverse((object) => {
+					if (object instanceof THREE.Points) {
+						object.geometry.dispose();
+						if (Array.isArray(object.material)) {
+							object.material.forEach((material) => material.dispose());
+						} else {
+							object.material.dispose();
+						}
+					}
+				});
+
+				sceneRef.current.renderer.dispose();
+
+				if (containerRef.current && sceneRef.current.renderer.domElement) {
+					containerRef.current.removeChild(
+						sceneRef.current.renderer.domElement,
+					);
+				}
+			}
+		};
+	}, [theme]);
+
+	return (
+		<div
+			ref={containerRef}
+			className={cn('pointer-events-none fixed inset-0 -z-1', className)}
+			{...props}
+		/>
+	);
 }
 
-interface AnimationConfig {
-    preview?: boolean;
-    scale: number;
-    speed: number;
-}
-
-interface NoiseConfig {
-    opacity: number;
-    scale: number;
-}
-
-interface ShadowOverlayProps {
-    type?: 'preset' | 'custom';
-    presetIndex?: number;
-    customImage?: ResponsiveImage;
-    sizing?: 'fill' | 'stretch';
-    color?: string;
-    animation?: AnimationConfig;
-    noise?: NoiseConfig;
-    style?: CSSProperties;
-    className?: string;
-}
-
-function mapRange(
-    value: number,
-    fromLow: number,
-    fromHigh: number,
-    toLow: number,
-    toHigh: number
-): number {
-    if (fromLow === fromHigh) {
-        return toLow;
-    }
-    const percentage = (value - fromLow) / (fromHigh - fromLow);
-    return toLow + percentage * (toHigh - toLow);
-}
-
-const useInstanceId = (): string => {
-    const id = useId();
-    const cleanId = id.replace(/:/g, "");
-    const instanceId = `shadowoverlay-${cleanId}`;
-    return instanceId;
-};
-
-export function Component({
-    sizing = 'fill',
-    color = 'rgba(128, 128, 128, 1)',
-    animation,
-    noise,
-    style,
-    className
-}: ShadowOverlayProps) {
-    const id = useInstanceId();
-    const animationEnabled = animation && animation.scale > 0;
-    const feColorMatrixRef = useRef<SVGFEColorMatrixElement>(null);
-    const hueRotateMotionValue = useMotionValue(180);
-    const hueRotateAnimation = useRef<AnimationPlaybackControls | null>(null);
-
-    const displacementScale = animation ? mapRange(animation.scale, 1, 100, 20, 100) : 0;
-    const animationDuration = animation ? mapRange(animation.speed, 1, 100, 1000, 50) : 1;
-
-    useEffect(() => {
-        if (feColorMatrixRef.current && animationEnabled) {
-            if (hueRotateAnimation.current) {
-                hueRotateAnimation.current.stop();
-            }
-            hueRotateMotionValue.set(0);
-            hueRotateAnimation.current = animate(hueRotateMotionValue, 360, {
-                duration: animationDuration / 25,
-                repeat: Infinity,
-                repeatType: "loop",
-                repeatDelay: 0,
-                ease: "linear",
-                delay: 0,
-                onUpdate: (value: number) => {
-                    if (feColorMatrixRef.current) {
-                        feColorMatrixRef.current.setAttribute("values", String(value));
-                    }
-                }
-            });
-
-            return () => {
-                if (hueRotateAnimation.current) {
-                    hueRotateAnimation.current.stop();
-                }
-            };
-        }
-    }, [animationEnabled, animationDuration, hueRotateMotionValue]);
-
-    return (
-        <div
-            className={className}
-            style={{
-                overflow: "hidden",
-                position: "relative",
-                width: "100%",
-                height: "100%",
-                ...style
-            }}
-        >
-            <div
-                style={{
-                    position: "absolute",
-                    inset: -displacementScale,
-                    filter: animationEnabled ? `url(#${id}) blur(4px)` : "none"
-                }}
-            >
-                {animationEnabled && (
-                    <svg style={{ position: "absolute" }}>
-                        <defs>
-                            <filter id={id}>
-                                <feTurbulence
-                                    result="undulation"
-                                    numOctaves="2"
-                                    baseFrequency={`${mapRange(animation.scale, 0, 100, 0.001, 0.0005)},${mapRange(animation.scale, 0, 100, 0.004, 0.002)}`}
-                                    seed="0"
-                                    type="turbulence"
-                                />
-                                <feColorMatrix
-                                    ref={feColorMatrixRef}
-                                    in="undulation"
-                                    type="hueRotate"
-                                    values="180"
-                                />
-                                <feColorMatrix
-                                    in="dist"
-                                    result="circulation"
-                                    type="matrix"
-                                    values="4 0 0 0 1  4 0 0 0 1  4 0 0 0 1  1 0 0 0 0"
-                                />
-                                <feDisplacementMap
-                                    in="SourceGraphic"
-                                    in2="circulation"
-                                    scale={displacementScale}
-                                    result="dist"
-                                />
-                                <feDisplacementMap
-                                    in="dist"
-                                    in2="undulation"
-                                    scale={displacementScale}
-                                    result="output"
-                                />
-                            </filter>
-                        </defs>
-                    </svg>
-                )}
-                <div
-                    style={{
-                        backgroundColor: color,
-                        maskImage: `url('https://framerusercontent.com/images/ceBGguIpUU8luwByxuQz79t7To.png')`,
-                        maskSize: sizing === "stretch" ? "100% 100%" : "cover",
-                        maskRepeat: "no-repeat",
-                        maskPosition: "center",
-                        width: "100%",
-                        height: "100%"
-                    }}
-                />
-            </div>
-
-            <div
-                style={{
-                    position: "absolute",
-                    top: "50%",
-                    left: "50%",
-                    transform: "translate(-50%, -50%)",
-                    textAlign: "center",
-                    zIndex: 10
-                }}
-            >
-                <h1 className="md:text-7xl text-6xl lg:text-8xl font-bold text-center text-foreground relative z-20">
-                    Etheral Shadows
-                </h1>
-            </div>
-
-            {noise && noise.opacity > 0 && (
-                <div
-                    style={{
-                        position: "absolute",
-                        inset: 0,
-                        backgroundImage: `url("https://framerusercontent.com/images/g0QcWrxr87K0ufOxIUFBakwYA8.png")`,
-                        backgroundSize: noise.scale * 200,
-                        backgroundRepeat: "repeat",
-                        opacity: noise.opacity / 2
-                    }}
-                />
-            )}
-        </div>
-    );
-}
 
 demo.tsx
-import { Component } from "@/components/ui/etheral-shadow";
+import { DottedSurface } from "@/components/ui/dotted-surface";
+import { cn } from '@/lib/utils';
 
-const DemoOne = () => {
-  return (
-    <div className="flex w-full h-screen justify-center items-center">
-      <Component
-      color="rgba(128, 128, 128, 1)"
-        animation={{ scale: 100, speed: 90 }}
-        noise={{ opacity: 1, scale: 1.2 }}
-        sizing="fill"
-         />
-    </div>
-  );
-};
-
-export { DemoOne };
+export default function DemoOne() {
+ return (
+		<DottedSurface className="size-full">
+			<div className="absolute inset-0 flex items-center justify-center">
+				<div
+					aria-hidden="true"
+					className={cn(
+						'pointer-events-none absolute -top-10 left-1/2 size-full -translate-x-1/2 rounded-full',
+						'bg-[radial-gradient(ellipse_at_center,--theme(--color-foreground/.1),transparent_50%)]',
+						'blur-[30px]',
+					)}
+				/>
+				<h1 className="font-mono text-4xl font-semibold">Dotted Surface</h1>
+			</div>
+		</DottedSurface>
+	);
+}
 
 ```
 
 Install NPM dependencies:
 ```bash
-framer-motion
+three, next-themes
 ```
 
 Implementation Guidelines

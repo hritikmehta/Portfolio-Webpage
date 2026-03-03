@@ -1,0 +1,241 @@
+{
+  "profile": {
+    "name": "Hritik Mehta",
+    "role": "Product-minded engineer",
+    "location": "India",
+    "siteUrl": "https://portfolio-webpage-rose-zeta.vercel.app/",
+    "tagline": "Building Systems With Taste",
+    "description": "Product-minded engineer crafting clean interfaces, robust web systems, and calm digital experiences.",
+    "email": "hello@hritikmehta.dev"
+  },
+  "seo": {
+    "title": "Hritik Mehta | Product Engineer Portfolio",
+    "description": "Portfolio of Hritik Mehta - product-minded engineer focused on modern frontend systems, performance, and design-led development.",
+    "ogImage": "assets/library/activity-1.jpg",
+    "twitterCard": "summary_large_image"
+  },
+  "hero": {
+    "title": "Building Systems With Taste",
+    "lead": "Product-minded engineer crafting clean interfaces, robust web systems, and calm digital experiences.",
+    "typingWords": [
+      "Open to collaborate",
+      "Building thoughtful products",
+      "Shipping clean interfaces"
+    ]
+  },
+  "career": {
+    "resumeUrl": "assets/resume/hritik-mehta-resume.pdf",
+    "entries": [
+      {
+        "period": "2018 — 2023",
+        "org": "IIT Kharagpur",
+        "role": "Research and product-thinking foundation",
+        "highlights": [
+          "Core member in E-Cell initiatives and student leadership.",
+          "Worked on undergraduate research with structured experimentation.",
+          "Built strong engineering fundamentals and collaboration habits."
+        ],
+        "images": [
+          "assets/career/2018-2023/01.svg",
+          "assets/career/2018-2023/02.svg",
+          "assets/career/2018-2023/03.svg",
+          "assets/career/2018-2023/04.svg"
+        ]
+      },
+      {
+        "period": "2023 — Present",
+        "org": "Housing.com",
+        "role": "Associate Product Engineer • Assistant Manager (Engineering)",
+        "highlights": [
+          "Scaling product surfaces with reliable frontend architecture.",
+          "Driving design-system consistency across teams.",
+          "Owning delivery from prototyping to production rollout."
+        ],
+        "images": [
+          "assets/career/2023-present/01.svg",
+          "assets/career/2023-present/02.svg",
+          "assets/career/2023-present/03.svg",
+          "assets/career/2023-present/04.svg"
+        ]
+      },
+      {
+        "period": "Next",
+        "org": "Mission in Progress",
+        "role": "Design-led systems and product ownership",
+        "highlights": [
+          "Targeting roles where design and engineering are tightly integrated.",
+          "Building systems that stay clean at scale.",
+          "Growing cross-functional leadership with strong product judgment."
+        ],
+        "images": [
+          "assets/career/next/01.svg",
+          "assets/career/next/02.svg",
+          "assets/career/next/03.svg",
+          "assets/career/next/04.svg"
+        ]
+      }
+    ]
+  },
+  "builds": [
+    {
+      "id": 1,
+      "title": "Design System Explorer",
+      "description": "A visual playground to test component states and spacing systems across breakpoints.",
+      "meta": "Frontend • Systems",
+      "imageSrc": "assets/builds/build-1.jpg",
+      "imageAlt": "Design interface shown on a desk",
+      "href": "https://github.com/"
+    },
+    {
+      "id": 2,
+      "title": "Performance Dashboard",
+      "description": "Tracks Core Web Vitals trends and highlights regressions before production rollout.",
+      "meta": "Web Perf • Analytics",
+      "imageSrc": "assets/builds/build-2.jpg",
+      "imageAlt": "Analytics dashboard on laptop",
+      "href": "https://github.com/"
+    },
+    {
+      "id": 3,
+      "title": "Career Timeline Engine",
+      "description": "Reusable timeline UI with carousel media, smooth transitions, and keyboard support.",
+      "meta": "UI • Interaction",
+      "imageSrc": "assets/builds/build-3.jpg",
+      "imageAlt": "Desktop setup with timeline prototype",
+      "href": "https://github.com/"
+    },
+    {
+      "id": 4,
+      "title": "Portfolio Motion Kit",
+      "description": "Animation utilities and motion presets tuned for performance and reduced-motion users.",
+      "meta": "Motion • Accessibility",
+      "imageSrc": "assets/builds/build-4.jpg",
+      "imageAlt": "Creative workspace with UI mockups",
+      "href": "https://github.com/"
+    },
+    {
+      "id": 5,
+      "title": "Reusable Gallery Cards",
+      "description": "Card templates with image optimization and accessible overlay text for curated libraries.",
+      "meta": "Components • Content",
+      "imageSrc": "assets/builds/build-5.jpg",
+      "imageAlt": "Laptop and notebook for component planning",
+      "href": "https://github.com/"
+    }
+  ],
+  "library": {
+    "activities": [
+      {
+        "title": "Instagram Reel",
+        "description": "Designing modern user interfaces.",
+        "imageSrc": "assets/library/activity-1.jpg",
+        "imageAlt": "Phone and desk workspace",
+        "href": "https://www.instagram.com/"
+      },
+      {
+        "title": "Medium Article",
+        "description": "Reflections on building large scale applications.",
+        "imageSrc": "assets/library/activity-2.jpg",
+        "imageAlt": "Article writing setup",
+        "href": "https://medium.com/"
+      },
+      {
+        "title": "LinkedIn Post",
+        "description": "Latest product engineering lessons and case studies.",
+        "imageSrc": "assets/library/resource-1.jpg",
+        "imageAlt": "Desktop with social post drafts",
+        "href": "https://www.linkedin.com/"
+      },
+      {
+        "title": "X Thread",
+        "description": "Thread on frontend performance and UI maintainability.",
+        "imageSrc": "assets/library/resource-2.jpg",
+        "imageAlt": "Laptop showing social thread planning",
+        "href": "https://x.com/"
+      }
+    ],
+    "recommendations": [
+      {
+        "title": "Reading: Atomic Habits",
+        "description": "An easy and proven way to build good habits and break bad ones.",
+        "imageSrc": "assets/library/activity-1.jpg",
+        "imageAlt": "Book recommendation visual",
+        "href": "https://jamesclear.com/atomic-habits"
+      },
+      {
+        "title": "Reading: Deep Work",
+        "description": "Rules for focused success in a distracted world.",
+        "imageSrc": "assets/library/activity-2.jpg",
+        "imageAlt": "Book cover style visual",
+        "href": "https://www.calnewport.com/books/deep-work/"
+      },
+      {
+        "title": "Watching: Inception",
+        "description": "A thief who steals corporate secrets through the use of dream-sharing technology.",
+        "imageSrc": "assets/library/resource-1.jpg",
+        "imageAlt": "Cinema-themed visual",
+        "href": "https://www.imdb.com/title/tt1375666/"
+      },
+      {
+        "title": "Watching: Interstellar",
+        "description": "A team of explorers travel through a wormhole in space.",
+        "imageSrc": "assets/library/resource-2.jpg",
+        "imageAlt": "Space-themed cinema visual",
+        "href": "https://www.imdb.com/title/tt0816692/"
+      }
+    ],
+    "resources": [
+      {
+        "title": "GitHub Repos",
+        "description": "Top open source tools and libraries I reuse.",
+        "imageSrc": "assets/library/resource-1.jpg",
+        "imageAlt": "GitHub-inspired coding visual",
+        "href": "https://github.com/"
+      },
+      {
+        "title": "Skill Maps",
+        "description": "Roadmaps and learning paths for web engineering.",
+        "imageSrc": "assets/library/resource-2.jpg",
+        "imageAlt": "Learning roadmap visual",
+        "href": "https://roadmap.sh/"
+      },
+      {
+        "title": "Favorite Websites",
+        "description": "Design inspiration and reading materials.",
+        "imageSrc": "assets/library/activity-1.jpg",
+        "imageAlt": "Browser windows with references",
+        "href": "https://www.awwwards.com/"
+      },
+      {
+        "title": "Products Used",
+        "description": "Software and hardware stack that powers my work.",
+        "imageSrc": "assets/library/activity-2.jpg",
+        "imageAlt": "Laptop and tooling setup",
+        "href": "https://www.notion.so/"
+      }
+    ]
+  },
+  "connect": {
+    "email": "hello@hritikmehta.dev",
+    "formEndpoint": "https://api.web3forms.com/submit",
+    "formAccessKey": "REPLACE_WITH_WEB3FORMS_ACCESS_KEY",
+    "socials": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/"
+      },
+      {
+        "label": "X",
+        "href": "https://x.com/"
+      },
+      {
+        "label": "Medium",
+        "href": "https://medium.com/"
+      }
+    ]
+  }
+}

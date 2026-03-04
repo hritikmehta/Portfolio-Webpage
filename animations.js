@@ -128,8 +128,41 @@ function renderHero(content) {
   const titleEl = document.getElementById("heroTitle");
   const leadEl = document.getElementById("heroLead");
 
-  if (titleEl && hero.title) titleEl.textContent = hero.title;
-  if (leadEl && hero.lead) leadEl.textContent = hero.lead;
+  const renderMarkedText = (el, text, options = {}) => {
+    const { allowSmallMarker = false } = options;
+    if (!el || typeof text !== "string") return;
+
+    const lineMarker = "<line change>";
+    const smallMarker = "<reduce to 75% size>";
+    const normalized = text.replace(/\n/g, ` ${lineMarker} `);
+    const segments = normalized.split(lineMarker);
+
+    el.textContent = "";
+    const frag = document.createDocumentFragment();
+
+    segments.forEach((segment, index) => {
+      const cleaned = segment.trim();
+      if (cleaned) {
+        if (allowSmallMarker && cleaned.includes(smallMarker)) {
+          const span = document.createElement("span");
+          span.className = "hero-title-small";
+          span.textContent = cleaned.replace(smallMarker, "").trim();
+          frag.appendChild(span);
+        } else {
+          frag.appendChild(document.createTextNode(cleaned));
+        }
+      }
+
+      if (index < segments.length - 1) {
+        frag.appendChild(document.createElement("br"));
+      }
+    });
+
+    el.appendChild(frag);
+  };
+
+  if (titleEl && hero.title) renderMarkedText(titleEl, hero.title, { allowSmallMarker: true });
+  if (leadEl && hero.lead) renderMarkedText(leadEl, hero.lead);
 }
 
 let twitterScriptRequested = false;

@@ -278,6 +278,11 @@ h1 {
   color: #fff;
 }
 
+.hero-title-small {
+  font-size: 0.75em;
+  line-height: 1.15;
+}
+
 .lead {
   max-width: 58ch;
   color: var(--muted);

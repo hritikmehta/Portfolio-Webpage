@@ -6,7 +6,7 @@
     "siteUrl": "https://portfolio-webpage-rose-zeta.vercel.app/",
     "tagline": "Building Systems With Taste",
     "description": "Product-minded engineer crafting clean interfaces, robust web systems, and calm digital experiences.",
-    "email": "hello@hritikmehta.dev"
+    "email": "hritikmehta.77@gmail.com"
   },
   "seo": {
     "title": "Hritik Mehta | Product Engineer Portfolio",
@@ -24,7 +24,7 @@
     ]
   },
   "career": {
-    "resumeUrl": "assets/resume/hritik-mehta-resume.pdf",
+    "resumeUrl": "https://tinyurl.com/Hritik-CV1",
     "entries": [
       {
         "period": "2018 — 2023",
@@ -221,25 +221,25 @@
     ]
   },
   "connect": {
-    "email": "hello@hritikmehta.dev",
+    "email": "hritikmehta.77@gmail.com",
     "formEndpoint": "https://api.web3forms.com/submit",
     "formAccessKey": "REPLACE_WITH_WEB3FORMS_ACCESS_KEY",
     "socials": [
       {
         "label": "GitHub",
-        "href": "https://github.com/"
+        "href": "https://github.com/hritikmehta"
       },
       {
         "label": "LinkedIn",
-        "href": "https://www.linkedin.com/"
+        "href": "https://www.linkedin.com/in/hritik-mehta77/"
       },
       {
         "label": "X",
-        "href": "https://x.com/"
+        "href": "https://x.com/HritikMehta_"
       },
       {
         "label": "Medium",
-        "href": "https://medium.com/"
+        "href": "https://medium.com/@hritik999"
       }
     ]
   }

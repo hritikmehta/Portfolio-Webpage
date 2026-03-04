@@ -1,7 +1,7 @@
 const DEFAULT_CONTENT = {
   profile: {
     siteUrl: "https://portfolio-webpage-rose-zeta.vercel.app/",
-    email: "hello@hritikmehta.dev"
+    email: "hritikmehta.77@gmail.com"
   },
   seo: {
     title: "Hritik Mehta | Product Engineer Portfolio",
@@ -15,7 +15,7 @@ const DEFAULT_CONTENT = {
     typingWords: ["Open to collaborate"]
   },
   career: {
-    resumeUrl: "assets/resume/hritik-mehta-resume.pdf",
+    resumeUrl: "https://tinyurl.com/Hritik-CV1",
     entries: []
   },
   builds: [],
@@ -25,10 +25,15 @@ const DEFAULT_CONTENT = {
     resources: []
   },
   connect: {
-    email: "hello@hritikmehta.dev",
+    email: "hritikmehta.77@gmail.com",
     formEndpoint: "",
     formAccessKey: "",
-    socials: []
+    socials: [
+      { label: "GitHub", href: "https://github.com/hritikmehta" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/hritik-mehta77/" },
+      { label: "X", href: "https://x.com/HritikMehta_" },
+      { label: "Medium", href: "https://medium.com/@hritik999" }
+    ]
   }
 };
 

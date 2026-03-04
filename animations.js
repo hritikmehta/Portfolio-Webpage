@@ -128,6 +128,58 @@ function renderHero(content) {
 }
 
 function createGalleryCard(item) {
+  if (item.embedUrl) {
+    const card = document.createElement("article");
+    card.className = "gallery-card embed-card";
+
+    const frameWrap = document.createElement("div");
+    frameWrap.className = "embed-frame-wrap";
+
+    const frame = document.createElement("iframe");
+    frame.src = item.embedUrl;
+    frame.title = item.title || "Embedded social post";
+    frame.loading = "lazy";
+    frame.referrerPolicy = "strict-origin-when-cross-origin";
+    frame.setAttribute("allow", "clipboard-write; encrypted-media; picture-in-picture; web-share");
+
+    const meta = document.createElement("div");
+    meta.className = "embed-meta";
+
+    const metaTop = document.createElement("div");
+    metaTop.className = "embed-meta-top";
+
+    const title = document.createElement("h4");
+    title.textContent = item.title || "Social Post";
+
+    metaTop.appendChild(title);
+
+    if (item.mark) {
+      const mark = document.createElement("span");
+      mark.className = "resource-mark";
+      mark.textContent = item.mark;
+      metaTop.appendChild(mark);
+    }
+
+    const open = document.createElement("a");
+    open.href = item.href || item.embedUrl;
+    open.textContent = "Open Resource";
+    open.target = "_blank";
+    open.rel = "noopener noreferrer";
+
+    frameWrap.appendChild(frame);
+    meta.appendChild(metaTop);
+    if (item.description) {
+      const desc = document.createElement("p");
+      desc.textContent = item.description;
+      meta.appendChild(desc);
+    }
+    meta.appendChild(open);
+    card.appendChild(frameWrap);
+    card.appendChild(meta);
+
+    return card;
+  }
+
   const href = item.href || "https://example.com";
   const anchor = document.createElement("a");
   anchor.className = "gallery-card";
@@ -154,6 +206,13 @@ function createGalleryCard(item) {
 
   const desc = document.createElement("p");
   desc.textContent = item.description || "";
+
+  if (item.mark) {
+    const mark = document.createElement("span");
+    mark.className = "resource-mark";
+    mark.textContent = item.mark;
+    overlay.appendChild(mark);
+  }
 
   overlay.appendChild(title);
   overlay.appendChild(desc);

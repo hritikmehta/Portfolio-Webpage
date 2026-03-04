@@ -114,91 +114,109 @@
     "activities": [
       {
         "title": "Instagram Reel",
-        "description": "Designing modern user interfaces.",
-        "imageSrc": "assets/library/activity-1.jpg",
-        "imageAlt": "Phone and desk workspace",
-        "href": "https://www.instagram.com/"
+        "description": "Tried by Hritik reel",
+        "kind": "embed",
+        "embedUrl": "https://www.instagram.com/reel/DVBsjIFj7VN/embed",
+        "href": "https://www.instagram.com/tried.byhritik/reel/DVBsjIFj7VN/"
       },
       {
-        "title": "Medium Article",
-        "description": "Reflections on building large scale applications.",
-        "imageSrc": "assets/library/activity-2.jpg",
-        "imageAlt": "Article writing setup",
-        "href": "https://medium.com/"
+        "title": "LinkedIn Activity",
+        "description": "Product and growth update",
+        "kind": "embed",
+        "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:activity:7431006270893019136",
+        "href": "https://www.linkedin.com/feed/update/urn:li:activity:7431006270893019136/?originTrackingId=dAKA3LzfBLaWb7sh0Q4gFQ%3D%3D"
       },
       {
         "title": "LinkedIn Post",
-        "description": "Latest product engineering lessons and case studies.",
-        "imageSrc": "assets/library/resource-1.jpg",
-        "imageAlt": "Desktop with social post drafts",
-        "href": "https://www.linkedin.com/"
+        "description": "Unexpected places where people share products",
+        "kind": "embed",
+        "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:activity:7428269342481383424",
+        "href": "https://www.linkedin.com/posts/hritik-mehta77_whats-the-most-unexpected-place-youve-seen-share-7428269342481383424-5iUT?utm_source=share&utm_medium=member_desktop&rcm=ACoAACj2GuEBKQgJBD401WNzGzk9sdARCMxkVYQ"
       },
       {
-        "title": "X Thread",
-        "description": "Thread on frontend performance and UI maintainability.",
-        "imageSrc": "assets/library/resource-2.jpg",
-        "imageAlt": "Laptop showing social thread planning",
-        "href": "https://x.com/"
+        "title": "X Post",
+        "description": "Tweet embed from HritikMehta_",
+        "kind": "embed",
+        "embedUrl": "https://twitframe.com/show?url=https://twitter.com/HritikMehta_/status/1955735557386199225",
+        "href": "https://twitter.com/HritikMehta_/status/1955735557386199225"
+      },
+      {
+        "title": "X Post",
+        "description": "Tweet embed from HritikMehta_",
+        "kind": "embed",
+        "embedUrl": "https://twitframe.com/show?url=https://twitter.com/HritikMehta_/status/1984596274914763243",
+        "href": "https://twitter.com/HritikMehta_/status/1984596274914763243"
       }
     ],
     "recommendations": [
       {
         "title": "Reading: Atomic Habits",
-        "description": "An easy and proven way to build good habits and break bad ones.",
-        "imageSrc": "assets/library/activity-1.jpg",
-        "imageAlt": "Book recommendation visual",
+        "description": "Practical systems to build good habits and break bad ones.",
+        "imageSrc": "assets/library/Recommendations-1.png",
+        "imageAlt": "Atomic Habits recommendation cover",
         "href": "https://jamesclear.com/atomic-habits"
       },
       {
         "title": "Reading: Deep Work",
-        "description": "Rules for focused success in a distracted world.",
-        "imageSrc": "assets/library/activity-2.jpg",
-        "imageAlt": "Book cover style visual",
+        "description": "Focused-work framework for high-impact output in distracted environments.",
+        "imageSrc": "assets/library/Recommendations-2.png",
+        "imageAlt": "Deep Work recommendation cover",
         "href": "https://www.calnewport.com/books/deep-work/"
       },
       {
-        "title": "Watching: Inception",
-        "description": "A thief who steals corporate secrets through the use of dream-sharing technology.",
-        "imageSrc": "assets/library/resource-1.jpg",
-        "imageAlt": "Cinema-themed visual",
-        "href": "https://www.imdb.com/title/tt1375666/"
+        "title": "Reco 3: 1984 - George Orwell",
+        "description": "My takeaways from Orwell's dystopian classic and why it still feels current.",
+        "imageSrc": "assets/library/Recommnedations-3.png",
+        "imageAlt": "1984 by George Orwell recommendation artwork",
+        "href": "https://medium.com/@hritik999/1984-george-orwell-64f904d7fdeb"
       },
       {
-        "title": "Watching: Interstellar",
-        "description": "A team of explorers travel through a wormhole in space.",
-        "imageSrc": "assets/library/resource-2.jpg",
-        "imageAlt": "Space-themed cinema visual",
+        "title": "Reco 4: Interstellar",
+        "description": "A visual and emotional sci-fi story on time, love, and exploration.",
+        "imageSrc": "assets/library/Recommendation-4.png",
+        "imageAlt": "Interstellar recommendation artwork",
         "href": "https://www.imdb.com/title/tt0816692/"
+      },
+      {
+        "title": "Reco 5: The Time Keeper - Mitch Albom",
+        "description": "A reflective story about time, meaning, and the pace at which we live.",
+        "imageSrc": "assets/library/Recommendations-5.png",
+        "imageAlt": "The Time Keeper recommendation artwork",
+        "href": "https://medium.com/@hritik999/the-time-keeper-mitch-albom-cc009d060d36"
       }
     ],
     "resources": [
       {
-        "title": "GitHub Repos",
-        "description": "Top open source tools and libraries I reuse.",
-        "imageSrc": "assets/library/resource-1.jpg",
-        "imageAlt": "GitHub-inspired coding visual",
-        "href": "https://github.com/"
+        "title": "What To Do With Spatial Datasets",
+        "description": "Practical use-cases and product thinking around spatial datasets.",
+        "kind": "embed",
+        "mark": "Self",
+        "embedUrl": "https://medium.com/@hritik999/what-to-do-with-spatial-datasets-68365b076c6f",
+        "href": "https://medium.com/@hritik999/what-to-do-with-spatial-datasets-68365b076c6f"
       },
       {
-        "title": "Skill Maps",
-        "description": "Roadmaps and learning paths for web engineering.",
-        "imageSrc": "assets/library/resource-2.jpg",
-        "imageAlt": "Learning roadmap visual",
-        "href": "https://roadmap.sh/"
+        "title": "Why MCP Won",
+        "description": "A strong view on why MCP became the default integration layer.",
+        "kind": "embed",
+        "mark": "Reposted",
+        "embedUrl": "https://www.latent.space/p/why-mcp-won",
+        "href": "https://www.latent.space/p/why-mcp-won"
       },
       {
-        "title": "Favorite Websites",
-        "description": "Design inspiration and reading materials.",
-        "imageSrc": "assets/library/activity-1.jpg",
-        "imageAlt": "Browser windows with references",
-        "href": "https://www.awwwards.com/"
+        "title": "Demystifying Evals for AI Agents",
+        "description": "Actionable eval strategies for building reliable AI agent systems.",
+        "kind": "embed",
+        "mark": "Reposted",
+        "embedUrl": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+        "href": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
       },
       {
-        "title": "Products Used",
-        "description": "Software and hardware stack that powers my work.",
-        "imageSrc": "assets/library/activity-2.jpg",
-        "imageAlt": "Laptop and tooling setup",
-        "href": "https://www.notion.so/"
+        "title": "tried.byhritik",
+        "description": "Personal Instagram hub for experiments, posts, and maker updates.",
+        "kind": "embed",
+        "mark": "Self",
+        "embedUrl": "https://www.instagram.com/tried.byhritik/",
+        "href": "https://www.instagram.com/tried.byhritik/"
       }
     ]
   },

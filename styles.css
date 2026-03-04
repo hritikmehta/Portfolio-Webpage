@@ -748,6 +748,91 @@ ul {
   display: block;
 }
 
+.gallery-card.embed-card {
+  min-width: 360px;
+  height: 560px;
+  background: #0f1118;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+}
+
+.embed-frame-wrap {
+  flex: 1;
+  min-height: 0;
+  background: #0b0d14;
+}
+
+.embed-frame-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  background: #0b0d14;
+}
+
+.embed-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.6rem;
+  padding: 0.75rem 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(15, 17, 24, 0.95);
+}
+
+.embed-meta-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.embed-meta h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #f3f4f6;
+  line-height: 1.3;
+}
+
+.embed-meta p {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #94a3b8;
+  line-height: 1.35;
+}
+
+.embed-meta a {
+  font-size: 0.8rem;
+  color: #9fb3c8;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  white-space: nowrap;
+}
+
+.embed-meta a:hover {
+  color: #f8fbff;
+}
+
+.resource-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.18rem 0.48rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #dbeafe;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
 .gallery-card img {
   position: absolute;
   inset: 0;
@@ -770,6 +855,11 @@ ul {
   justify-content: flex-end;
   padding: 1.5rem;
   color: #fff;
+}
+
+.gallery-overlay .resource-mark {
+  align-self: flex-start;
+  margin-bottom: 0.55rem;
 }
 
 .gallery-overlay h4 {
@@ -1022,6 +1112,11 @@ textarea {
 
   .gallery-card {
     min-width: min(280px, calc(100vw - 2.5rem));
+  }
+
+  .gallery-card.embed-card {
+    min-width: min(360px, calc(100vw - 2.5rem));
+    height: 520px;
   }
 
   .carousel-grid {

@@ -72,7 +72,7 @@ function mergeDeep(base, override) {
 
 async function loadSiteContent() {
   try {
-    const res = await fetch("content/site-content.json", { cache: "no-store" });
+    const res = await fetch(`content/site-content.json?v=${Date.now()}`, { cache: "no-store" });
     if (!res.ok) throw new Error("Failed to load content JSON");
     const json = await res.json();
     return mergeDeep(DEFAULT_CONTENT, json);
@@ -163,7 +163,8 @@ function appendStretchLink(card, href, titleText) {
 }
 
 function createGalleryCard(item, options = {}) {
-  const { hideDescription = false } = options;
+  const { hideDescription = false, hideTitle = false } = options;
+  const hasTitle = typeof item.title === "string" && item.title.trim().length > 0;
 
   if (item.embedType === "twitter" && item.href) {
     const card = document.createElement("article");
@@ -184,26 +185,36 @@ function createGalleryCard(item, options = {}) {
 
     frameWrap.appendChild(blockquote);
 
-    const meta = document.createElement("div");
-    meta.className = "embed-meta";
+    card.appendChild(frameWrap);
 
-    const metaTop = document.createElement("div");
-    metaTop.className = "embed-meta-top";
+    const shouldRenderMeta = !hideTitle || (item.description && !hideDescription);
+    if (shouldRenderMeta) {
+      const meta = document.createElement("div");
+      meta.className = "embed-meta";
 
-    const title = document.createElement("h4");
-    title.textContent = item.title || "X Post";
-    metaTop.appendChild(title);
+      const metaTop = document.createElement("div");
+      metaTop.className = "embed-meta-top";
 
-    meta.appendChild(metaTop);
-    if (item.description && !hideDescription) {
-      const desc = document.createElement("p");
-      desc.textContent = item.description;
-      meta.appendChild(desc);
+      if (!hideTitle && hasTitle) {
+        const title = document.createElement("h4");
+        title.textContent = item.title;
+        metaTop.appendChild(title);
+      }
+
+      if (metaTop.childElementCount > 0) {
+        meta.appendChild(metaTop);
+      }
+
+      if (item.description && !hideDescription) {
+        const desc = document.createElement("p");
+        desc.textContent = item.description;
+        meta.appendChild(desc);
+      }
+
+      card.appendChild(meta);
     }
 
-    card.appendChild(frameWrap);
-    card.appendChild(meta);
-    appendStretchLink(card, item.href, item.title || "X Post");
+    appendStretchLink(card, item.href, hasTitle ? item.title : "X Post");
 
     ensureTwitterWidgets();
     const loadTweet = () => {
@@ -231,44 +242,59 @@ function createGalleryCard(item, options = {}) {
     frame.referrerPolicy = "strict-origin-when-cross-origin";
     frame.setAttribute("allow", "clipboard-write; encrypted-media; picture-in-picture; web-share");
 
-    const meta = document.createElement("div");
-    meta.className = "embed-meta";
-
-    const metaTop = document.createElement("div");
-    metaTop.className = "embed-meta-top";
-
-    const title = document.createElement("h4");
-    title.textContent = item.title || "Social Post";
-
-    metaTop.appendChild(title);
-
-    if (item.mark) {
-      const mark = document.createElement("span");
-      mark.className = "resource-mark";
-      mark.textContent = item.mark;
-      metaTop.appendChild(mark);
-    }
-
     frameWrap.appendChild(frame);
-    meta.appendChild(metaTop);
-    if (item.description && !hideDescription) {
-      const desc = document.createElement("p");
-      desc.textContent = item.description;
-      meta.appendChild(desc);
-    }
     card.appendChild(frameWrap);
-    card.appendChild(meta);
-    appendStretchLink(card, item.href || item.embedUrl, item.title || "resource");
+
+    const shouldRenderMeta = item.mark || !hideTitle || (item.description && !hideDescription);
+    if (shouldRenderMeta) {
+      const meta = document.createElement("div");
+      meta.className = "embed-meta";
+
+      const metaTop = document.createElement("div");
+      metaTop.className = "embed-meta-top";
+
+      if (!hideTitle && hasTitle) {
+        const title = document.createElement("h4");
+        title.textContent = item.title;
+        metaTop.appendChild(title);
+      }
+
+      if (item.mark) {
+        const mark = document.createElement("span");
+        mark.className = "resource-mark";
+        mark.textContent = item.mark;
+        metaTop.appendChild(mark);
+      }
+
+      if (metaTop.childElementCount > 0) {
+        meta.appendChild(metaTop);
+      }
+
+      if (item.description && !hideDescription) {
+        const desc = document.createElement("p");
+        desc.textContent = item.description;
+        meta.appendChild(desc);
+      }
+
+      card.appendChild(meta);
+    }
+
+    appendStretchLink(card, item.href || item.embedUrl, hasTitle ? item.title : "resource");
 
     return card;
   }
 
-  const href = item.href || "https://example.com";
+  const href = typeof item.href === "string" ? item.href.trim() : "";
   const anchor = document.createElement("a");
   anchor.className = "gallery-card";
-  anchor.href = href;
+  if (href) {
+    anchor.href = href;
+  } else {
+    anchor.href = "#";
+    anchor.setAttribute("aria-disabled", "true");
+  }
 
-  if (isExternalUrl(href)) {
+  if (href && isExternalUrl(href)) {
     anchor.target = "_blank";
     anchor.rel = "noopener noreferrer";
   }
@@ -281,27 +307,32 @@ function createGalleryCard(item, options = {}) {
   img.width = 1080;
   img.height = 1350;
 
-  const overlay = document.createElement("div");
-  overlay.className = "gallery-overlay";
-
-  const title = document.createElement("h4");
-  title.textContent = item.title || "Untitled";
-
-  if (item.mark) {
-    const mark = document.createElement("span");
-    mark.className = "resource-mark";
-    mark.textContent = item.mark;
-    overlay.appendChild(mark);
-  }
-
-  overlay.appendChild(title);
-  if (!hideDescription) {
-    const desc = document.createElement("p");
-    desc.textContent = item.description || "";
-    overlay.appendChild(desc);
-  }
+  const shouldRenderOverlay = item.mark || !hideTitle || !hideDescription;
   anchor.appendChild(img);
-  anchor.appendChild(overlay);
+  if (shouldRenderOverlay) {
+    const overlay = document.createElement("div");
+    overlay.className = "gallery-overlay";
+
+    if (item.mark) {
+      const mark = document.createElement("span");
+      mark.className = "resource-mark";
+      mark.textContent = item.mark;
+      overlay.appendChild(mark);
+    }
+
+    if (!hideTitle && hasTitle) {
+      const title = document.createElement("h4");
+      title.textContent = item.title;
+      overlay.appendChild(title);
+    }
+
+    if (!hideDescription) {
+      const desc = document.createElement("p");
+      desc.textContent = item.description || "";
+      overlay.appendChild(desc);
+    }
+    anchor.appendChild(overlay);
+  }
 
   return anchor;
 }
@@ -313,7 +344,7 @@ function renderLibrary(content) {
 
   const library = content.library || {};
   const sections = [
-    { el: activitiesGrid, items: library.activities || [], options: { hideDescription: true } },
+    { el: activitiesGrid, items: library.activities || [], options: { hideDescription: true, hideTitle: true } },
     { el: recommendationsGrid, items: library.recommendations || [], options: { hideDescription: false } },
     { el: resourcesGrid, items: library.resources || [], options: { hideDescription: false } }
   ];

@@ -15,12 +15,12 @@
     "twitterCard": "summary_large_image"
   },
   "hero": {
-    "title": "Building Systems With Taste",
-    "lead": "Newbie with the ability to juggle multiple hats. My undergraduate years taught me the importance of compounding, diversification, and network.",
+    "title": "Plan Is To Build Great Systems With Great Taste",
+    "lead": "Newbie with the ability to juggle multiple hats. \n Values compounding, diversification, and network.",
     "typingWords": [
       "Open to collaborate",
-      "Building thoughtful products",
-      "Shipping clean interfaces"
+      "+5:30 UTC",
+      "Multiple Interests"
     ]
   },
   "career": {
@@ -81,7 +81,7 @@
       "id": 1,
       "title": "NutriPlay",
       "description": "Gamified nutrition coach with streaks, progress loops, and a playful UX for consistent healthy habits.",
-      "meta": "2026 • Nutrition • Gamified Web App",
+      "meta": "2025 • Gamified Web App",
       "imageSrc": "assets/builds/build-1.png",
       "imageAlt": "NutriPlay web app preview",
       "href": "https://nutri-play.vercel.app/",
@@ -91,8 +91,8 @@
     {
       "id": 2,
       "title": "Valentine Website",
-      "description": "A cinematic, interactive public-view website with custom motion, romantic storytelling, and polished visual details.",
-      "meta": "2026 • Interactive • Storytelling Experience",
+      "description": "When yon need to do something on valentines for her and also follow the trend",
+      "meta": "2026 • Interactive",
       "imageSrc": "assets/builds/build-2.png",
       "imageAlt": "Valentine Website public view preview",
       "href": "https://valentine-ht-git-public-view-hritiks-projects-57ab03c7.vercel.app/",
@@ -103,7 +103,7 @@
       "id": 3,
       "title": "Making Life Easy",
       "description": "Utility workflow to convert screenshots or image batches into clean PDF files in a few clicks.",
-      "meta": "2026 • Utility • Image-to-PDF Tool",
+      "meta": "2022 • Image-to-PDF Tool",
       "imageSrc": "assets/builds/build-3-generated.svg",
       "imageAlt": "Illustration of image to PDF conversion utility",
       "href": "https://github.com/hritikmehta/Making_life_easy",
@@ -150,35 +150,35 @@
     ],
     "recommendations": [
       {
-        "title": "Reading: Atomic Habits",
-        "description": "Practical systems to build good habits and break bad ones.",
+        "title": "",
+        "description": "",
         "imageSrc": "assets/library/Recommendations-1.png",
-        "imageAlt": "Atomic Habits recommendation cover",
+        "imageAlt": "Terminal Movie recommendation artwork",
         "href": "https://jamesclear.com/atomic-habits"
       },
       {
-        "title": "Reading: Deep Work",
-        "description": "Focused-work framework for high-impact output in distracted environments.",
+        "title": "",
+        "description": "",
         "imageSrc": "assets/library/Recommendations-2.png",
-        "imageAlt": "Deep Work recommendation cover",
-        "href": "https://www.calnewport.com/books/deep-work/"
+        "imageAlt": "Norwegian Wood by Haruki Murakami recommendation artwork",
+        "href": ""
       },
       {
-        "title": "Reco 3: 1984 - George Orwell",
+        "title": "",
         "description": "My takeaways from Orwell's dystopian classic and why it still feels current.",
         "imageSrc": "assets/library/Recommnedations-3.png",
         "imageAlt": "1984 by George Orwell recommendation artwork",
         "href": "https://medium.com/@hritik999/1984-george-orwell-64f904d7fdeb"
       },
       {
-        "title": "Reco 4: Interstellar",
-        "description": "A visual and emotional sci-fi story on time, love, and exploration.",
+        "title": "",
+        "description": "",
         "imageSrc": "assets/library/Recommendation-4.png",
-        "imageAlt": "Interstellar recommendation artwork",
-        "href": "https://www.imdb.com/title/tt0816692/"
+        "imageAlt": "300 Movie recommendation artwork",
+        "href": ""
       },
       {
-        "title": "Reco 5: The Time Keeper - Mitch Albom",
+        "title": "",
         "description": "A reflective story about time, meaning, and the pace at which we live.",
         "imageSrc": "assets/library/Recommendations-5.png",
         "imageAlt": "The Time Keeper recommendation artwork",
@@ -191,7 +191,7 @@
         "description": "Practical use-cases and product thinking around spatial datasets.",
         "kind": "link",
         "mark": "Self",
-        "imageSrc": "assets/library/resource-1.jpg",
+        "imageSrc": "assets/library/resource-1.png",
         "imageAlt": "Spatial datasets article preview",
         "href": "https://medium.com/@hritik999/what-to-do-with-spatial-datasets-68365b076c6f"
       },
@@ -200,7 +200,7 @@
         "description": "A strong view on why MCP became the default integration layer.",
         "kind": "link",
         "mark": "Reposted",
-        "imageSrc": "assets/library/resource-2.jpg",
+        "imageSrc": "assets/library/resource-2.png",
         "imageAlt": "Why MCP Won article preview",
         "href": "https://www.latent.space/p/why-mcp-won"
       },
@@ -209,7 +209,7 @@
         "description": "Actionable eval strategies for building reliable AI agent systems.",
         "kind": "link",
         "mark": "Reposted",
-        "imageSrc": "assets/library/activity-1.jpg",
+        "imageSrc": "assets/library/resource-3.png",
         "imageAlt": "AI evals article preview",
         "href": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
       },
@@ -218,7 +218,7 @@
         "description": "Personal Instagram hub for experiments, posts, and maker updates.",
         "kind": "link",
         "mark": "Self",
-        "imageSrc": "assets/library/activity-2.jpg",
+        "imageSrc": "assets/library/resource-4.png",
         "imageAlt": "tried.byhritik profile preview",
         "href": "https://www.instagram.com/tried.byhritik/"
       }

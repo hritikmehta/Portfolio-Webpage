@@ -278,6 +278,10 @@ h1 {
   color: #fff;
 }
 
+.hero-content #heroTitle {
+  max-width: 22ch;
+}
+
 .hero-title-small {
   font-size: 0.75em;
   line-height: 1.15;
@@ -884,15 +888,14 @@ ul {
   height: 300px;
 }
 
-#libraryActivitiesGrid .gallery-card {
-  min-width: 280px;
-  height: 340px;
-}
-
+#libraryActivitiesGrid .gallery-card,
 #libraryActivitiesGrid .gallery-card.embed-card,
 #libraryActivitiesGrid .gallery-card.embed-card.embed-card-tweet {
+  width: 280px;
   min-width: 280px;
+  max-width: 280px;
   height: 340px;
+  flex: 0 0 280px;
 }
 
 .gallery-overlay h4 {
@@ -1157,15 +1160,14 @@ textarea {
     height: 400px;
   }
 
-  #libraryActivitiesGrid .gallery-card {
-    min-width: min(280px, calc(100vw - 2.5rem));
-    height: 340px;
-  }
-
+  #libraryActivitiesGrid .gallery-card,
   #libraryActivitiesGrid .gallery-card.embed-card,
   #libraryActivitiesGrid .gallery-card.embed-card.embed-card-tweet {
+    width: min(280px, calc(100vw - 2.5rem));
     min-width: min(280px, calc(100vw - 2.5rem));
+    max-width: min(280px, calc(100vw - 2.5rem));
     height: 340px;
+    flex: 0 0 min(280px, calc(100vw - 2.5rem));
   }
 
   .carousel-grid {

@@ -11,7 +11,7 @@ const DEFAULT_CONTENT = {
   },
   hero: {
     title: "Building Systems With Taste",
-    lead: "Product-minded engineer crafting clean interfaces, robust web systems, and calm digital experiences.",
+    lead: "Newbie with the ability to juggle multiple hats. My undergraduate years taught me the importance of compounding, diversification, and network.",
     typingWords: ["Open to collaborate"]
   },
   career: {

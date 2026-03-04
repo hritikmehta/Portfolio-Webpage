@@ -749,18 +749,25 @@ ul {
 }
 
 .gallery-card.embed-card {
-  min-width: 360px;
-  height: 560px;
+  min-width: 320px;
+  height: 460px;
   background: #0f1118;
   border: 1px solid rgba(255, 255, 255, 0.12);
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+}
+
+.gallery-card.embed-card.embed-card-tweet {
+  min-width: 320px;
+  height: 420px;
 }
 
 .embed-frame-wrap {
   flex: 1;
   min-height: 0;
   background: #0b0d14;
+  overflow: auto;
 }
 
 .embed-frame-wrap iframe {
@@ -769,6 +776,14 @@ ul {
   border: 0;
   display: block;
   background: #0b0d14;
+}
+
+.tweet-frame-wrap {
+  padding: 0.25rem 0.25rem 0;
+}
+
+.tweet-frame-wrap .twitter-tweet {
+  margin: 0 auto !important;
 }
 
 .embed-meta {
@@ -805,16 +820,13 @@ ul {
   line-height: 1.35;
 }
 
-.embed-meta a {
-  font-size: 0.8rem;
-  color: #9fb3c8;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  white-space: nowrap;
-}
-
-.embed-meta a:hover {
-  color: #f8fbff;
+.card-stretch-link {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  border-radius: inherit;
+  text-indent: -9999px;
+  overflow: hidden;
 }
 
 .resource-mark {
@@ -860,6 +872,11 @@ ul {
 .gallery-overlay .resource-mark {
   align-self: flex-start;
   margin-bottom: 0.55rem;
+}
+
+#libraryResourcesGrid .gallery-card {
+  min-width: 250px;
+  height: 300px;
 }
 
 .gallery-overlay h4 {
@@ -1115,8 +1132,13 @@ textarea {
   }
 
   .gallery-card.embed-card {
-    min-width: min(360px, calc(100vw - 2.5rem));
-    height: 520px;
+    min-width: min(320px, calc(100vw - 2.5rem));
+    height: 430px;
+  }
+
+  .gallery-card.embed-card.embed-card-tweet {
+    min-width: min(320px, calc(100vw - 2.5rem));
+    height: 400px;
   }
 
   .carousel-grid {

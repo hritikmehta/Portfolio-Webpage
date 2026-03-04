@@ -132,7 +132,91 @@ function renderHero(content) {
   if (leadEl && hero.lead) leadEl.textContent = hero.lead;
 }
 
-function createGalleryCard(item) {
+let twitterScriptRequested = false;
+
+function ensureTwitterWidgets() {
+  if (window.twttr && window.twttr.widgets) return;
+  if (twitterScriptRequested) return;
+  twitterScriptRequested = true;
+
+  const script = document.createElement("script");
+  script.src = "https://platform.twitter.com/widgets.js";
+  script.async = true;
+  script.charset = "utf-8";
+  document.head.appendChild(script);
+}
+
+function appendStretchLink(card, href, titleText) {
+  if (!href) return;
+
+  const link = document.createElement("a");
+  link.className = "card-stretch-link";
+  link.href = href;
+  link.setAttribute("aria-label", `Open ${titleText || "resource"}`);
+
+  if (isExternalUrl(href)) {
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+  }
+
+  card.appendChild(link);
+}
+
+function createGalleryCard(item, options = {}) {
+  const { hideDescription = false } = options;
+
+  if (item.embedType === "twitter" && item.href) {
+    const card = document.createElement("article");
+    card.className = "gallery-card embed-card embed-card-tweet";
+
+    const frameWrap = document.createElement("div");
+    frameWrap.className = "embed-frame-wrap tweet-frame-wrap";
+
+    const blockquote = document.createElement("blockquote");
+    blockquote.className = "twitter-tweet";
+    blockquote.setAttribute("data-theme", "dark");
+    blockquote.setAttribute("data-dnt", "true");
+
+    const anchor = document.createElement("a");
+    anchor.href = item.href;
+    anchor.textContent = item.href;
+    blockquote.appendChild(anchor);
+
+    frameWrap.appendChild(blockquote);
+
+    const meta = document.createElement("div");
+    meta.className = "embed-meta";
+
+    const metaTop = document.createElement("div");
+    metaTop.className = "embed-meta-top";
+
+    const title = document.createElement("h4");
+    title.textContent = item.title || "X Post";
+    metaTop.appendChild(title);
+
+    meta.appendChild(metaTop);
+    if (item.description && !hideDescription) {
+      const desc = document.createElement("p");
+      desc.textContent = item.description;
+      meta.appendChild(desc);
+    }
+
+    card.appendChild(frameWrap);
+    card.appendChild(meta);
+    appendStretchLink(card, item.href, item.title || "X Post");
+
+    ensureTwitterWidgets();
+    const loadTweet = () => {
+      if (window.twttr && window.twttr.widgets) {
+        window.twttr.widgets.load(card);
+      }
+    };
+    setTimeout(loadTweet, 0);
+    setTimeout(loadTweet, 500);
+
+    return card;
+  }
+
   if (item.embedUrl) {
     const card = document.createElement("article");
     card.className = "gallery-card embed-card";
@@ -165,22 +249,16 @@ function createGalleryCard(item) {
       metaTop.appendChild(mark);
     }
 
-    const open = document.createElement("a");
-    open.href = item.href || item.embedUrl;
-    open.textContent = "Open Resource";
-    open.target = "_blank";
-    open.rel = "noopener noreferrer";
-
     frameWrap.appendChild(frame);
     meta.appendChild(metaTop);
-    if (item.description) {
+    if (item.description && !hideDescription) {
       const desc = document.createElement("p");
       desc.textContent = item.description;
       meta.appendChild(desc);
     }
-    meta.appendChild(open);
     card.appendChild(frameWrap);
     card.appendChild(meta);
+    appendStretchLink(card, item.href || item.embedUrl, item.title || "resource");
 
     return card;
   }
@@ -209,9 +287,6 @@ function createGalleryCard(item) {
   const title = document.createElement("h4");
   title.textContent = item.title || "Untitled";
 
-  const desc = document.createElement("p");
-  desc.textContent = item.description || "";
-
   if (item.mark) {
     const mark = document.createElement("span");
     mark.className = "resource-mark";
@@ -220,7 +295,11 @@ function createGalleryCard(item) {
   }
 
   overlay.appendChild(title);
-  overlay.appendChild(desc);
+  if (!hideDescription) {
+    const desc = document.createElement("p");
+    desc.textContent = item.description || "";
+    overlay.appendChild(desc);
+  }
   anchor.appendChild(img);
   anchor.appendChild(overlay);
 
@@ -234,16 +313,16 @@ function renderLibrary(content) {
 
   const library = content.library || {};
   const sections = [
-    { el: activitiesGrid, items: library.activities || [] },
-    { el: recommendationsGrid, items: library.recommendations || [] },
-    { el: resourcesGrid, items: library.resources || [] }
+    { el: activitiesGrid, items: library.activities || [], options: { hideDescription: true } },
+    { el: recommendationsGrid, items: library.recommendations || [], options: { hideDescription: false } },
+    { el: resourcesGrid, items: library.resources || [], options: { hideDescription: false } }
   ];
 
-  sections.forEach(({ el, items }) => {
+  sections.forEach(({ el, items, options }) => {
     if (!el) return;
     el.innerHTML = "";
     items.forEach((item) => {
-      el.appendChild(createGalleryCard(item));
+      el.appendChild(createGalleryCard(item, options));
     });
   });
 }

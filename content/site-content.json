@@ -130,22 +130,22 @@
         "title": "LinkedIn Post",
         "description": "Unexpected places where people share products",
         "kind": "embed",
-        "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:activity:7428269342481383424",
-        "href": "https://www.linkedin.com/posts/hritik-mehta77_whats-the-most-unexpected-place-youve-seen-share-7428269342481383424-5iUT?utm_source=share&utm_medium=member_desktop&rcm=ACoAACj2GuEBKQgJBD401WNzGzk9sdARCMxkVYQ"
+        "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:activity:7428269343500705793",
+        "href": "https://www.linkedin.com/feed/update/urn:li:activity:7428269343500705793/?originTrackingId=zDZQu%2FQHcWCY5DMCAVmCSw%3D%3D"
       },
       {
         "title": "X Post",
-        "description": "Tweet embed from HritikMehta_",
+        "description": "Automated IVRs and Voicemails : cute love story",
         "kind": "embed",
-        "embedUrl": "https://twitframe.com/show?url=https://twitter.com/HritikMehta_/status/1955735557386199225",
-        "href": "https://twitter.com/HritikMehta_/status/1955735557386199225"
-      },
-      {
-        "title": "X Post",
-        "description": "Tweet embed from HritikMehta_",
-        "kind": "embed",
-        "embedUrl": "https://twitframe.com/show?url=https://twitter.com/HritikMehta_/status/1984596274914763243",
+        "embedType": "twitter",
         "href": "https://twitter.com/HritikMehta_/status/1984596274914763243"
+      },
+      {
+        "title": "X Post",
+        "description": "Holding on to a problem does not mean solving it",
+        "kind": "embed",
+        "embedType": "twitter",
+        "href": "https://twitter.com/HritikMehta_/status/1955735557386199225"
       }
     ],
     "recommendations": [
@@ -189,33 +189,37 @@
       {
         "title": "What To Do With Spatial Datasets",
         "description": "Practical use-cases and product thinking around spatial datasets.",
-        "kind": "embed",
+        "kind": "link",
         "mark": "Self",
-        "embedUrl": "https://medium.com/@hritik999/what-to-do-with-spatial-datasets-68365b076c6f",
+        "imageSrc": "assets/library/resource-1.jpg",
+        "imageAlt": "Spatial datasets article preview",
         "href": "https://medium.com/@hritik999/what-to-do-with-spatial-datasets-68365b076c6f"
       },
       {
         "title": "Why MCP Won",
         "description": "A strong view on why MCP became the default integration layer.",
-        "kind": "embed",
+        "kind": "link",
         "mark": "Reposted",
-        "embedUrl": "https://www.latent.space/p/why-mcp-won",
+        "imageSrc": "assets/library/resource-2.jpg",
+        "imageAlt": "Why MCP Won article preview",
         "href": "https://www.latent.space/p/why-mcp-won"
       },
       {
         "title": "Demystifying Evals for AI Agents",
         "description": "Actionable eval strategies for building reliable AI agent systems.",
-        "kind": "embed",
+        "kind": "link",
         "mark": "Reposted",
-        "embedUrl": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+        "imageSrc": "assets/library/activity-1.jpg",
+        "imageAlt": "AI evals article preview",
         "href": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
       },
       {
         "title": "tried.byhritik",
         "description": "Personal Instagram hub for experiments, posts, and maker updates.",
-        "kind": "embed",
+        "kind": "link",
         "mark": "Self",
-        "embedUrl": "https://www.instagram.com/tried.byhritik/",
+        "imageSrc": "assets/library/activity-2.jpg",
+        "imageAlt": "tried.byhritik profile preview",
         "href": "https://www.instagram.com/tried.byhritik/"
       }
     ]

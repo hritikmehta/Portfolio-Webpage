@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="Image to PDF utility illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111827"/>
+      <stop offset="1" stop-color="#0b1220"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00FF9E"/>
+      <stop offset="1" stop-color="#2EB9DF"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg)"/>
+
+  <rect x="96" y="100" width="320" height="420" rx="24" fill="#1F2937" stroke="#334155" stroke-width="3"/>
+  <rect x="126" y="146" width="260" height="16" rx="8" fill="#475569"/>
+  <rect x="126" y="186" width="180" height="16" rx="8" fill="#475569"/>
+  <rect x="126" y="226" width="230" height="220" rx="16" fill="#0f172a" stroke="#334155"/>
+
+  <rect x="442" y="220" width="320" height="420" rx="24" fill="#0f172a" stroke="#334155" stroke-width="3"/>
+  <path d="M505 340h194" stroke="#475569" stroke-width="14" stroke-linecap="round"/>
+  <path d="M505 390h194" stroke="#475569" stroke-width="14" stroke-linecap="round"/>
+  <path d="M505 440h154" stroke="#475569" stroke-width="14" stroke-linecap="round"/>
+  <text x="602" y="280" font-family="Inter, Arial, sans-serif" font-size="44" text-anchor="middle" fill="#e2e8f0">PDF</text>
+
+  <path d="M786 380h116" stroke="url(#accent)" stroke-width="12" stroke-linecap="round"/>
+  <path d="M878 340l54 40-54 40" fill="none" stroke="url(#accent)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="912" y="160" width="212" height="520" rx="24" fill="#111827" stroke="#334155" stroke-width="3"/>
+  <rect x="946" y="212" width="146" height="14" rx="7" fill="#475569"/>
+  <rect x="946" y="250" width="130" height="14" rx="7" fill="#475569"/>
+  <rect x="946" y="288" width="142" height="14" rx="7" fill="#475569"/>
+  <rect x="946" y="338" width="146" height="260" rx="14" fill="#0f172a"/>
+
+  <text x="96" y="760" font-family="Inter, Arial, sans-serif" font-size="56" font-weight="700" fill="#f8fafc">Making Life Easy</text>
+  <text x="96" y="812" font-family="Inter, Arial, sans-serif" font-size="30" fill="#a5b4fc">Convert screenshots and images into PDFs in seconds</text>
+</svg>

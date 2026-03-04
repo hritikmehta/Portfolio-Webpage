@@ -79,48 +79,35 @@
   "builds": [
     {
       "id": 1,
-      "title": "Design System Explorer",
-      "description": "A visual playground to test component states and spacing systems across breakpoints.",
-      "meta": "Frontend • Systems",
-      "imageSrc": "assets/builds/build-1.jpg",
-      "imageAlt": "Design interface shown on a desk",
-      "href": "https://github.com/"
+      "title": "NutriPlay",
+      "description": "Gamified nutrition coach with streaks, progress loops, and a playful UX for consistent healthy habits.",
+      "meta": "2026 • Nutrition • Gamified Web App",
+      "imageSrc": "assets/builds/build-1.png",
+      "imageAlt": "NutriPlay web app preview",
+      "href": "https://nutri-play.vercel.app/",
+      "liveUrl": "https://nutri-play.vercel.app/",
+      "repoUrl": "https://github.com/hritikmehta/NutriPlay"
     },
     {
       "id": 2,
-      "title": "Performance Dashboard",
-      "description": "Tracks Core Web Vitals trends and highlights regressions before production rollout.",
-      "meta": "Web Perf • Analytics",
-      "imageSrc": "assets/builds/build-2.jpg",
-      "imageAlt": "Analytics dashboard on laptop",
-      "href": "https://github.com/"
+      "title": "Valentine Website",
+      "description": "A cinematic, interactive public-view website with custom motion, romantic storytelling, and polished visual details.",
+      "meta": "2026 • Interactive • Storytelling Experience",
+      "imageSrc": "assets/builds/build-2.png",
+      "imageAlt": "Valentine Website public view preview",
+      "href": "https://valentine-ht-git-public-view-hritiks-projects-57ab03c7.vercel.app/",
+      "liveUrl": "https://valentine-ht-git-public-view-hritiks-projects-57ab03c7.vercel.app/",
+      "repoUrl": "https://github.com/hritikmehta/Valentine-Website/tree/Public-View"
     },
     {
       "id": 3,
-      "title": "Career Timeline Engine",
-      "description": "Reusable timeline UI with carousel media, smooth transitions, and keyboard support.",
-      "meta": "UI • Interaction",
-      "imageSrc": "assets/builds/build-3.jpg",
-      "imageAlt": "Desktop setup with timeline prototype",
-      "href": "https://github.com/"
-    },
-    {
-      "id": 4,
-      "title": "Portfolio Motion Kit",
-      "description": "Animation utilities and motion presets tuned for performance and reduced-motion users.",
-      "meta": "Motion • Accessibility",
-      "imageSrc": "assets/builds/build-4.jpg",
-      "imageAlt": "Creative workspace with UI mockups",
-      "href": "https://github.com/"
-    },
-    {
-      "id": 5,
-      "title": "Reusable Gallery Cards",
-      "description": "Card templates with image optimization and accessible overlay text for curated libraries.",
-      "meta": "Components • Content",
-      "imageSrc": "assets/builds/build-5.jpg",
-      "imageAlt": "Laptop and notebook for component planning",
-      "href": "https://github.com/"
+      "title": "Making Life Easy",
+      "description": "Utility workflow to convert screenshots or image batches into clean PDF files in a few clicks.",
+      "meta": "2026 • Utility • Image-to-PDF Tool",
+      "imageSrc": "assets/builds/build-3-generated.svg",
+      "imageAlt": "Illustration of image to PDF conversion utility",
+      "href": "https://github.com/hritikmehta/Making_life_easy",
+      "repoUrl": "https://github.com/hritikmehta/Making_life_easy"
     }
   ],
   "library": {

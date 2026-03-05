@@ -4,7 +4,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hritik Mehta — Portfolio Skeleton</title>
+  <title>Hritik Mehta | Product Engineer Portfolio</title>
+  <meta name="description"
+    content="Portfolio of Hritik Mehta - product-minded engineer focused on modern frontend systems, performance, and design-led development." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://portfolio-webpage-rose-zeta.vercel.app/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Hritik Mehta | Product Engineer Portfolio" />
+  <meta property="og:description"
+    content="Product-minded engineer crafting clean interfaces, robust web systems, and calm digital experiences." />
+  <meta property="og:url" content="https://portfolio-webpage-rose-zeta.vercel.app/" />
+  <meta property="og:image" content="assets/library/activity-1.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hritik Mehta | Product Engineer Portfolio" />
+  <meta name="twitter:description"
+    content="Product-minded engineer crafting clean interfaces, robust web systems, and calm digital experiences." />
+  <meta name="twitter:image" content="assets/library/activity-1.jpg" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -21,12 +41,27 @@
   <header class="top-nav">
     <div class="top-nav-inner">
       <a class="logo" href="#hero">HRITIK MEHTA</a>
-      <nav>
+
+      <button id="mobileMenuToggle" class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobileNav"
+        aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav aria-label="Primary">
         <a href="#career">Career</a>
         <a href="#builds">Builds</a>
         <a href="#library">Library</a>
       </nav>
       <a class="nav-cta" href="#connect">Connect</a>
+    </div>
+
+    <div id="mobileNav" class="mobile-nav" hidden>
+      <a href="#career">Career</a>
+      <a href="#builds">Builds</a>
+      <a href="#library">Library</a>
+      <a href="#connect">Connect</a>
     </div>
   </header>
 
@@ -35,11 +70,10 @@
       <canvas id="shootingStarsCanvas" class="stars-canvas"></canvas>
       <div class="twinkling-bg"></div>
       <div class="hero-content">
-        <!-- <h1 style="color: #fff;">Learning &amp; Building Systems</h1> -->
-        <h1 style="color: #fff;">Building Systems With Taste</h1>
-        <p class="lead" style="color: #cbd5e1;">
-          Product-minded engineer crafting clean interfaces, robust web systems,
-          and calm digital experiences.
+        <h1 id="heroTitle">Building Systems With Taste</h1>
+        <p id="heroLead" class="lead">
+          Newbie with the ability to juggle multiple hats. My undergraduate years taught me the importance of compounding,
+          diversification, and network.
         </p>
         <div class="hero-meta">
           <span id="heroTypingAnimation" class="typing-animation" aria-live="polite">Open to collaborate</span>
@@ -47,13 +81,15 @@
       </div>
     </section>
 
+    <div class="dotted-surface-bg dotted-surface-bg-fixed" aria-hidden="true"></div>
+
     <section class="section with-bg relative overflow-hidden" id="career">
-      <div class="dotted-surface-bg" aria-hidden="true"></div>
       <div class="section-content section-body career-shell relative z-10 w-full max-w-6xl mx-auto px-4 mt-8">
         <div class="section-head">
           <h2>Career Timeline</h2>
-          <a id="careerResumeCta" class="button resume-cta" href="#" aria-label="Download Résumé">
-            <span class="resume-cta-text">Download Résumé</span>
+          <a id="careerResumeCta" class="button resume-cta" href="https://tinyurl.com/Hritik-CV1"
+            aria-label="Download resume" target="_blank" rel="noopener noreferrer">
+            <span class="resume-cta-text">Download Resume</span>
             <svg class="resume-cta-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
               <path class="resume-tray" d="M8 28v4a2 2 0 002 2h20a2 2 0 002-2v-4" />
               <g class="resume-arrow">
@@ -84,8 +120,7 @@
             <article class="career-info-panel" aria-live="polite">
               <p id="careerInfoPeriod" class="career-info-period">2023 — Present</p>
               <h3 id="careerInfoOrg">Housing.com</h3>
-              <p id="careerInfoRole" class="career-info-role">Associate Product Engineer • Assistant Manager (Engineering)
-              </p>
+              <p id="careerInfoRole" class="career-info-role">Associate Product Engineer • Assistant Manager (Engineering)</p>
               <ul id="careerInfoHighlights" class="career-info-highlights">
                 <li>Scaling product surfaces with reliable frontend architecture.</li>
                 <li>Driving design-system consistency across teams.</li>
@@ -95,10 +130,8 @@
 
             <aside class="career-media" aria-label="Career media carousel">
               <div class="career-carousel" id="careerCarousel">
-                <img
-                  id="careerCarouselImage"
-                  src="assets/career/2023-present/01.svg"
-                  alt="Housing.com - career highlight image 1" />
+                <img id="careerCarouselImage" src="assets/career/2023-present/01.svg"
+                  alt="Housing.com - career highlight image 1" width="960" height="720" />
                 <button id="careerCarouselPrev" class="career-carousel-btn prev" type="button" aria-label="Previous image">
                   &lsaquo;
                 </button>
@@ -114,33 +147,31 @@
     </section>
 
     <section class="section with-bg builds-rail-sec relative overflow-hidden" id="builds">
-      <div class="dotted-surface-bg" aria-hidden="true"></div>
       <div class="focus-rail-container">
         <div class="section-head builds-head section-body">
-          <h2 style="color: #fff;">Selected Builds</h2>
+          <h2>Selected Builds</h2>
         </div>
         <div class="rail-stage-wrapper">
           <div class="rail-stage-perspective">
-            <div class="rail-stage-drag" id="railStageDrag">
-              <!-- Rendered via JS -->
-            </div>
+            <div class="rail-stage-drag" id="railStageDrag"></div>
           </div>
 
           <div class="rail-info-controls">
             <div class="rail-info" id="railInfo">
-              <span class="rail-meta" id="railMeta">Urban • Travel</span>
-              <h2 class="rail-title" id="railTitle">Neon Tokyo</h2>
-              <p class="rail-desc" id="railDesc">Experience the vibrant nightlife and illuminated streets of Shinjuku.
-              </p>
+              <span class="rail-meta" id="railMeta">2026 • Nutrition • Gamified Web App</span>
+              <h2 class="rail-title" id="railTitle">NutriPlay</h2>
+              <p class="rail-desc" id="railDesc">Gamified nutrition coach with streaks, progress loops, and a playful UX for
+                consistent healthy habits.</p>
             </div>
 
             <div class="rail-controls">
               <div class="rail-nav">
-                <button id="railPrev">&lsaquo;</button>
+                <button id="railPrev" type="button" aria-label="Previous build">&lsaquo;</button>
                 <span id="railCount">1 / 5</span>
-                <button id="railNext">&rsaquo;</button>
+                <button id="railNext" type="button" aria-label="Next build">&rsaquo;</button>
               </div>
-              <a href="#" class="button" id="railExplore">Explore &rarr;</a>
+              <a href="https://github.com/" class="button" id="railExplore" target="_blank" rel="noopener noreferrer">Explore
+                &rarr;</a>
             </div>
           </div>
         </div>
@@ -148,158 +179,65 @@
     </section>
 
     <section class="section with-bg relative overflow-hidden" id="library">
-      <div class="dotted-surface-bg" aria-hidden="true"></div>
       <div class="section-body">
         <div class="section-head">
           <h2>Library</h2>
-          <label class="toggle">Read only <span></span></label>
+          <span class="toggle" aria-hidden="true">Read only <span></span></span>
         </div>
 
-      <h3 class="subhead">Recent Activities</h3>
-        <div class="gallery-grid">
-        <a href="#" class="gallery-card">
-          <img
-            src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-            alt="Instagram Reel" />
-          <div class="gallery-overlay">
-            <h4>Instagram Reel</h4>
-            <p>Designing modern user interfaces.</p>
-          </div>
-        </a>
-        <a href="#" class="gallery-card">
-          <img
-            src="https://images.unsplash.com/photo-1552508744-1696d4464960?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-            alt="Medium Article" />
-          <div class="gallery-overlay">
-            <h4>Medium Article</h4>
-            <p>Reflections on building large scale applications.</p>
-          </div>
-        </a>
-        <a href="#" class="gallery-card">
-          <img
-            src="https://images.unsplash.com/photo-1611926653458-09294b3142bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-            alt="LinkedIn Post" />
-          <div class="gallery-overlay">
-            <h4>LinkedIn Post</h4>
-            <p>My latest career milestone and learning journey.</p>
-          </div>
-        </a>
-        <a href="#" class="gallery-card">
-          <img
-            src="https://images.unsplash.com/photo-1611605698335-8b1569810432?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-            alt="X Post" />
-          <div class="gallery-overlay">
-            <h4>X Post</h4>
-            <p>Thread on web performance optimization.</p>
-          </div>
-        </a>
-      </div>
+        <h3 class="subhead">Recent Activities</h3>
+        <div id="libraryActivitiesGrid" class="gallery-grid"></div>
 
-      <h3 class="subhead">Recommendations</h3>
-        <div class="gallery-grid">
-        <a href="#" class="gallery-card">
-          <img
-            src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-            alt="Book 1" />
-          <div class="gallery-overlay">
-            <h4>Reading: Atomic Habits</h4>
-            <p>An easy and proven way to build good habits and break bad ones.</p>
-          </div>
-        </a>
-        <a href="#" class="gallery-card">
-          <img
-            src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-            alt="Book 2" />
-          <div class="gallery-overlay">
-            <h4>Reading: Deep Work</h4>
-            <p>Rules for focused success in a distracted world.</p>
-          </div>
-        </a>
-        <a href="#" class="gallery-card">
-          <img
-            src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-            alt="Movie 1" />
-          <div class="gallery-overlay">
-            <h4>Watching: Inception</h4>
-            <p>A thief who steals corporate secrets through the use of dream-sharing technology.</p>
-          </div>
-        </a>
-        <a href="#" class="gallery-card">
-          <img
-            src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-            alt="Movie 2" />
-          <div class="gallery-overlay">
-            <h4>Watching: Interstellar</h4>
-            <p>A team of explorers travel through a wormhole in space.</p>
-          </div>
-        </a>
-      </div>
+        <h3 class="subhead">Recommendations</h3>
+        <div id="libraryRecommendationsGrid" class="gallery-grid"></div>
 
-      <h3 class="subhead">Resources</h3>
-        <div class="gallery-grid">
-        <a href="#" class="gallery-card">
-          <img
-            src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-            alt="GitHub Repos" />
-          <div class="gallery-overlay">
-            <h4>GitHub Repos</h4>
-            <p>Top open source tools and libraries I reuse.</p>
-          </div>
-        </a>
-        <a href="#" class="gallery-card">
-          <img
-            src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-            alt="Skill Maps" />
-          <div class="gallery-overlay">
-            <h4>Skill Maps</h4>
-            <p>Roadmaps and learning paths for web engineering.</p>
-          </div>
-        </a>
-        <a href="#" class="gallery-card">
-          <img
-            src="https://images.unsplash.com/photo-1457305237443-44c3d5a30b89?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-            alt="Favorite Websites" />
-          <div class="gallery-overlay">
-            <h4>Favorite Websites</h4>
-            <p>Design inspiration and reading materials.</p>
-          </div>
-        </a>
-        <a href="#" class="gallery-card">
-          <img
-            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-            alt="Products Used" />
-          <div class="gallery-overlay">
-            <h4>Products Used</h4>
-            <p>Software and hardware stack that powers my work.</p>
-          </div>
-        </a>
-        </div>
+        <h3 class="subhead">Resources</h3>
+        <div id="libraryResourcesGrid" class="gallery-grid"></div>
       </div>
     </section>
 
     <section class="section with-bg connect relative overflow-hidden" id="connect">
-      <div class="dotted-surface-bg" aria-hidden="true"></div>
       <div class="section-content section-body relative z-10 w-full max-w-6xl mx-auto px-4 mt-8">
         <div class="connect-stack">
-          <p class="connect-mail">Mail me at hritik@yourdomain.com</p>
-          <form class="connect-form">
-          <label>
-            Message
-            <textarea placeholder="Drop a message..."></textarea>
-          </label>
-            <button type="button" class="nav-cta connect-send">Send Message</button>
+          <p class="connect-mail">Mail me at <a id="contactEmailLink" href="mailto:hritikmehta.77@gmail.com">hritikmehta.77@gmail.com</a></p>
+
+          <form id="connectForm" class="connect-form" method="POST" novalidate>
+            <input id="contactAccessKey" type="hidden" name="access_key" value="" />
+            <input type="checkbox" name="botcheck" class="sr-only" tabindex="-1" autocomplete="off" />
+
+            <label for="contactName">
+              Name
+              <input id="contactName" name="name" type="text" required autocomplete="name" />
+            </label>
+
+            <label for="contactEmail">
+              Email
+              <input id="contactEmail" name="email" type="email" required autocomplete="email" />
+            </label>
+
+            <label for="contactMessage">
+              Message
+              <textarea id="contactMessage" name="message" placeholder="Drop a message..." required></textarea>
+            </label>
+
+            <button id="connectSubmit" type="submit" class="nav-cta connect-send">Send Message</button>
+            <p id="connectStatus" class="connect-status" role="status" aria-live="polite"></p>
           </form>
 
-          <div class="platforms">
-            <a href="#">GitHub</a>
-            <a href="#">LinkedIn</a>
-            <a href="#">X</a>
-            <a href="#">Medium</a>
+          <div id="platformLinks" class="platforms">
+            <a href="https://github.com/hritikmehta" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/hritik-mehta77/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://x.com/HritikMehta_" target="_blank" rel="noopener noreferrer">X</a>
+            <a href="https://medium.com/@hritik999" target="_blank" rel="noopener noreferrer">Medium</a>
           </div>
         </div>
       </div>
     </section>
   </main>
+
+  <noscript>
+    <p class="noscript-note">This site works best with JavaScript enabled for interactive sections and dynamic content.</p>
+  </noscript>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="animations.js"></script>

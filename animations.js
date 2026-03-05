@@ -4,8 +4,8 @@ const DEFAULT_CONTENT = {
     email: "hritikmehta.77@gmail.com"
   },
   seo: {
-    title: "Hritik Mehta | Product Engineer Portfolio",
-    description: "Portfolio of Hritik Mehta - product-minded engineer focused on modern frontend systems, performance, and design-led development.",
+    title: "Hritik Mehta | Growth & Product Builder",
+    description: "Professional portfolio of Hritik Mehta, a growth and product builder focused on modern frontend systems and design-led execution.",
     ogImage: "assets/library/activity-1.jpg",
     twitterCard: "summary_large_image"
   },

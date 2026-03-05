@@ -1,16 +1,16 @@
 {
   "profile": {
     "name": "Hritik Mehta",
-    "role": "Product-minded engineer",
+    "role": "Growth & Product Builder",
     "location": "India",
     "siteUrl": "https://portfolio-webpage-rose-zeta.vercel.app/",
     "tagline": "Building Systems With Taste",
-    "description": "Product-minded engineer crafting clean interfaces, robust web systems, and calm digital experiences.",
+    "description": "Growth and product builder professional focused on clean interfaces, robust web systems, and execution that scales.",
     "email": "hritikmehta.77@gmail.com"
   },
   "seo": {
-    "title": "Hritik Mehta | Product Engineer Portfolio",
-    "description": "Portfolio of Hritik Mehta - product-minded engineer focused on modern frontend systems, performance, and design-led development.",
+    "title": "Hritik Mehta | Growth & Product Builder",
+    "description": "Professional portfolio of Hritik Mehta, a growth and product builder focused on modern frontend systems and design-led execution.",
     "ogImage": "assets/library/activity-1.jpg",
     "twitterCard": "summary_large_image"
   },
@@ -36,10 +36,9 @@
           "Built strong engineering fundamentals and collaboration habits."
         ],
         "images": [
-          "assets/career/2018-2023/01.svg",
-          "assets/career/2018-2023/02.svg",
-          "assets/career/2018-2023/03.svg",
-          "assets/career/2018-2023/04.svg"
+          "assets/career/2018-2023/01.png",
+          "assets/career/2018-2023/02.jpg",
+          "assets/career/2018-2023/03.jpeg"
         ]
       },
       {
@@ -52,10 +51,11 @@
           "Owning delivery from prototyping to production rollout."
         ],
         "images": [
-          "assets/career/2023-present/01.svg",
-          "assets/career/2023-present/02.svg",
-          "assets/career/2023-present/03.svg",
-          "assets/career/2023-present/04.svg"
+          "assets/career/2023-present/01.png",
+          "assets/career/2023-present/02.png",
+          "assets/career/2023-present/03.png",
+          "assets/career/2023-present/04.png",
+          "assets/career/2023-present/05.JPG"
         ]
       },
       {
@@ -68,10 +68,7 @@
           "Growing cross-functional leadership with strong product judgment."
         ],
         "images": [
-          "assets/career/next/01.svg",
-          "assets/career/next/02.svg",
-          "assets/career/next/03.svg",
-          "assets/career/next/04.svg"
+          "assets/career/next/01.svg"
         ]
       }
     ]

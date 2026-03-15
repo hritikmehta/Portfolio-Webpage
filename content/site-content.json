@@ -256,8 +256,8 @@
   },
   "connect": {
     "email": "hritikmehta.77@gmail.com",
-    "formEndpoint": "https://api.web3forms.com/submit",
-    "formAccessKey": "REPLACE_WITH_WEB3FORMS_ACCESS_KEY",
+    "formEndpoint": "https://script.google.com/macros/s/AKfycbw0zm5RVTR8S1sxtP40DDt2FBmS86sXYciuiwFsPR9xh7mBjVmqHqXs0Vba2h0UliQy/exec",
+    "formAccessKey": "",
     "socials": [
       {
         "label": "GitHub",

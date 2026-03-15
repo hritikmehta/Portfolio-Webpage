@@ -1089,6 +1089,7 @@ function initContactForm(content) {
 
   const endpoint = connect.formEndpoint || "";
   const accessKey = connect.formAccessKey || "";
+  const usesWeb3Forms = /web3forms\.com/.test(endpoint);
 
   function setStatus(text, type) {
     statusEl.textContent = text;
@@ -1106,7 +1107,7 @@ function initContactForm(content) {
       return;
     }
 
-    if (/web3forms\.com/.test(endpoint) && (!accessKey || accessKey.includes("REPLACE"))) {
+    if (usesWeb3Forms && (!accessKey || accessKey.includes("REPLACE"))) {
       setStatus("Form access key is missing. Add your Web3Forms key in content/site-content.json.", "is-error");
       return;
     }
@@ -1116,10 +1117,26 @@ function initContactForm(content) {
 
     try {
       const formData = new FormData(form);
+      const requestInit = usesWeb3Forms
+        ? {
+            method: "POST",
+            headers: { Accept: "application/json" },
+            body: formData
+          }
+        : {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              name: formData.get("name"),
+              email: formData.get("email"),
+              message: formData.get("message")
+            })
+          };
       const response = await fetch(endpoint, {
-        method: "POST",
-        headers: { Accept: "application/json" },
-        body: formData
+        ...requestInit
       });
 
       const payload = await response.json().catch(() => ({}));

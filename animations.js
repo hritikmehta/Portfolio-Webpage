@@ -1090,6 +1090,7 @@ function initContactForm(content) {
   const endpoint = connect.formEndpoint || "";
   const accessKey = connect.formAccessKey || "";
   const usesWeb3Forms = /web3forms\.com/.test(endpoint);
+  const usesGoogleAppsScript = /script\.google\.com\/macros\/s\//.test(endpoint);
 
   function setStatus(text, type) {
     statusEl.textContent = text;
@@ -1123,6 +1124,19 @@ function initContactForm(content) {
             headers: { Accept: "application/json" },
             body: formData
           }
+        : usesGoogleAppsScript
+          ? {
+              method: "POST",
+              mode: "no-cors",
+              headers: {
+                "Content-Type": "text/plain;charset=utf-8"
+              },
+              body: JSON.stringify({
+                name: formData.get("name"),
+                email: formData.get("email"),
+                message: formData.get("message")
+              })
+            }
         : {
             method: "POST",
             headers: {
@@ -1138,6 +1152,12 @@ function initContactForm(content) {
       const response = await fetch(endpoint, {
         ...requestInit
       });
+
+      if (usesGoogleAppsScript) {
+        form.reset();
+        setStatus("Message sent successfully. Thanks for reaching out.", "is-success");
+        return;
+      }
 
       const payload = await response.json().catch(() => ({}));
 

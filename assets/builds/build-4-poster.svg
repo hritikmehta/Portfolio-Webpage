@@ -1,0 +1,96 @@
+<svg width="1200" height="1600" viewBox="0 0 1200 1600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="96" y1="120" x2="1114" y2="1526" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1220"/>
+      <stop offset="0.55" stop-color="#121C31"/>
+      <stop offset="1" stop-color="#0E1526"/>
+    </linearGradient>
+    <linearGradient id="editor" x1="312" y1="318" x2="908" y2="1162" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#15213A"/>
+      <stop offset="1" stop-color="#101A2E"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="226" y1="1210" x2="1030" y2="408" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4BE2D6"/>
+      <stop offset="1" stop-color="#7AB8FF"/>
+    </linearGradient>
+    <filter id="shadow" x="164" y="232" width="882" height="1158" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="28"/>
+      <feGaussianBlur stdDeviation="32"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.016 0 0 0 0 0.058 0 0 0 0 0.127 0 0 0 0.28 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="1600" rx="42" fill="url(#bg)"/>
+  <circle cx="986" cy="236" r="172" fill="#173053"/>
+  <circle cx="238" cy="1340" r="228" fill="#0E223E"/>
+  <path d="M170 260C310 260 372 198 524 198C698 198 702 304 874 304C957 304 1023 280 1070 256" stroke="#183C5A" stroke-width="2"/>
+  <path d="M132 1298C252 1298 332 1366 486 1366C655 1366 704 1218 874 1218C968 1218 1036 1242 1086 1272" stroke="#183C5A" stroke-width="2"/>
+
+  <g opacity="0.65">
+    <circle cx="220" cy="412" r="8" fill="#62D9D0"/>
+    <circle cx="976" cy="1136" r="8" fill="#62D9D0"/>
+    <circle cx="1006" cy="668" r="6" fill="#7AB8FF"/>
+    <circle cx="276" cy="1138" r="6" fill="#7AB8FF"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="236" y="290" width="728" height="1030" rx="34" fill="url(#editor)" stroke="#233455" stroke-width="3"/>
+    <rect x="236" y="290" width="728" height="92" rx="34" fill="#101A2C"/>
+    <circle cx="300" cy="336" r="12" fill="#FF718A"/>
+    <circle cx="340" cy="336" r="12" fill="#FFCA5D"/>
+    <circle cx="380" cy="336" r="12" fill="#4BE2D6"/>
+    <rect x="452" y="318" width="296" height="36" rx="18" fill="#17253F"/>
+    <text x="600" y="341" text-anchor="middle" fill="#B0C6E7" font-family="Avenir Next, Segoe UI, Arial, sans-serif" font-size="24" font-weight="600">Skills for Codex or Claude</text>
+
+    <rect x="286" y="426" width="166" height="512" rx="26" fill="#10192D" stroke="#203250" stroke-width="2"/>
+    <rect x="314" y="468" width="92" height="14" rx="7" fill="#5677A7"/>
+    <rect x="314" y="512" width="108" height="14" rx="7" fill="#2A456C"/>
+    <rect x="314" y="556" width="126" height="14" rx="7" fill="#2A456C"/>
+    <rect x="314" y="600" width="96" height="14" rx="7" fill="#2A456C"/>
+    <rect x="314" y="676" width="98" height="20" rx="10" fill="#0F2E40"/>
+    <rect x="314" y="722" width="108" height="20" rx="10" fill="#0F2E40"/>
+    <rect x="314" y="768" width="120" height="20" rx="10" fill="#0F2E40"/>
+    <rect x="314" y="846" width="116" height="22" rx="11" fill="#17365A"/>
+
+    <g opacity="0.92">
+      <rect x="496" y="442" width="408" height="164" rx="24" fill="#121F36" stroke="#24415E" stroke-width="2"/>
+      <text x="532" y="492" fill="#7AB8FF" font-family="Menlo, Consolas, monospace" font-size="26">use $skill-installer</text>
+      <text x="532" y="534" fill="#4BE2D6" font-family="Menlo, Consolas, monospace" font-size="26">skills:</text>
+      <text x="658" y="534" fill="#D8E6FA" font-family="Menlo, Consolas, monospace" font-size="26">excalidraw, file-organizer</text>
+      <text x="532" y="576" fill="#7AB8FF" font-family="Menlo, Consolas, monospace" font-size="26">mode:</text>
+      <text x="620" y="576" fill="#D8E6FA" font-family="Menlo, Consolas, monospace" font-size="26">inspect, explain, apply</text>
+    </g>
+
+    <rect x="496" y="648" width="178" height="152" rx="28" fill="#12263A" stroke="#264866" stroke-width="2"/>
+    <rect x="704" y="648" width="200" height="152" rx="28" fill="#12263A" stroke="#264866" stroke-width="2"/>
+    <rect x="496" y="834" width="196" height="162" rx="28" fill="#12263A" stroke="#264866" stroke-width="2"/>
+    <rect x="724" y="834" width="180" height="162" rx="28" fill="#12263A" stroke="#264866" stroke-width="2"/>
+
+    <g fill="url(#accent)">
+      <rect x="530" y="682" width="38" height="38" rx="10"/>
+      <rect x="542" y="726" width="100" height="12" rx="6"/>
+      <rect x="734" y="682" width="38" height="38" rx="10"/>
+      <circle cx="754" cy="698" r="7" fill="#0F1B2F"/>
+      <circle cx="786" cy="698" r="7" fill="#0F1B2F"/>
+      <circle cx="818" cy="698" r="7" fill="#0F1B2F"/>
+      <rect x="744" y="726" width="120" height="12" rx="6"/>
+      <path d="M530 878H658" stroke="url(#accent)" stroke-width="12" stroke-linecap="round"/>
+      <path d="M530 922H626" stroke="url(#accent)" stroke-width="12" stroke-linecap="round"/>
+      <path d="M760 882L796 918L852 854" stroke="url(#accent)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="752" y="930" width="110" height="12" rx="6"/>
+    </g>
+
+    <rect x="496" y="1040" width="408" height="208" rx="28" fill="#0F1A2D" stroke="#203352" stroke-width="2"/>
+    <text x="532" y="1096" fill="#69C1FF" font-family="Menlo, Consolas, monospace" font-size="26">$ codex use skill</text>
+    <text x="532" y="1144" fill="#A4BADA" font-family="Menlo, Consolas, monospace" font-size="24">diagram  organize  review</text>
+    <text x="532" y="1192" fill="#4BE2D6" font-family="Menlo, Consolas, monospace" font-size="24">safe actions only after approval</text>
+
+    <path d="M452 1026C496 1026 520 998 520 948" stroke="#33597B" stroke-width="4"/>
+    <path d="M674 824C674 786 704 760 744 760" stroke="#33597B" stroke-width="4"/>
+    <path d="M694 914C742 914 760 940 760 982" stroke="#33597B" stroke-width="4"/>
+  </g>
+</svg>

@@ -178,6 +178,16 @@
       </div>
     </section>
 
+    <div id="buildNoticeModal" class="build-notice-modal" hidden aria-hidden="true">
+      <div class="build-notice-backdrop" data-build-notice-close></div>
+      <div class="build-notice-dialog" role="dialog" aria-modal="true" aria-labelledby="buildNoticeTitle" aria-describedby="buildNoticeMessage">
+        <button type="button" class="build-notice-close" id="buildNoticeClose" aria-label="Close notice">&times;</button>
+        <p class="build-notice-label">Selected Build</p>
+        <h3 id="buildNoticeTitle">Under NDA</h3>
+        <p id="buildNoticeMessage">This project is confidential.</p>
+      </div>
+    </div>
+
     <section class="section with-bg relative overflow-hidden" id="library">
       <div class="section-body">
         <div class="section-head">

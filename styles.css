@@ -1368,6 +1368,11 @@ textarea {
   cursor: pointer;
 }
 
+.rail-card.actionable {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
 .rail-card img {
   width: 100%;
   height: 100%;
@@ -1508,6 +1513,74 @@ textarea {
 
 #railExplore:active {
   transform: scale(0.95);
+}
+
+.build-notice-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.build-notice-modal[hidden] {
+  display: none;
+}
+
+.build-notice-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 9, 11, 0.72);
+  backdrop-filter: blur(8px);
+}
+
+.build-notice-dialog {
+  position: relative;
+  width: min(100%, 420px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(180deg, rgba(24, 24, 27, 0.98), rgba(15, 15, 18, 0.98));
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.4);
+  padding: 1.5rem 1.5rem 1.35rem;
+  color: #f5f5f5;
+}
+
+.build-notice-label {
+  margin: 0 0 0.35rem;
+  color: #a3a3a3;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.build-notice-dialog h3 {
+  margin: 0;
+  font-size: clamp(1.6rem, 3vw, 2rem);
+}
+
+.build-notice-dialog p:last-child {
+  margin: 0.8rem 0 0;
+  color: #d4d4d8;
+  line-height: 1.6;
+}
+
+.build-notice-close {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #f5f5f5;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.build-notice-close:hover {
+  background: rgba(255, 255, 255, 0.14);
 }
 
 /* --- Dotted Surface Background (non-hero sections) --- */

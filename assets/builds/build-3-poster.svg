@@ -1,0 +1,86 @@
+<svg width="1200" height="1600" viewBox="0 0 1200 1600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="118" y1="120" x2="1060" y2="1534" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6F8FC"/>
+      <stop offset="0.62" stop-color="#E9EEF6"/>
+      <stop offset="1" stop-color="#DDE5F1"/>
+    </linearGradient>
+    <linearGradient id="flow" x1="388" y1="782" x2="840" y2="782" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F7CFF"/>
+      <stop offset="1" stop-color="#00B0C8"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="696" y1="320" x2="996" y2="1236" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F8FBFF"/>
+    </linearGradient>
+    <filter id="shadow" x="160" y="216" width="900" height="1214" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="26"/>
+      <feGaussianBlur stdDeviation="28"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.283 0 0 0 0 0.364 0 0 0 0 0.479 0 0 0 0.14 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="1600" rx="42" fill="url(#bg)"/>
+  <circle cx="1058" cy="240" r="170" fill="#FFFFFF" fill-opacity="0.55"/>
+  <circle cx="152" cy="1362" r="220" fill="#EFF4FB"/>
+
+  <g opacity="0.42">
+    <path d="M112 190H524" stroke="#D6DEE9" stroke-width="4" stroke-linecap="round"/>
+    <path d="M112 230H422" stroke="#D6DEE9" stroke-width="4" stroke-linecap="round"/>
+    <path d="M112 270H486" stroke="#D6DEE9" stroke-width="4" stroke-linecap="round"/>
+    <path d="M710 1332H1086" stroke="#CFD9E7" stroke-width="4" stroke-linecap="round"/>
+    <path d="M710 1372H1002" stroke="#CFD9E7" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="180" y="284" width="262" height="360" rx="30" fill="#FFFFFF"/>
+    <rect x="210" y="324" width="202" height="116" rx="20" fill="#EEF3FB"/>
+    <rect x="224" y="340" width="174" height="14" rx="7" fill="#CAD9F0"/>
+    <rect x="224" y="368" width="132" height="12" rx="6" fill="#D8E4F5"/>
+    <rect x="224" y="462" width="74" height="104" rx="16" fill="#8EB8FF"/>
+    <rect x="310" y="462" width="88" height="104" rx="16" fill="#D1E2FF"/>
+    <rect x="224" y="586" width="174" height="16" rx="8" fill="#DCE5F2"/>
+
+    <rect x="234" y="716" width="240" height="330" rx="30" transform="rotate(-8 234 716)" fill="#FFFFFF"/>
+    <rect x="272" y="764" width="156" height="114" rx="20" transform="rotate(-8 272 764)" fill="#FFE0B8"/>
+    <rect x="282" y="900" width="118" height="14" rx="7" transform="rotate(-8 282 900)" fill="#D4DEED"/>
+    <rect x="282" y="934" width="144" height="14" rx="7" transform="rotate(-8 282 934)" fill="#D4DEED"/>
+    <rect x="282" y="968" width="126" height="14" rx="7" transform="rotate(-8 282 968)" fill="#D4DEED"/>
+
+    <rect x="206" y="1038" width="214" height="292" rx="28" transform="rotate(8 206 1038)" fill="#FFFFFF"/>
+    <rect x="244" y="1082" width="142" height="94" rx="18" transform="rotate(8 244 1082)" fill="#B9E9E7"/>
+    <rect x="248" y="1200" width="124" height="14" rx="7" transform="rotate(8 248 1200)" fill="#D4DEED"/>
+    <rect x="248" y="1234" width="112" height="14" rx="7" transform="rotate(8 248 1234)" fill="#D4DEED"/>
+
+    <path d="M448 788C540 788 594 788 632 788C670 788 714 788 790 788" stroke="url(#flow)" stroke-width="20" stroke-linecap="round" stroke-dasharray="2 32"/>
+    <path d="M780 740L858 788L780 836" stroke="#2F7FFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="700" y="312" width="332" height="930" rx="34" fill="url(#paper)"/>
+    <path d="M948 312H1032V394L948 312Z" fill="#E7EEF8"/>
+    <rect x="748" y="404" width="142" height="58" rx="18" fill="#FF5E73"/>
+    <text x="819" y="442" text-anchor="middle" fill="#FFFFFF" font-family="Avenir Next, Segoe UI, Arial, sans-serif" font-size="30" font-weight="800">PDF</text>
+    <text x="850" y="520" text-anchor="middle" fill="#243041" font-family="Avenir Next, Segoe UI, Arial, sans-serif" font-size="48" font-weight="700">Making Life Easy</text>
+    <text x="850" y="562" text-anchor="middle" fill="#6E7B90" font-family="Avenir Next, Segoe UI, Arial, sans-serif" font-size="20" letter-spacing="2">SCREENSHOTS TO CLEAN FILES</text>
+
+    <rect x="760" y="640" width="212" height="18" rx="9" fill="#D4DDEB"/>
+    <rect x="760" y="688" width="168" height="18" rx="9" fill="#D4DDEB"/>
+    <rect x="760" y="736" width="240" height="18" rx="9" fill="#D4DDEB"/>
+    <rect x="760" y="824" width="38" height="38" rx="10" fill="#E5F3FF"/>
+    <path d="M772 844L786 858L816 828" stroke="#2E90FA" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="824" y="834" width="148" height="18" rx="9" fill="#C9D8E9"/>
+    <rect x="760" y="896" width="38" height="38" rx="10" fill="#E5F9F8"/>
+    <path d="M772 916L786 930L816 900" stroke="#0FAF9A" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="824" y="906" width="176" height="18" rx="9" fill="#C9D8E9"/>
+    <rect x="760" y="968" width="38" height="38" rx="10" fill="#FFF4E8"/>
+    <path d="M772 988L786 1002L816 972" stroke="#F79009" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="824" y="978" width="156" height="18" rx="9" fill="#C9D8E9"/>
+
+    <rect x="748" y="1090" width="236" height="88" rx="24" fill="#EEF4FB"/>
+    <rect x="778" y="1122" width="82" height="24" rx="12" fill="#B4C8E8"/>
+    <rect x="878" y="1122" width="76" height="24" rx="12" fill="#C8D5E8"/>
+  </g>
+</svg>

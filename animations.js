@@ -599,16 +599,58 @@ function initFocusRail(items) {
   const uiExplore = document.getElementById("railExplore");
   const btnPrev = document.getElementById("railPrev");
   const btnNext = document.getElementById("railNext");
+  const noticeModal = document.getElementById("buildNoticeModal");
+  const noticeTitle = document.getElementById("buildNoticeTitle");
+  const noticeMessage = document.getElementById("buildNoticeMessage");
+  const noticeClose = document.getElementById("buildNoticeClose");
 
   if (!dragContainer || !uiMeta || !uiTitle || !uiDesc || !uiCount || !uiExplore || !btnPrev || !btnNext) return;
   if (!Array.isArray(items) || !items.length) return;
 
   let activeIndex = 0;
   const count = items.length;
+  let lastFocusedCard = null;
 
   function wrap(min, max, value) {
     const range = max - min;
     return ((((value - min) % range) + range) % range) + min;
+  }
+
+  function closeNotice() {
+    if (!noticeModal) return;
+    noticeModal.hidden = true;
+    noticeModal.setAttribute("aria-hidden", "true");
+    document.body.style.removeProperty("overflow");
+    if (lastFocusedCard) {
+      lastFocusedCard.focus();
+      lastFocusedCard = null;
+    }
+  }
+
+  function openNotice(item, triggerEl) {
+    if (!noticeModal || !noticeTitle || !noticeMessage || !item?.ndaNotice) return;
+    noticeTitle.textContent = item.ndaNotice.title || "Under NDA";
+    noticeMessage.textContent = item.ndaNotice.message || "This project is confidential.";
+    noticeModal.hidden = false;
+    noticeModal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    lastFocusedCard = triggerEl || null;
+    noticeClose?.focus();
+  }
+
+  if (noticeModal && noticeClose && !noticeModal.dataset.initialized) {
+    noticeModal.dataset.initialized = "true";
+    noticeClose.addEventListener("click", closeNotice);
+    noticeModal.addEventListener("click", (event) => {
+      if (event.target instanceof HTMLElement && event.target.hasAttribute("data-build-notice-close")) {
+        closeNotice();
+      }
+    });
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !noticeModal.hidden) {
+        closeNotice();
+      }
+    });
   }
 
   function render() {
@@ -652,16 +694,30 @@ function initFocusRail(items) {
       const brightness = isCenter ? 1 : 0.5;
 
       const card = document.createElement("div");
-      card.className = `rail-card ${!isCenter ? "clickable" : ""}`;
+      const isActionable = isCenter && Boolean(item.ndaNotice);
+      card.className = `rail-card ${!isCenter ? "clickable" : ""} ${isActionable ? "actionable" : ""}`.trim();
       card.style.transform = `translateX(${offset * xOffset}px) translateZ(${zOffset}px) scale(${scale}) rotateY(${rotateY}deg)`;
       card.style.opacity = String(opacity);
       card.style.filter = `blur(${blur}px) brightness(${brightness})`;
       card.style.zIndex = isCenter ? "20" : "10";
+      if (isActionable) {
+        card.tabIndex = 0;
+        card.setAttribute("role", "button");
+        card.setAttribute("aria-label", `${item.title || "Project"} details`);
+      }
 
       if (!isCenter) {
         card.addEventListener("click", () => {
           activeIndex += offset;
           render();
+        });
+      } else if (item.ndaNotice) {
+        card.addEventListener("click", () => openNotice(item, card));
+        card.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openNotice(item, card);
+          }
         });
       }
 

@@ -192,7 +192,7 @@ body {
 .product-card {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    aspect-ratio: 1 / 1.15; /* Makes overall card shape more square/consistent */
     background: var(--bg-image); /* The image background shows through if image doesn't fill completely */
     border: 1px solid var(--border-card);
     border-radius: var(--card-radius);
@@ -240,7 +240,6 @@ body {
 .product-card__image-wrap {
     width: 100%;
     flex: 1; /* Expand dynamically to fill the card */
-    min-height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;

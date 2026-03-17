@@ -1,0 +1,80 @@
+{
+  "categories": [
+    { "id": "all", "label": "All" },
+    { "id": "tech", "label": "Tech" },
+    { "id": "books", "label": "Books" },
+    { "id": "lifestyle", "label": "Lifestyle" },
+    { "id": "health", "label": "Health" }
+  ],
+  "products": [
+    {
+      "id": "product-1",
+      "category": "tech",
+      "categoryLabel": "Tech",
+      "name": "Kindle Paperwhite",
+      "description": "The best e-reader for serious readers. Waterproof, warm light, weeks of battery.",
+      "link": "https://www.amazon.in",
+      "placeholder": {
+        "bg1": "#e8ddd0",
+        "bg2": "#d4c4b0",
+        "stroke": "#a08b73",
+        "svgContent": "<rect x=\"5\" y=\"2\" width=\"14\" height=\"20\" rx=\"2\" ry=\"2\"/><line x1=\"12\" y1=\"18\" x2=\"12.01\" y2=\"18\"/>"
+      }
+    },
+    {
+      "id": "product-2",
+      "category": "books",
+      "categoryLabel": "Books",
+      "name": "Atomic Habits",
+      "description": "James Clear's masterpiece on building good habits and breaking bad ones.",
+      "link": "https://www.amazon.in",
+      "image": "/recommendations/assets/reco_book_1.png"
+    },
+    {
+      "id": "product-3",
+      "category": "books",
+      "categoryLabel": "Books",
+      "name": "Add Book Title Here",
+      "description": "Add your short description for this book recommendation right here.",
+      "link": "https://www.amazon.in",
+      "image": "/recommendations/assets/reco_book_2.png"
+    },
+    {
+      "id": "product-4",
+      "category": "tech",
+      "categoryLabel": "Tech",
+      "name": "Sony WH-1000XM5",
+      "description": "Industry-leading noise cancellation. Perfect for deep focus and travel.",
+      "link": "https://www.amazon.in",
+      "placeholder": {
+        "bg1": "#d8dde8",
+        "bg2": "#c2c8d8",
+        "stroke": "#6e7a8f",
+        "svgContent": "<path d=\"M3 18v-6a9 9 0 0118 0v6\"/><path d=\"M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z\"/>"
+      }
+    },
+    {
+      "id": "product-5",
+      "category": "health",
+      "categoryLabel": "Health",
+      "name": "Yoga Mat — Liforme",
+      "description": "Alignment markers, superior grip, and eco-friendly materials. Worth every rupee.",
+      "link": "https://www.amazon.in",
+      "placeholder": {
+        "bg1": "#e0e8d8",
+        "bg2": "#cdd8c0",
+        "stroke": "#6e8f6e",
+        "svgContent": "<path d=\"M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z\"/>"
+      }
+    },
+    {
+      "id": "product-6",
+      "category": "books",
+      "categoryLabel": "Books",
+      "name": "Psychology of Money",
+      "description": "Morgan Housel on timeless lessons about wealth, greed, and happiness.",
+      "link": "https://www.amazon.in",
+      "image": "/recommendations/assets/reco_book_3.png"
+    }
+  ]
+}

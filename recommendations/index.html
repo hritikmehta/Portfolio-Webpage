@@ -25,103 +25,12 @@
 
         <!-- Category Filter -->
         <nav class="filters" id="category-filters" aria-label="Filter by category">
-            <button class="filter-pill active" data-category="all" id="filter-all">All</button>
-            <button class="filter-pill" data-category="tech" id="filter-tech">Tech</button>
-            <button class="filter-pill" data-category="books" id="filter-books">Books</button>
-            <button class="filter-pill" data-category="lifestyle" id="filter-lifestyle">Lifestyle</button>
-            <button class="filter-pill" data-category="health" id="filter-health">Health</button>
+            <!-- Rendered by JS from data.json -->
         </nav>
 
         <!-- Product Grid -->
         <section class="products" id="products-grid" aria-label="Product recommendations">
-
-            <!-- Card 1 -->
-            <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer" class="product-card" data-category="tech" id="product-1">
-                <div class="product-card__image-wrap">
-                    <div class="product-card__placeholder-img" style="background: linear-gradient(135deg, #e8ddd0, #d4c4b0);">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#a08b73" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-                    </div>
-                </div>
-                <div class="product-card__body">
-                    <span class="product-card__category">Tech</span>
-                    <h2 class="product-card__name">Kindle Paperwhite</h2>
-                    <p class="product-card__desc">The best e-reader for serious readers. Waterproof, warm light, weeks of battery.</p>
-                </div>
-            </a>
-
-            <!-- Card 2 -->
-            <!-- ✏️ EDIT HERE: Replace the href="..." with your Amazon/affiliate link -->
-            <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer" class="product-card" data-category="books" id="product-2">
-                <div class="product-card__image-wrap">
-                    <img src="/recommendations/Recommendations-2.png" alt="Atomic Habits" style="width:100%; height:100%; object-fit:cover;">
-                </div>
-                <div class="product-card__body">
-                    <span class="product-card__category">Books</span>
-                    <!-- ✏️ EDIT HERE: Update the product name below -->
-                    <h2 class="product-card__name">Atomic Habits</h2>
-                    <!-- ✏️ EDIT HERE: Update the product description below -->
-                    <p class="product-card__desc">James Clear's masterpiece on building good habits and breaking bad ones.</p>
-                </div>
-            </a>
-
-            <!-- Card 3 -->
-            <!-- ✏️ EDIT HERE: Replace the href="..." with your Amazon/affiliate link -->
-            <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer" class="product-card" data-category="books" id="product-3">
-                <div class="product-card__image-wrap">
-                    <img src="/recommendations/Recommnedations-3.png" alt="Book 3" style="width:100%; height:100%; object-fit:cover;">
-                </div>
-                <div class="product-card__body">
-                    <span class="product-card__category">Books</span>
-                    <!-- ✏️ EDIT HERE: Update the product name below -->
-                    <h2 class="product-card__name">Add Book Title Here</h2>
-                    <!-- ✏️ EDIT HERE: Update the product description below -->
-                    <p class="product-card__desc">Add your short description for this book recommendation right here.</p>
-                </div>
-            </a>
-
-            <!-- Card 4 -->
-            <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer" class="product-card" data-category="tech" id="product-4">
-                <div class="product-card__image-wrap">
-                    <div class="product-card__placeholder-img" style="background: linear-gradient(135deg, #d8dde8, #c2c8d8);">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#6e7a8f" stroke-width="1.5"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
-                    </div>
-                </div>
-                <div class="product-card__body">
-                    <span class="product-card__category">Tech</span>
-                    <h2 class="product-card__name">Sony WH-1000XM5</h2>
-                    <p class="product-card__desc">Industry-leading noise cancellation. Perfect for deep focus and travel.</p>
-                </div>
-            </a>
-
-            <!-- Card 5 -->
-            <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer" class="product-card" data-category="health" id="product-5">
-                <div class="product-card__image-wrap">
-                    <div class="product-card__placeholder-img" style="background: linear-gradient(135deg, #e0e8d8, #cdd8c0);">
-                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#6e8f6e" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-                    </div>
-                </div>
-                <div class="product-card__body">
-                    <span class="product-card__category">Health</span>
-                    <h2 class="product-card__name">Yoga Mat — Liforme</h2>
-                    <p class="product-card__desc">Alignment markers, superior grip, and eco-friendly materials. Worth every rupee.</p>
-                </div>
-            </a>
-
-            <!-- Card 6 -->
-            <!-- ✏️ EDIT HERE: Replace the href="..." with your Amazon/affiliate link -->
-            <a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer" class="product-card" data-category="books" id="product-6">
-                <div class="product-card__image-wrap">
-                    <img src="/recommendations/Recommendations-5.png" alt="Psychology of Money" style="width:100%; height:100%; object-fit:cover;">
-                </div>
-                <div class="product-card__body">
-                    <span class="product-card__category">Books</span>
-                    <!-- ✏️ EDIT HERE: Update the product name below -->
-                    <h2 class="product-card__name">Psychology of Money</h2>
-                    <!-- ✏️ EDIT HERE: Update the product description below -->
-                    <p class="product-card__desc">Morgan Housel on timeless lessons about wealth, greed, and happiness.</p>
-                </div>
-            </a>
-
+            <!-- Rendered by JS from data.json -->
         </section>
 
         <!-- Footer -->

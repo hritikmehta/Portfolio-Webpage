@@ -77,10 +77,20 @@ document.addEventListener('DOMContentLoaded', async () => {
             
             // Auto-convert standard Google Drive URLs to direct image links
             let imageUrl = product.image;
-            if (imageUrl && imageUrl.includes('drive.google.com/file/d/')) {
-                const match = imageUrl.match(/\/d\/([a-zA-Z0-9_-]+)/);
-                if (match && match[1]) {
-                    imageUrl = `https://drive.google.com/uc?export=view&id=${match[1]}`;
+            if (imageUrl) {
+                // Handle both "file/d/ID/view" and "uc?export=view&id=ID" link formats
+                let fileId = null;
+                if (imageUrl.includes('drive.google.com/file/d/')) {
+                    const match = imageUrl.match(/\/d\/([a-zA-Z0-9_-]+)/);
+                    if (match && match[1]) fileId = match[1];
+                } else if (imageUrl.includes('drive.google.com/uc')) {
+                    const match = imageUrl.match(/id=([a-zA-Z0-9_-]+)/);
+                    if (match && match[1]) fileId = match[1];
+                }
+
+                if (fileId) {
+                    // This is Google's unblocked global CDN endpoint for Drive images
+                    imageUrl = `https://lh3.googleusercontent.com/d/${fileId}`;
                 }
             }
 

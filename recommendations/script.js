@@ -8,8 +8,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     const filtersContainer = document.getElementById('category-filters');
     const productsContainer = document.getElementById('products-grid');
 
+    // ✏️ EDIT HERE: PASTE YOUR WEBSCRIPT URL FROM SHEETS_SETUP.md HERE 
+    const SHEETS_URL = '/recommendations/data.json'; // Replace with "https://script.google.com/macros/..."
+
     try {
-        const res = await fetch('/recommendations/data.json');
+        // Show Skeleton loaders initially
+        renderSkeletons(6);
+
+        // Fetch data
+        const res = await fetch(SHEETS_URL);
+        if(!res.ok) throw new Error("Failed to fetch");
+        
         const data = await res.json();
         
         let currentCategory = 'all';
@@ -26,6 +35,25 @@ document.addEventListener('DOMContentLoaded', async () => {
     } catch(err) {
         console.error('Error loading recommendations:', err);
         productsContainer.innerHTML = '<p style="text-align:center;">Failed to load recommendations.</p>';
+    }
+
+    function renderSkeletons(count) {
+        let html = '';
+        for (let i = 0; i < count; i++) {
+            html += `
+            <div class="product-card skeleton-card">
+                <div class="product-card__image-wrap">
+                    <div class="skeleton-img"></div>
+                </div>
+                <div class="product-card__body">
+                    <div class="skeleton skeleton-text short"></div>
+                    <div class="skeleton skeleton-text title"></div>
+                    <div class="skeleton skeleton-text"></div>
+                    <div class="skeleton skeleton-text"></div>
+                </div>
+            </div>`;
+        }
+        productsContainer.innerHTML = html;
     }
 
     function renderFilters(categories) {

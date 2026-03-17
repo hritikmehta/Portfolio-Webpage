@@ -1,10 +1,25 @@
 {
   "categories": [
-    { "id": "all", "label": "All" },
-    { "id": "tech", "label": "Tech" },
-    { "id": "books", "label": "Books" },
-    { "id": "lifestyle", "label": "Lifestyle" },
-    { "id": "health", "label": "Health" }
+    {
+      "id": "all",
+      "label": "All"
+    },
+    {
+      "id": "tech",
+      "label": "Tech"
+    },
+    {
+      "id": "books",
+      "label": "Books"
+    },
+    {
+      "id": "lifestyle",
+      "label": "Lifestyle"
+    },
+    {
+      "id": "health",
+      "label": "Health"
+    }
   ],
   "products": [
     {
@@ -25,18 +40,18 @@
       "id": "product-2",
       "category": "books",
       "categoryLabel": "Books",
-      "name": "Atomic Habits",
-      "description": "James Clear's masterpiece on building good habits and breaking bad ones.",
-      "link": "https://www.amazon.in",
+      "name": "Norwegian Wood",
+      "description": "",
+      "link": "",
       "image": "/recommendations/assets/reco_book_1.png"
     },
     {
       "id": "product-3",
       "category": "books",
       "categoryLabel": "Books",
-      "name": "Add Book Title Here",
-      "description": "Add your short description for this book recommendation right here.",
-      "link": "https://www.amazon.in",
+      "name": "1984",
+      "description": "",
+      "link": "https://amzn.to/4uAJwRu",
       "image": "/recommendations/assets/reco_book_2.png"
     },
     {

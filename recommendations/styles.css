@@ -255,6 +255,53 @@ body {
     transition: transform 0.4s ease;
 }
 
+/* === Skeleton Loading Animation === */
+.skeleton {
+    background: #e2e5e9;
+    background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+    border-radius: 4px;
+    background-size: 200% 100%;
+    animation: 1.5s shimmer linear infinite;
+    color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+@keyframes shimmer {
+    to {
+        background-position-x: -200%;
+    }
+}
+
+.product-card.skeleton-card {
+    pointer-events: none; /* Can't click loading cards */
+    display: flex;
+}
+
+.product-card.skeleton-card .skeleton-img {
+    width: 100%;
+    height: 100%;
+    animation: 1.5s shimmer linear infinite;
+    background: linear-gradient(110deg, #e4e7ee 8%, #f2f4f8 18%, #e4e7ee 33%);
+    background-size: 200% 100%;
+}
+
+.product-card.skeleton-card .skeleton-text {
+    height: 16px;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+.product-card.skeleton-card .skeleton-text.short {
+    width: 40%;
+}
+
+.product-card.skeleton-card .skeleton-text.title {
+    height: 24px;
+    width: 80%;
+    margin-bottom: 12px;
+}
+
 .product-card:hover .product-card__placeholder-img {
     transform: scale(1.05);
 }

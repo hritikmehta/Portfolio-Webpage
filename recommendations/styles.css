@@ -7,6 +7,7 @@
 /* === CDN Font Import === */
 @import url('https://fonts.googleapis.com/css2?family=Pompiere&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
 
 /* === Reset === */
 *,
@@ -52,6 +53,7 @@
     /* Typography */
     --font-display: 'Pompiere', cursive;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-proxima: 'Proxima Nova', -apple-system, BlinkMacSystemFont, sans-serif;
 
     /* Sizing */
     --container-max: 720px;
@@ -127,7 +129,8 @@ body {
 }
 
 .header__subtitle {
-    font-size: 13px;
+    font-family: var(--font-proxima);
+    font-size: 14px;
     color: var(--text-muted);
     margin-top: 2px;
     letter-spacing: 0.3px;
@@ -285,7 +288,8 @@ body {
 }
 
 .product-card__desc {
-    font-size: 13px;
+    font-family: var(--font-proxima);
+    font-size: 14px;
     line-height: 1.5;
     color: var(--text-muted);
     display: -webkit-box;

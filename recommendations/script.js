@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const productsContainer = document.getElementById('products-grid');
 
     // ✏️ EDIT HERE: PASTE YOUR WEBSCRIPT URL FROM SHEETS_SETUP.md HERE 
-    const SHEETS_URL = '/recommendations/data.json'; // Replace with "https://script.google.com/macros/..."
+    const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwz7cD2YP8sos66NVwCZxWImb8pNqZWmzbdL5R6Aq9j55Wb0SUpSeGuykFh-4TTtAK-/exec'; // Replace with "https://script.google.com/macros/..."
 
     try {
         // Show Skeleton loaders initially
@@ -17,22 +17,22 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Fetch data
         const res = await fetch(SHEETS_URL);
-        if(!res.ok) throw new Error("Failed to fetch");
-        
+        if (!res.ok) throw new Error("Failed to fetch");
+
         const data = await res.json();
-        
+
         let currentCategory = 'all';
 
         // 1. Render Categories
         renderFilters(data.categories);
-        
+
         // 2. Render Products
         renderProducts(data.products, currentCategory);
 
         // 3. Attach Events
         attachEvents(data.products);
 
-    } catch(err) {
+    } catch (err) {
         console.error('Error loading recommendations:', err);
         productsContainer.innerHTML = '<p style="text-align:center;">Failed to load recommendations.</p>';
     }
@@ -67,15 +67,25 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     function renderProducts(products, filterCat) {
         let html = '';
-        
-        const filtered = filterCat === 'all' 
-            ? products 
+
+        const filtered = filterCat === 'all'
+            ? products
             : products.filter(p => p.category === filterCat);
 
         filtered.forEach((product, i) => {
             let imageHtml = '';
-            if (product.image) {
-                imageHtml = `<img src="${product.image}" alt="${product.name}" style="width:100%; height:100%; object-fit:cover;">`;
+            
+            // Auto-convert standard Google Drive URLs to direct image links
+            let imageUrl = product.image;
+            if (imageUrl && imageUrl.includes('drive.google.com/file/d/')) {
+                const match = imageUrl.match(/\/d\/([a-zA-Z0-9_-]+)/);
+                if (match && match[1]) {
+                    imageUrl = `https://drive.google.com/uc?export=view&id=${match[1]}`;
+                }
+            }
+
+            if (imageUrl) {
+                imageHtml = `<img src="${imageUrl}" alt="${product.name}" style="width:100%; height:100%; object-fit:cover;">`;
             } else if (product.placeholder) {
                 imageHtml = `
                     <div class="product-card__placeholder-img" style="background: linear-gradient(135deg, ${product.placeholder.bg1}, ${product.placeholder.bg2});">
@@ -109,7 +119,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         filterButtons.forEach(btn => {
             btn.addEventListener('click', () => {
                 const category = btn.dataset.category;
-                
+
                 filterButtons.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
 

@@ -77,3 +77,15 @@ function doGet(e) {
 Once you have the URL, go into `recommendations/script.js` on line 12 and replace the `const SHEETS_URL = "YOUR_APP_SCRIPT_URL_HERE";` with your copied URL.
 
 Commit and push your changes!
+
+## Step 5: How to use Google Drive images
+If you want to use Google Drive to host your images instead of putting them in the GitHub repo:
+1. Upload your image to a folder in Google Drive.
+2. Right-click the image -> **Share**.
+3. Under "General access", change Restricted to **Anyone with the link**.
+4. Click **Copy link**.
+5. The link will look like this: `https://drive.google.com/file/d/1XyZ_abc123.../view?usp=sharing`
+6. Copy ONLY the ID part in the middle: `1XyZ_abc123...`
+7. In your Google Sheet, paste this formula into the `image` column, replacing `<YOUR_ID_HERE>` with the ID you copied:
+   `https://drive.google.com/uc?export=view&id=<YOUR_ID_HERE>`
+8. Your website will now instantly load the image directly from your Google Drive!

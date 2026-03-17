@@ -19,8 +19,8 @@
     "lead": " Seeking - Compounding, Diversification, and Network. <line change> Loves Mountains 🏔️ and Coffee ☕️",
     "typingWords": [
       "Open to collaborate",
-      "+5:30 UTC", 
-      "3 Yrs of Cross-Functional Experience" 
+      "+5:30 UTC",
+      "3 Yrs of Cross-Functional Experience"
     ]
   },
   "career": {
@@ -98,7 +98,6 @@
       "liveUrl": "https://valentine-ht-git-public-view-hritiks-projects-57ab03c7.vercel.app/",
       "repoUrl": "https://github.com/hritikmehta/Valentine-Website/tree/Public-View"
     },
-   
     {
       "id": 3,
       "title": "Skills for Codex or Claude",
@@ -144,15 +143,15 @@
       "repoUrl": "https://github.com/hritikmehta/Slow-web"
     },
     {
-    "id": 7,
-    "title": "Making Life Easy",
-    "description": "Utility workflow to convert screenshots or image batches into clean PDF files in a few clicks.",
-    "meta": "2022 • Image-to-PDF Tool",
-    "imageSrc": "assets/builds/build-3-poster.svg",
-    "imageAlt": "Making Life Easy poster",
-    "href": "https://github.com/hritikmehta/Making_life_easy",
-    "repoUrl": "https://github.com/hritikmehta/Making_life_easy"
-  }
+      "id": 7,
+      "title": "Making Life Easy",
+      "description": "Utility workflow to convert screenshots or image batches into clean PDF files in a few clicks.",
+      "meta": "2022 • Image-to-PDF Tool",
+      "imageSrc": "assets/builds/build-3-poster.svg",
+      "imageAlt": "Making Life Easy poster",
+      "href": "https://github.com/hritikmehta/Making_life_easy",
+      "repoUrl": "https://github.com/hritikmehta/Making_life_easy"
+    }
   ],
   "library": {
     "activities": [
@@ -193,6 +192,13 @@
       }
     ],
     "recommendations": [
+      {
+        "title": "Checkout my tried products",
+        "description": "Tap to open my Recos page with products I actually use, short reviews, and affiliate links.",
+        "imageSrc": "assets/recos/recos-mockup.svg",
+        "imageAlt": "Poster card for tried products recommendations page",
+        "href": "recos/"
+      },
       {
         "title": "",
         "description": "",

@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/resume",
+      "destination": "https://tinyurl.com/Hritik-CV1",
+      "permanent": false
+    },
+    {
+      "source": "/pm-resume",
+      "destination": "https://drive.google.com/file/d/1V99PVRPyS3ZBqxBicX3mJQsmxRAyPSm9/view",
+      "permanent": false
+    }
+  ]
+}

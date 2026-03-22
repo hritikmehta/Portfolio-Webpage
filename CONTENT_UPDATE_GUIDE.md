@@ -47,28 +47,36 @@ The homepage button fallback lives in `content/site-content.json`:
 The real resume routing now lives in:
 
 - `resume-links.js`
+- `vercel.json`
 
 Use it for two things:
 
 - `activeButtonPath` controls where the homepage `Download Resume` button goes.
-- `routes.resume.targetUrl`, `routes["pm-resume"].targetUrl`, etc. control the final redirect destination for each hosted resume path.
+- `vercel.json` controls where `/resume`, `/pm-resume`, etc. redirect at the hosting layer.
 
 Example:
 
 ```js
 window.RESUME_LINKS = {
-  activeButtonPath: "/resume",
-  routes: {
-    resume: {
-      label: "Generalist Resume",
-      targetUrl: "https://drive.google.com/file/d/..."
-    },
-    "pm-resume": {
-      label: "PM Resume",
-      targetUrl: "https://drive.google.com/file/d/..."
-    }
-  }
+  activeButtonPath: "/resume"
 };
+```
+
+```json
+{
+  "redirects": [
+    {
+      "source": "/resume",
+      "destination": "https://drive.google.com/file/d/...",
+      "permanent": false
+    },
+    {
+      "source": "/pm-resume",
+      "destination": "https://drive.google.com/file/d/...",
+      "permanent": false
+    }
+  ]
+}
 ```
 
 ## Builds
@@ -239,7 +247,7 @@ Run:
 jq empty content/site-content.json
 node --check animations.js
 node --check resume-links.js
-node --check resume-redirect.js
+jq empty vercel.json
 ```
 
 If both pass, content syntax is good.

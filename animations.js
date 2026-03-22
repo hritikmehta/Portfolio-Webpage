@@ -1,6 +1,6 @@
 const DEFAULT_CONTENT = {
   profile: {
-    siteUrl: "https://portfolio-webpage-rose-zeta.vercel.app/",
+    siteUrl: "https://hritikm.com/",
     email: "hritikmehta.77@gmail.com"
   },
   seo: {
@@ -15,7 +15,7 @@ const DEFAULT_CONTENT = {
     typingWords: ["Open to collaborate"]
   },
   career: {
-    resumeUrl: "https://tinyurl.com/Hritik-CV1",
+    resumeUrl: "/resume",
     entries: []
   },
   builds: [],
@@ -39,6 +39,20 @@ const DEFAULT_CONTENT = {
 
 function isExternalUrl(value) {
   return /^https?:\/\//i.test(value || "");
+}
+
+function getActiveResumeUrl(content) {
+  const configuredPath = window.RESUME_LINKS?.activeButtonPath;
+  if (typeof configuredPath === "string" && configuredPath.trim()) {
+    return configuredPath.trim();
+  }
+
+  const careerResumeUrl = content?.career?.resumeUrl;
+  if (typeof careerResumeUrl === "string" && careerResumeUrl.trim()) {
+    return careerResumeUrl.trim();
+  }
+
+  return DEFAULT_CONTENT.career.resumeUrl;
 }
 
 function shouldReduceMotion() {
@@ -436,8 +450,8 @@ function renderCareerMeta(content) {
   const career = content.career || {};
   const resumeCta = document.getElementById("careerResumeCta");
 
-  if (resumeCta && career.resumeUrl) {
-    resumeCta.href = career.resumeUrl;
+  if (resumeCta) {
+    resumeCta.href = getActiveResumeUrl(content);
   }
 
   const buttons = document.querySelectorAll(".career-orbit-button");

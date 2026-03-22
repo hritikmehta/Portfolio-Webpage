@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Resume Redirect | Hritik Mehta</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f1e8;
+      --surface: rgba(255, 252, 246, 0.92);
+      --text: #1b1712;
+      --accent: #8a3d12;
+      --border: rgba(27, 23, 18, 0.12);
+      --shadow: 0 24px 60px rgba(66, 39, 17, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background:
+        radial-gradient(circle at top, rgba(201, 122, 67, 0.16), transparent 38%),
+        linear-gradient(180deg, #fbf5ec 0%, var(--bg) 100%);
+      color: var(--text);
+      font-family: "Space Grotesk", "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(100%, 560px);
+      padding: 32px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 24px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fffaf4;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1 id="resumeRedirectTitle">Redirecting to your resume</h1>
+    <p id="resumeRedirectDescription">If the redirect does not happen automatically, use the button below.</p>
+    <a id="resumeRedirectFallback" href="/">Open resume</a>
+  </main>
+
+  <script src="../resume-links.js"></script>
+  <script src="../resume-redirect.js"></script>
+</body>
+
+</html>

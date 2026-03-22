@@ -39,10 +39,37 @@ Example:
 
 ## Career
 
-In `content/site-content.json`:
+The homepage button fallback lives in `content/site-content.json`:
 
 - `career.resumeUrl`
 - `career.entries[]` (`period`, `org`, `role`, `highlights`, `images`)
+
+The real resume routing now lives in:
+
+- `resume-links.js`
+
+Use it for two things:
+
+- `activeButtonPath` controls where the homepage `Download Resume` button goes.
+- `routes.resume.targetUrl`, `routes["pm-resume"].targetUrl`, etc. control the final redirect destination for each hosted resume path.
+
+Example:
+
+```js
+window.RESUME_LINKS = {
+  activeButtonPath: "/resume",
+  routes: {
+    resume: {
+      label: "Generalist Resume",
+      targetUrl: "https://drive.google.com/file/d/..."
+    },
+    "pm-resume": {
+      label: "PM Resume",
+      targetUrl: "https://drive.google.com/file/d/..."
+    }
+  }
+};
+```
 
 ## Builds
 
@@ -211,6 +238,8 @@ Run:
 ```bash
 jq empty content/site-content.json
 node --check animations.js
+node --check resume-links.js
+node --check resume-redirect.js
 ```
 
 If both pass, content syntax is good.
@@ -230,4 +259,3 @@ Add any changed assets too, for example:
 ```bash
 git add assets/builds assets/library
 ```
-

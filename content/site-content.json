@@ -77,6 +77,17 @@
   },
   "builds": [
     {
+      "id": 0,
+      "title": "MrTracker",
+      "description": "What if you don't have to lift your phone to record your daily activities and get a detailed report and actionable insights.",
+      "meta": "2026 • Low Touch Tracker • WIP",
+      "imageSrc": "assets/builds/build-mrtracker.png",
+      "imageAlt": "MrTracker app poster",
+      "href": "https://mr-tracker-nine.vercel.app/dashboard",
+      "liveUrl": "https://mr-tracker-nine.vercel.app/dashboard",
+      "repoUrl": "https://github.com/hritikmehta/Portfolio-Webpage"
+    },
+    {
       "id": 1,
       "title": "NutriPlay",
       "description": "Gamified nutrition coach with streaks, progress loops, and a playful UX for consistent healthy habits.",

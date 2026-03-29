@@ -676,16 +676,11 @@ function initFocusRail(items) {
     uiDesc.textContent = activeItem.description || "";
     uiCount.textContent = `${wrap(0, count, activeIndex) + 1} / ${count}`;
 
-    if (activeItem.href) {
-      uiExplore.href = activeItem.href;
+    if (activeItem.repoUrl) {
+      uiExplore.href = activeItem.repoUrl;
       uiExplore.style.display = "inline-flex";
-      if (isExternalUrl(activeItem.href)) {
-        uiExplore.target = "_blank";
-        uiExplore.rel = "noopener noreferrer";
-      } else {
-        uiExplore.removeAttribute("target");
-        uiExplore.removeAttribute("rel");
-      }
+      uiExplore.target = "_blank";
+      uiExplore.rel = "noopener noreferrer";
     } else {
       uiExplore.style.display = "none";
     }
@@ -708,7 +703,7 @@ function initFocusRail(items) {
       const brightness = isCenter ? 1 : 0.5;
 
       const card = document.createElement("div");
-      const isActionable = isCenter && Boolean(item.ndaNotice);
+      const isActionable = isCenter && Boolean(item.ndaNotice || item.liveUrl || item.href);
       card.className = `rail-card ${!isCenter ? "clickable" : ""} ${isActionable ? "actionable" : ""}`.trim();
       card.style.transform = `translateX(${offset * xOffset}px) translateZ(${zOffset}px) scale(${scale}) rotateY(${rotateY}deg)`;
       card.style.opacity = String(opacity);
@@ -717,7 +712,7 @@ function initFocusRail(items) {
       if (isActionable) {
         card.tabIndex = 0;
         card.setAttribute("role", "button");
-        card.setAttribute("aria-label", `${item.title || "Project"} details`);
+        card.setAttribute("aria-label", `${item.title || "Project"} — visit project`);
       }
 
       if (!isCenter) {
@@ -731,6 +726,17 @@ function initFocusRail(items) {
           if (event.key === "Enter" || event.key === " ") {
             event.preventDefault();
             openNotice(item, card);
+          }
+        });
+      } else if (item.liveUrl || item.href) {
+        const dest = item.liveUrl || item.href;
+        card.addEventListener("click", () => {
+          window.open(dest, "_blank", "noopener,noreferrer");
+        });
+        card.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            window.open(dest, "_blank", "noopener,noreferrer");
           }
         });
       }

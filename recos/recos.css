@@ -1,0 +1,102 @@
+:root {
+  color-scheme: dark;
+  --bg: #080912;
+  --panel: #111427;
+  --text: #f5f7ff;
+  --muted: #c3c7de;
+  --accent: #68ddff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: radial-gradient(circle at 20% 10%, #20153f 0%, var(--bg) 44%);
+  color: var(--text);
+}
+
+.recos-shell {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+.recos-head h1 {
+  margin: 0.4rem 0;
+  font-family: Fraunces, serif;
+  font-size: clamp(2rem, 6vw, 3.7rem);
+}
+
+.eyebrow {
+  letter-spacing: 0.1em;
+  font-size: 0.86rem;
+  color: var(--accent);
+  margin: 0;
+}
+
+.lead {
+  color: var(--muted);
+  max-width: 64ch;
+}
+
+.back-link {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  opacity: 0.88;
+}
+
+.mockup-wrap {
+  margin: 2rem 0;
+}
+
+.mockup-wrap img {
+  width: min(100%, 620px);
+  border-radius: 16px;
+  border: 1px solid #454b7b;
+}
+
+h2 {
+  font-family: Fraunces, serif;
+  margin-top: 2.4rem;
+}
+
+.card-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.reco-card {
+  background: var(--panel);
+  border: 1px solid #30385f;
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.poster {
+  background: linear-gradient(135deg, #5e7fff, #5f33b8);
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.reco-card p {
+  color: var(--muted);
+}
+
+.reco-card .review {
+  color: #f2e8ff;
+  font-size: 0.95rem;
+}
+
+.reco-card a {
+  display: inline-block;
+  margin-top: 0.25rem;
+  color: var(--accent);
+}

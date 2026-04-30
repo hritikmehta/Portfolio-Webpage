@@ -180,21 +180,42 @@
         "title": "Instagram Reel",
         "description": "Tried by Hritik reel",
         "kind": "embed",
+        "embedUrl": "https://www.instagram.com/reel/DXOQEfrkQRb/embed",
+        "href": "https://www.instagram.com/triedby.hritik/reel/DXOQEfrkQRb/"
+      },
+      {
+        "title": "Instagram Reel",
+        "description": "Tried by Hritik reel",
+        "kind": "embed",
+        "embedUrl": "https://www.instagram.com/reel/DXeeu9lkWsU/embed",
+        "href": "https://www.instagram.com/triedby.hritik/reel/DXeeu9lkWsU/"
+      },
+      {
+        "title": "Instagram Reel",
+        "description": "Tried by Hritik reel",
+        "kind": "embed",
         "embedUrl": "https://www.instagram.com/reel/DVBsjIFj7VN/embed",
-        "href": "https://www.instagram.com/tried.byhritik/reel/DVBsjIFj7VN/"
+        "href": "https://www.instagram.com/triedby.hritik/reel/DVBsjIFj7VN/"
+      },
+      {
+        "title": "LinkedIn Post",
+        "description": "Product and growth update",
+        "kind": "embed",
+        "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:share:7451580703118430208?collapsed=1",
+        "href": "https://www.linkedin.com/feed/update/urn:li:share:7451580703118430208/"
       },
       {
         "title": "LinkedIn Activity",
         "description": "Product and growth update",
         "kind": "embed",
-        "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:activity:7431006270893019136",
+        "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:activity:7431006270893019136?collapsed=1",
         "href": "https://www.linkedin.com/feed/update/urn:li:activity:7431006270893019136/?originTrackingId=dAKA3LzfBLaWb7sh0Q4gFQ%3D%3D"
       },
       {
         "title": "LinkedIn Post",
         "description": "Unexpected places where people share products",
         "kind": "embed",
-        "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:activity:7428269343500705793",
+        "embedUrl": "https://www.linkedin.com/embed/feed/update/urn:li:activity:7428269343500705793?collapsed=1",
         "href": "https://www.linkedin.com/feed/update/urn:li:activity:7428269343500705793/?originTrackingId=zDZQu%2FQHcWCY5DMCAVmCSw%3D%3D"
       },
       {

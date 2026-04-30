@@ -216,6 +216,7 @@ function createGalleryCard(item, options = {}) {
   if (item.embedType === "twitter" && item.href) {
     const card = document.createElement("article");
     card.className = "gallery-card embed-card embed-card-tweet";
+    card.dataset.embedType = "twitter";
 
     const frameWrap = document.createElement("div");
     frameWrap.className = "embed-frame-wrap tweet-frame-wrap";
@@ -278,6 +279,11 @@ function createGalleryCard(item, options = {}) {
   if (item.embedUrl) {
     const card = document.createElement("article");
     card.className = "gallery-card embed-card";
+    if (item.embedUrl.includes("instagram.com")) {
+      card.dataset.embedType = "instagram";
+    } else if (item.embedUrl.includes("linkedin.com")) {
+      card.dataset.embedType = "linkedin";
+    }
 
     const frameWrap = document.createElement("div");
     frameWrap.className = "embed-frame-wrap";

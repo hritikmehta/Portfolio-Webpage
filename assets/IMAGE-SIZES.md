@@ -10,6 +10,7 @@ All primary posters should be **1200 × 1600 px** (3:4 portrait ratio).
 
 | File | Size | Format | Notes |
 |------|------|--------|-------|
+| build-paperweight.png | 1200 × 1600 | PNG | PaperWeight Chrome extension |
 | build-mrtracker.png | 1200 × 1600 | PNG | Blurred bg + centered screenshot + drop shadow |
 | build-1-poster.svg | 1200 × 1600 | SVG | NutriPlay |
 | build-2-poster.svg | 1200 × 1600 | SVG | Valentine Website |

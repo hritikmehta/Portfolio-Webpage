@@ -19,8 +19,8 @@
     "lead": " Seeking - Compounding, Diversification, and Network. <line change> Loves Mountains 🏔️ and Coffee ☕️",
     "typingWords": [
       "Open to collaborate",
-      "+5:30 UTC", 
-      "3 Yrs of Cross-Functional Experience" 
+      "+5:30 UTC",
+      "3 Yrs of Cross-Functional Experience"
     ]
   },
   "career": {
@@ -78,6 +78,16 @@
   "builds": [
     {
       "id": 0,
+      "title": "PaperWeight",
+      "description": "A Chrome extension that learns what you love to read and surfaces every new post from authors you follow. No backend, no account — runs entirely in your browser.",
+      "meta": "2026 • Chrome Extension",
+      "imageSrc": "assets/builds/build-paperweight.png",
+      "imageAlt": "PaperWeight Chrome extension poster",
+      "href": "https://paperweight-eight.vercel.app/",
+      "liveUrl": "https://paperweight-eight.vercel.app/"
+    },
+    {
+      "id": 1,
       "title": "MrTracker",
       "description": "What if you don't have to lift your phone to record your daily activities and get a detailed report and actionable insights.",
       "meta": "2026 • Low Touch Tracker • WIP",
@@ -88,7 +98,7 @@
       "repoUrl": "https://github.com/hritikmehta/Portfolio-Webpage"
     },
     {
-      "id": 1,
+      "id": 2,
       "title": "NutriPlay",
       "description": "Gamified nutrition coach with streaks, progress loops, and a playful UX for consistent healthy habits.",
       "meta": "2025 • Gamified Web App",
@@ -99,7 +109,7 @@
       "repoUrl": "https://github.com/hritikmehta/NutriPlay"
     },
     {
-      "id": 2,
+      "id": 3,
       "title": "Valentine Website",
       "description": "When yon need to do something on valentines for her and also follow the trend",
       "meta": "2026 • Interactive",
@@ -109,9 +119,8 @@
       "liveUrl": "https://valentine-ht-git-public-view-hritiks-projects-57ab03c7.vercel.app/",
       "repoUrl": "https://github.com/hritikmehta/Valentine-Website/tree/Public-View"
     },
-   
     {
-      "id": 3,
+      "id": 4,
       "title": "Skills for Codex or Claude",
       "description": "Reusable skill bundles for coding agents, focused on structured diagramming and safe file-organization workflows.",
       "meta": "2026 • Developer Tooling",
@@ -121,7 +130,7 @@
       "repoUrl": "https://github.com/hritikmehta/Skills-for-Codex-or-Claude"
     },
     {
-      "id": 4,
+      "id": 5,
       "title": "Trend-AI",
       "description": "Internal Housing.com market lookup tool for demand, lead quality, supply, and seller-supply questions in plain language.",
       "meta": "2026 • Internal Product",
@@ -133,7 +142,7 @@
       }
     },
     {
-      "id": 5,
+      "id": 6,
       "title": "Beaver's Party",
       "description": "SlowWeb - Part 1. A quiet riverside timer where beavers slowly build a dam while time passes softly in the background.",
       "meta": "2026 • Slow Web",
@@ -144,7 +153,7 @@
       "repoUrl": "https://github.com/hritikmehta/Slow-web"
     },
     {
-      "id": 6,
+      "id": 7,
       "title": "Pine Forest",
       "description": "SlowWeb - Part 2. A quiet digital retreat where pine cones fall at their own pace and time is felt through the environment.",
       "meta": "2026 • Slow Web",
@@ -155,15 +164,15 @@
       "repoUrl": "https://github.com/hritikmehta/Slow-web"
     },
     {
-    "id": 7,
-    "title": "Making Life Easy",
-    "description": "Utility workflow to convert screenshots or image batches into clean PDF files in a few clicks.",
-    "meta": "2022 • Image-to-PDF Tool",
-    "imageSrc": "assets/builds/build-3-poster.svg",
-    "imageAlt": "Making Life Easy poster",
-    "href": "https://github.com/hritikmehta/Making_life_easy",
-    "repoUrl": "https://github.com/hritikmehta/Making_life_easy"
-  }
+      "id": 8,
+      "title": "Making Life Easy",
+      "description": "Utility workflow to convert screenshots or image batches into clean PDF files in a few clicks.",
+      "meta": "2022 • Image-to-PDF Tool",
+      "imageSrc": "assets/builds/build-3-poster.svg",
+      "imageAlt": "Making Life Easy poster",
+      "href": "https://github.com/hritikmehta/Making_life_easy",
+      "repoUrl": "https://github.com/hritikmehta/Making_life_easy"
+    }
   ],
   "library": {
     "activities": [

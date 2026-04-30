@@ -18,8 +18,8 @@ All primary posters should be **1200 × 1600 px** (3:4 portrait ratio).
 | build-4-poster.svg | 1200 × 1600 | SVG | Skills for Codex or Claude |
 | build-5-poster.svg | 1200 × 1600 | SVG | Trend-AI |
 | build-3-generated.svg | 900 × 1200 | SVG | Alternate / generated variant |
-| build-6-beaver-party.png | 746 × 1078 | PNG | Beaver's Party (legacy, not at standard ratio) |
-| build-7-pinecones.png | 768 × 1146 | PNG | Pine Forest (legacy, not at standard ratio) |
+| build-6-beaver-party.png | 1086 × 1448 | PNG | Beaver's Party |
+| build-7-pinecones.png | 1086 × 1448 | PNG | Pine Forest |
 
 **Standard**: `1200 × 1600 px`, PNG or SVG, portrait.
 **Padding recipe for PNG posters**: 90 px padding all sides, blurred+darkened screenshot as bg, soft drop shadow (radius 18, opacity 90).

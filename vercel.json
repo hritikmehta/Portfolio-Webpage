@@ -10,5 +10,15 @@
       "destination": "https://drive.google.com/file/d/1V99PVRPyS3ZBqxBicX3mJQsmxRAyPSm9/view",
       "permanent": false
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/builds/slowweb/pinecone/:path*",
+      "destination": "https://pinecones.vercel.app/:path*"
+    },
+    {
+      "source": "/builds/slowweb/beaversparty/:path*",
+      "destination": "https://party-with-beavers.vercel.app/:path*"
+    }
   ]
 }

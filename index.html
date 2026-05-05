@@ -100,23 +100,24 @@
             </svg>
           </a>
         </div>
-        <div class="career-orbit-layout">
-          <div class="career-orbits" role="tablist" aria-label="Career periods">
-            <button class="career-orbit-button" type="button" role="tab" aria-selected="false" data-index="0">
-              <span class="orbit-ring"><span class="orbit-planet"></span></span>
-              <span class="orbit-label">2018 — 2023</span>
-            </button>
-            <button class="career-orbit-button is-active" type="button" role="tab" aria-selected="true" data-index="1">
-              <span class="orbit-ring"><span class="orbit-planet"></span></span>
-              <span class="orbit-label">2023 — Present</span>
-            </button>
-            <button class="career-orbit-button" type="button" role="tab" aria-selected="false" data-index="2">
-              <span class="orbit-ring"><span class="orbit-planet"></span></span>
-              <span class="orbit-label">Next</span>
-            </button>
+        <div class="career-tabs-layout">
+          <div class="career-tabs" role="tablist" aria-label="Career periods">
+            <button class="career-tab-btn" type="button" role="tab" aria-selected="false" data-index="0">2018 — 2023</button>
+            <button class="career-tab-btn is-active" type="button" role="tab" aria-selected="true" data-index="1">2023 — Present</button>
+            <button class="career-tab-btn" type="button" role="tab" aria-selected="false" data-index="2">Next</button>
           </div>
 
-          <div class="career-main">
+          <div class="career-content">
+            <aside class="career-media" aria-label="Career media carousel">
+              <div class="career-carousel" id="careerCarousel">
+                <img id="careerCarouselImage" src="assets/career/2023-present/01.png"
+                  alt="Housing.com - career highlight image 1" width="960" height="720" />
+                <button id="careerCarouselPrev" class="career-carousel-btn prev" type="button" aria-label="Previous image">&lsaquo;</button>
+                <button id="careerCarouselNext" class="career-carousel-btn next" type="button" aria-label="Next image">&rsaquo;</button>
+                <div id="careerCarouselDots" class="career-carousel-dots" aria-label="Image position"></div>
+              </div>
+            </aside>
+
             <article class="career-info-panel" aria-live="polite">
               <p id="careerInfoPeriod" class="career-info-period">2023 — Present</p>
               <h3 id="careerInfoOrg">Housing.com</h3>
@@ -127,20 +128,6 @@
                 <li>Uncovering insights, planning GTM, and challenging legacy logic.</li>
               </ul>
             </article>
-
-            <aside class="career-media" aria-label="Career media carousel">
-              <div class="career-carousel" id="careerCarousel">
-                <img id="careerCarouselImage" src="assets/career/2023-present/01.png"
-                  alt="Housing.com - career highlight image 1" width="960" height="720" />
-                <button id="careerCarouselPrev" class="career-carousel-btn prev" type="button" aria-label="Previous image">
-                  &lsaquo;
-                </button>
-                <button id="careerCarouselNext" class="career-carousel-btn next" type="button" aria-label="Next image">
-                  &rsaquo;
-                </button>
-                <div id="careerCarouselDots" class="career-carousel-dots" aria-label="Image position"></div>
-              </div>
-            </aside>
           </div>
         </div>
       </div>
@@ -163,16 +150,16 @@
               <p class="rail-desc" id="railDesc">Gamified nutrition coach with streaks, progress loops, and a playful UX for
                 consistent healthy habits.</p>
             </div>
+          </div>
 
-            <div class="rail-controls">
-              <div class="rail-nav">
-                <button id="railPrev" type="button" aria-label="Previous build">&lsaquo;</button>
-                <span id="railCount">1 / 5</span>
-                <button id="railNext" type="button" aria-label="Next build">&rsaquo;</button>
-              </div>
-              <a href="https://github.com/" class="button" id="railExplore" target="_blank" rel="noopener noreferrer">Repo
-                &rarr;</a>
+          <div class="rail-controls">
+            <div class="rail-nav">
+              <button id="railPrev" type="button" aria-label="Previous build">&lsaquo;</button>
+              <span id="railCount">1 / 5</span>
+              <button id="railNext" type="button" aria-label="Next build">&rsaquo;</button>
             </div>
+            <a href="https://github.com/" class="button" id="railExplore" target="_blank" rel="noopener noreferrer">Repo
+              &rarr;</a>
           </div>
         </div>
       </div>

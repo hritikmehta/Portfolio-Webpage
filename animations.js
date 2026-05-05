@@ -1255,70 +1255,6 @@ function initNavScrollspy() {
   setActive("hero");
 }
 
-function initSectionSnap() {
-  // Skip on mobile — touch scroll feels better without snap
-  if (window.innerWidth < 768) return;
-
-  const sections = Array.from(document.querySelectorAll("main .section[id]"));
-  if (!sections.length) return;
-
-  let isSnapping = false;
-  let snapTimeout = null;
-
-  function getSectionBounds(el) {
-    const rect = el.getBoundingClientRect();
-    return { top: rect.top + window.scrollY, bottom: rect.bottom + window.scrollY, height: rect.height };
-  }
-
-  function getCurrentSection() {
-    const mid = window.scrollY + window.innerHeight / 2;
-    return sections.find((s) => {
-      const { top, bottom } = getSectionBounds(s);
-      return mid >= top && mid < bottom;
-    }) || sections[0];
-  }
-
-  function snapTo(el, alignTop) {
-    if (isSnapping) return;
-    isSnapping = true;
-    const { top, bottom } = getSectionBounds(el);
-    const targetY = alignTop ? top : bottom - window.innerHeight;
-    window.scrollTo({ top: Math.max(0, targetY), behavior: "smooth" });
-    setTimeout(() => { isSnapping = false; }, 800);
-  }
-
-  function onWheel(e) {
-    if (isSnapping) return;
-    clearTimeout(snapTimeout);
-
-    const scrollingDown = e.deltaY > 0;
-    const current = getCurrentSection();
-    const { top, bottom } = getSectionBounds(current);
-    const viewTop = window.scrollY;
-    const viewBottom = window.scrollY + window.innerHeight;
-
-    // Only snap when near section boundaries (within 80px threshold)
-    const nearTop = Math.abs(viewTop - top) < 80;
-    const nearBottom = Math.abs(viewBottom - bottom) < 80;
-    const sectionFitsInView = current.offsetHeight <= window.innerHeight * 1.05;
-
-    if (sectionFitsInView || nearBottom || nearTop) {
-      snapTimeout = setTimeout(() => {
-        if (scrollingDown) {
-          const next = sections[sections.indexOf(current) + 1];
-          if (next) snapTo(next, true);
-          else snapTo(current, false);
-        } else {
-          const prev = sections[sections.indexOf(current) - 1];
-          if (nearTop && prev) snapTo(prev, false);
-          else snapTo(current, true);
-        }
-      }, 60);
-    }
-  }
-
-  window.addEventListener("wheel", onWheel, { passive: true });
-}
 
 (async function initApp() {
   const content = await loadSiteContent();
@@ -1338,5 +1274,4 @@ function initSectionSnap() {
   initCareer(content.career || {});
   initContactForm(content);
   initNavScrollspy();
-  initSectionSnap();
 })();

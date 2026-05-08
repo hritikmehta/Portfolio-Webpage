@@ -1,0 +1,19 @@
+{
+  "categories": [
+    { "id": "all", "label": "All" },
+    { "id": "extension", "label": "Extensions" },
+    { "id": "app", "label": "Apps" },
+    { "id": "tool", "label": "Tools" }
+  ],
+  "builds": [
+    {
+      "id": "build-paperweight",
+      "category": "extension",
+      "categoryLabel": "Chrome Extension",
+      "name": "PaperWeight",
+      "description": "Learns what you love to read and surfaces every new post from authors you follow. No backend, no account — runs entirely in your browser.",
+      "link": "https://chromewebstore.google.com/detail/paperweight/clflhljhoobkbipmhcpobcaicgopeabk?authuser=0&hl=en-GB",
+      "image": "/assets/builds/build-paperweight.png"
+    }
+  ]
+}

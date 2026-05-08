@@ -13,7 +13,7 @@
       "name": "PaperWeight",
       "description": "Learns what you love to read and surfaces every new post from authors you follow. No backend, no account — runs entirely in your browser.",
       "link": "https://chromewebstore.google.com/detail/paperweight/clflhljhoobkbipmhcpobcaicgopeabk?authuser=0&hl=en-GB",
-      "image": "/assets/builds/build-paperweight.png"
+      "image": "/builds/paperweight-fin.png"
     }
   ]
 }

@@ -13,6 +13,14 @@
   ],
   "rewrites": [
     {
+      "source": "/30sundays-ps",
+      "destination": "https://30sundays-ps.vercel.app/"
+    },
+    {
+      "source": "/30sundays-ps/:path*",
+      "destination": "https://30sundays-ps.vercel.app/:path*"
+    },
+    {
       "source": "/builds/slowweb/pinecone/:path*",
       "destination": "https://pinecones.vercel.app/:path*"
     },

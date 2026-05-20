@@ -9,11 +9,16 @@
       "source": "/pm-resume",
       "destination": "https://drive.google.com/file/d/1V99PVRPyS3ZBqxBicX3mJQsmxRAyPSm9/view",
       "permanent": false
+    },
+    {
+      "source": "/30sundays-ps",
+      "destination": "/30sundays-ps/",
+      "permanent": false
     }
   ],
   "rewrites": [
     {
-      "source": "/30sundays-ps",
+      "source": "/30sundays-ps/",
       "destination": "https://30sundays-ps.vercel.app/"
     },
     {

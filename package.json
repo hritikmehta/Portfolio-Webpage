@@ -1,0 +1,16 @@
+{
+  "name": "portfolio-webpage",
+  "version": "1.0.0",
+  "description": "Professional portfolio of Hritik Mehta",
+  "scripts": {
+    "build": "node build-analytics.js",
+    "dev": "python3 -m http.server 8000",
+    "lint": "echo 'No linting configured for static site'"
+  },
+  "keywords": ["portfolio", "static"],
+  "author": "Hritik Mehta",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  }
+}
